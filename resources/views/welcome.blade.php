@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="vie"w"port" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
 
@@ -72,20 +72,23 @@
                 <li class="nav-item">
                     <a href="{{ url('/uz') }}" class="nav-link">UZ</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ url('/ru') }}" class="nav-link">RU</a>
+                </li>
             </ul>
         </div>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
-                    @auth
+                    {{-- @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login', app()->getLocale()) }}">Login</a>
+                        <a href="{{ route('login', app()->getLocale()) }}">{{__("Login")}}</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register', app()->getLocale()) }}">Register</a>
+                            <a href="{{ route('register', app()->getLocale()) }}">{{__("Register")}}</a>
                         @endif
-                    @endauth
+                    @endauth --}}
                 </div>
             @endif
 
@@ -96,9 +99,9 @@
 
                 <div class="links">
                     <a href="https://laravel.com/docs">{{__("Docs")}}</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
+                    <a href="https://laracasts.com">{{__("Laracasts")}}</a>
+                    <a href="https://laravel-news.com">{{__("News")}}</a>
+                    <a href="https://blog.laravel.com">{{__("Blog")}}</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>

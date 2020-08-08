@@ -1,0 +1,16 @@
+{
+    "Laravel": "добро пожаловать!",
+    "Docs": "документы",
+    "Name": "имя",
+    "News": "Новости",
+    "Blog": "Блог",
+    "E-Mail Address": "Адрес электронной почты",
+    "Login": "Kirish",
+    "Password": "Parol",
+    "Remember Me": "Meni eslab qol",
+    "Forgot Your Password?": "Parol esingizdan chiqdimi?",
+    "Register": "Royhatdan o'tish",
+    "Confirm Password": "Parolni qayta tering",
+    "Reset Password": "Parolni Yangilash",
+    "Send Password Reset Link": "Parolni Yangilanganini Yuborish"
+}
