@@ -6,7 +6,7 @@ models:
     timestamps: true
     softDeletes: true
     relationships:
-      belogsToMany: SubCategory, Company, Tag, Product
+      belongsToMany: SubCategory, Company, Tag, Product
       
   Subcategory:
     category_id: id foreign
@@ -15,7 +15,7 @@ models:
     timestamps: true
     softDeletes: true
     relationships:
-      belogsToMany: Company, Tag, Product
+      belongsToMany: Company, Tag, Product
 
   Company:
     subcategory_id: id foreign
@@ -38,7 +38,7 @@ models:
     timestamps: true
     softDeletes: true
     relationships:
-      belogsToMany: Subcategory, Category, Tag, Product
+      belongsToMany: Subcategory, Category, Tag, Product
 
   Tag:
     name: string
@@ -46,7 +46,7 @@ models:
     timestamps: true
     softDeletes: true
     relationships:
-      belogsToMany: Subcategory, Category, Product, Company, Blog, Service, Investment
+      belongsToMany: Subcategory, Category, Product, Company, Blog, Service, Investment
 
   Product: 
     company_id: id foreign 
@@ -73,7 +73,7 @@ models:
     timestamps: true
     softDeletes: true
     relationships:
-      belogsToMany: Tag
+      belongsToMany: Tag
 
 
   Service:
@@ -98,7 +98,7 @@ models:
     timestamps: true
     softDeletes: true
     relationships:
-      belogsToMany: Company, Subcategory, Category, Tag
+      belongsToMany: Company, Subcategory, Category, Tag
 
   Investment:
     category_id: id foreign 
@@ -120,7 +120,7 @@ models:
     timestamps: true
     softDeletes: true
     relationships:
-      belogsToMany: Company, Subcategory, Category, Tag
+      belongsToMany: Company, Subcategory, Category, Tag
 
   Buyrequest:
     category_id: id foreign 
@@ -133,4 +133,4 @@ models:
     timestamps: true
     softDeletes: true
     relationships:
-      belogsToMany: Company, Subcategory, Category, Tag
+      belongsToMany: Company, Subcategory, Category, Tag
