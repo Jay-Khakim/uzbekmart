@@ -1,0 +1,22 @@
+models: 
+  Category: 
+    parent_id: id foreign:categories nullable 
+    name: srting 
+    slug: string unique
+    timestamps: true
+    softDeletes: true
+    relationships:
+      belogsToMany: Company, Tag, Product
+
+  Company:
+    category_id: id foreign:categories
+    name_en: string:300
+    name_uz: string:300
+    name_ru: string:300
+    slug_en: string:300
+    slug_uz: string:300
+    slug_ru: string:300
+    desc_en: longtext 
+    desc_uz: longtext 
+    desc_ru: longtext 
+
