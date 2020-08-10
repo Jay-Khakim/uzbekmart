@@ -1,25 +1,29 @@
 models: 
   Category: 
-    parent_id: id foreign:categories nullable 
+    # parent_id: id foreign:categories nullable 
     name: srting 
     slug: string unique
     timestamps: true
     softDeletes: true
-    relationships:
-      belongsToMany: SubCategory, Company, Tag, Product
+    # relationships:
+    #   belongsToMany: SubCategory, Company, Tag, Product
       
   Subcategory:
-    category_id: id foreign
+    # category_id: id foreign
+    category_id: id
     name: string 
     slug: string unique
     timestamps: true
     softDeletes: true
-    relationships:
-      belongsToMany: Company, Tag, Product
+    # relationships:
+    #   belongsToMany: Company, Tag, Product
 
   Company:
-    subcategory_id: id foreign
-    companytype: enum:local, foreign
+    # subcategory_id: id foreign
+    subcategory_id: id 
+    category_id: id 
+    tag_id: id
+    companytype: enum:local,foreign
     name_en: string:300
     name_uz: string:300
     name_ru: string:300
@@ -37,19 +41,21 @@ models:
     address_ru: varchar:255
     timestamps: true
     softDeletes: true
-    relationships:
-      belongsToMany: Subcategory, Category, Tag, Product
+    # relationships:
+    #   belongsToMany: Subcategory, Category, Tag, Product
 
   Tag:
     name: string
     slug: string unique
     timestamps: true
     softDeletes: true
-    relationships:
-      belongsToMany: Subcategory, Category, Product, Company, Blog, Service, Investment
+    # relationships:
+    #   belongsToMany: Subcategory, Category, Product, Company, Blog, Service, Investment
 
   Product: 
-    company_id: id foreign 
+    # company_id: id foreign 
+    company_id: id 
+    tag_id: id
     name_en: string:300
     name_uz: string:300
     name_ru: string:300
@@ -60,10 +66,11 @@ models:
     image: string:300
     timestamps: true
     softDeletes: true
-    relationships:
-      belogsToMany: Company, Subcategory, Category, Tag
+    # relationships:
+    #   belongsToMany: Company, Subcategory, Category, Tag
 
   Blog: 
+    tag_id: id
     title_en: string:300
     title_uz: string:300
     title_ru: string:300
@@ -72,11 +79,13 @@ models:
     image: string:300
     timestamps: true
     softDeletes: true
-    relationships:
-      belongsToMany: Tag
+    # relationships:
+    #   belongsToMany: Tag
 
 
   Service:
+    tag_id: id
+    company_id: id
     name_en: string:300
     name_uz: string:300
     name_ru: string:300
@@ -97,10 +106,11 @@ models:
     address_ru: varchar:255
     timestamps: true
     softDeletes: true
-    relationships:
-      belongsToMany: Company, Subcategory, Category, Tag
+    # relationships:
+    #   belongsToMany: Company, Subcategory, Category, Tag
 
   Investment:
+    tag_id: id
     category_id: id foreign 
     title_en: string:300
     title_uz: string:300
@@ -119,11 +129,12 @@ models:
     workplaces: char:10
     timestamps: true
     softDeletes: true
-    relationships:
-      belongsToMany: Company, Subcategory, Category, Tag
+    # relationships:
+    #   belongsToMany: Company, Subcategory, Category, Tag
 
   Buyrequest:
-    category_id: id foreign 
+    tag_id: id 
+    category_id: id
     name: string
     email: string:100
     company: string:200
@@ -132,5 +143,5 @@ models:
     image: string:300
     timestamps: true
     softDeletes: true
-    relationships:
-      belongsToMany: Company, Subcategory, Category, Tag
+    # relationships:
+    #   belongsToMany: Company, Subcategory, Category, Tag

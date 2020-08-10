@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Tag;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,11 +19,14 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/', function () {
         return view('welcome');
     });
-
+    Route::get('/tags', function (){
+        $tags = Tag::get();
+        return view('tags')->with('tags', $tags);
+    });
     Auth::routes();
 
     Route::get('/home', 'HomeController@index')->name('home');
 });
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
