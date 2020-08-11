@@ -1,14 +1,14 @@
 created:
-    - database/migrations/2020_08_11_061754_create_categories_table.php
-    - database/migrations/2020_08_11_061755_create_subcategories_table.php
-    - database/migrations/2020_08_11_061756_create_companies_table.php
-    - database/migrations/2020_08_11_061757_create_tags_table.php
-    - database/migrations/2020_08_11_061758_create_products_table.php
-    - database/migrations/2020_08_11_061759_create_blogs_table.php
-    - database/migrations/2020_08_11_061800_create_services_table.php
-    - database/migrations/2020_08_11_061801_create_investments_table.php
-    - database/migrations/2020_08_11_061802_create_buyrequests_table.php
-    - database/migrations/2020_08_11_061803_create_banners_table.php
+    - database/migrations/2020_08_11_104439_create_categories_table.php
+    - database/migrations/2020_08_11_104440_create_subcategories_table.php
+    - database/migrations/2020_08_11_104441_create_companies_table.php
+    - database/migrations/2020_08_11_104442_create_tags_table.php
+    - database/migrations/2020_08_11_104443_create_products_table.php
+    - database/migrations/2020_08_11_104444_create_blogs_table.php
+    - database/migrations/2020_08_11_104445_create_services_table.php
+    - database/migrations/2020_08_11_104446_create_investments_table.php
+    - database/migrations/2020_08_11_104447_create_buyrequests_table.php
+    - database/migrations/2020_08_11_104448_create_banners_table.php
     - app/Category.php
     - app/Subcategory.php
     - app/Company.php
@@ -42,11 +42,11 @@ models:
     User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
     Category: { name_en: 'string:300', name_uz: 'string:300', name_ru: 'string:300', slug_en: 'string:300 unique', timestamps: timestamps, softdeletes: softDeletes }
     Subcategory: { category_id: id, name_en: 'string:300', name_uz: 'string:300', name_ru: 'string:300', slug_en: 'string:300 unique', timestamps: timestamps, softdeletes: softDeletes }
-    Company: { subcategory_id: id, category_id: id, tag_id: id, companytype: 'enum:local,foreign', name_en: 'string:300', name_uz: 'string:300', name_ru: 'string:300', slug_en: 'string:300 unique', desc_en: longtext, desc_uz: longtext, desc_ru: longtext, status: 'enum:active, inactive', image: 'string:300', web: 'varchar:80', email: 'string:100', phone: 'char:20', address_en: 'varchar:255', address_uz: 'varchar:255', address_ru: 'varchar:255', timestamps: timestamps, softdeletes: softDeletes }
+    Company: { subcategory_id: id, category_id: id, tag_id: id, companytype: 'enum:local,foreign', name_en: 'string:300', name_uz: 'string:300', name_ru: 'string:300', slug_en: 'string:300 unique', desc_en: longtext, desc_uz: longtext, desc_ru: longtext, status: 'enum:active,not', image: 'string:300', web: 'varchar:80', email: 'string:100', phone: 'char:20', address_en: 'varchar:255', address_uz: 'varchar:255', address_ru: 'varchar:255', timestamps: timestamps, softdeletes: softDeletes }
     Tag: { name: string, slug: 'string unique', timestamps: timestamps, softdeletes: softDeletes }
     Product: { company_id: id, tag_id: id, name_en: 'string:300', name_uz: 'string:300', name_ru: 'string:300', slug_en: 'string:300 unique', desc_en: longtext, desc_uz: longtext, desc_ru: longtext, image: 'string:300', timestamps: timestamps, softdeletes: softDeletes }
-    Blog: { tag_id: id, title_en: 'string:300', title_uz: 'string:300', title_ru: 'string:300', slug_en: 'string:300 unique', body: longtext, image: 'string:300', timestamps: timestamps, softdeletes: softDeletes }
-    Service: { tag_id: id, company_id: id, name_en: 'string:300', name_uz: 'string:300', name_ru: 'string:300', service_en: 'string:300', service_uz: 'string:300', service_ru: 'string:300', slug_en: 'string:300 unique', desc_en: longtext, desc_uz: longtext, desc_ru: longtext, status: 'enum:active, inactive', image: 'string:300', web: 'varchar:80', email: 'string:100', phone: 'char:20', address_en: 'varchar:255', address_uz: 'varchar:255', address_ru: 'varchar:255', timestamps: timestamps, softdeletes: softDeletes }
+    Blog: { tag_id: id, title_en: 'string:300', title_uz: 'string:300', title_ru: 'string:300', slug_en: 'string:300 unique', body_en: longtext, body_uz: longtext, body_ru: longtext, image: 'string:300', timestamps: timestamps, softdeletes: softDeletes }
+    Service: { tag_id: id, company_id: id, name_en: 'string:300', name_uz: 'string:300', name_ru: 'string:300', service_en: 'string:300', service_uz: 'string:300', service_ru: 'string:300', slug_en: 'string:300 unique', desc_en: longtext, desc_uz: longtext, desc_ru: longtext, status: 'enum:active,not', image: 'string:300', web: 'varchar:80', email: 'string:100', phone: 'char:20', address_en: 'varchar:255', address_uz: 'varchar:255', address_ru: 'varchar:255', timestamps: timestamps, softdeletes: softDeletes }
     Investment: { tag_id: id, category_id: 'id foreign', title_en: 'string:300', title_uz: 'string:300', title_ru: 'string:300', slug_en: 'string:300 unique', address_en: 'varchar:255', address_uz: 'varchar:255', address_ru: 'varchar:255', amount: 'char:20', avaragepower_en: 'char:50', avaragepower_uz: 'char:50', avaragepower_ru: 'char:50', iir: 'char:10', npv: 'char:20', payback: 'char:10', workplaces: 'char:10', timestamps: timestamps, softdeletes: softDeletes }
     Buyrequest: { tag_id: id, category_id: id, name_en: 'string:300', name_uz: 'string:300', name_ru: 'string:300', email: 'string:100', company_en: 'string:200', company_uz: 'string:200', company_ru: 'string:200', wants_en: longtext, wants_ru: longtext, wants_uz: longtext, amount_en: 'char:40', amount_ru: 'char:40', amount_uz: 'char:40', image: 'string:300', timestamps: timestamps, softdeletes: softDeletes }
-    Models\Banners: { name: string, url: 'string:300', image: 'string:300', status: 'enum:active, inactive', deadline: date, timestamps: timestamps, softdeletes: softDeletes }
+    Models\Banners: { name: string, url: 'string:300', image: 'string:300', status: 'enum:active,not', deadline: date, timestamps: timestamps, softdeletes: softDeletes }

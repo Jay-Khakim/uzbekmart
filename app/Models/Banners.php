@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Banners extends Model
 {
-    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use SoftDeletes;
 
     /**

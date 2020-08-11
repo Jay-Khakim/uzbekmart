@@ -12,7 +12,9 @@ $factory->define(Blog::class, function (Faker $faker) {
         'title_uz' => $faker->word,
         'title_ru' => $faker->word,
         'slug_en' => $faker->word,
-        'body' => $faker->text,
+        'body_en' => $faker->text,
+        'body_uz' => $faker->text,
+        'body_ru' => $faker->text,
         'image' => $faker->word,
     ];
 });

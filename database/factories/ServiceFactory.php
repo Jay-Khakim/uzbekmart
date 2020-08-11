@@ -19,7 +19,7 @@ $factory->define(Service::class, function (Faker $faker) {
         'desc_en' => $faker->text,
         'desc_uz' => $faker->text,
         'desc_ru' => $faker->text,
-        'status' => $faker->randomElement(["active",""]),
+        'status' => $faker->randomElement(["active","not"]),
         'image' => $faker->word,
         'web' => $faker->word,
         'email' => $faker->safeEmail,

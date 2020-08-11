@@ -35,7 +35,7 @@ models:
     desc_en: longtext 
     desc_uz: longtext 
     desc_ru: longtext
-    status: enum:active, inactive
+    status: enum:active,not
     image: string:300
     web: varchar:80 
     email: string:100
@@ -79,7 +79,9 @@ models:
     title_uz: string:300
     title_ru: string:300
     slug_en: string:300 unique
-    body: longtext
+    body_en: longtext
+    body_uz: longtext
+    body_ru: longtext
     image: string:300
     timestamps: true
     softDeletes: true
@@ -100,7 +102,7 @@ models:
     desc_en: longtext 
     desc_uz: longtext 
     desc_ru: longtext
-    status: enum:active, inactive
+    status: enum:active,not
     image: string:300
     web: varchar:80 
     email: string:100
@@ -162,7 +164,7 @@ models:
     name: string
     url: string:300
     image: string:300
-    status: enum:active, inactive
+    status: enum:active,not
     deadline: date  #YYYY-MM-DD
     timestamps: true
     softDeletes: true

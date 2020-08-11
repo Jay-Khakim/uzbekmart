@@ -20,7 +20,9 @@ class Blog extends Model
         'title_uz',
         'title_ru',
         'slug_en',
-        'body',
+        'body_en',
+        'body_uz',
+        'body_ru',
         'image',
     ];
 

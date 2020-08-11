@@ -58,7 +58,101 @@ class BlogCrudController extends CrudController
     {
         CRUD::setValidation(BlogRequest::class);
 
-        CRUD::setFromDb(); // fields
+        // CRUD::setFromDb(); // fields
+        CRUD::addField(
+            [  // Select2
+                'label'     => "Tag",
+                'type'      => 'select2_multiple',
+                'name'      => 'tag_id', // the db column for the foreign key
+                'entity'    => 'tag', // the method that defines the relationship in your Model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+                'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
+                // 'select_all' => true, // show Select All and Clear buttons?
+
+                'options'   => (function ($query) {
+                        return $query->orderBy('name', 'ASC')->get();
+                    }), // force the related options to be a custom query, instead of all(); you can use this to filter the results show in the select
+            ]
+        );
+
+        CRUD::addField(
+            [   
+                'name'  => 'title_en',
+                'label' => "Title in English",
+                'type'  => 'text',
+            ],
+        );
+
+        CRUD::addField(
+            [   
+                'name'  => 'title_uz',
+                'label' => "Title in Uzbek",
+                'type'  => 'text',
+            ],
+        );
+
+        CRUD::addField(
+            [   
+                'name'  => 'title_ru',
+                'label' => "Title in Russian",
+                'type'  => 'text',
+            ],
+        );
+
+        CRUD::addField(
+            [   
+                'name'  => 'slug_en',
+                'label' => "Slug in English",
+                'type'  => 'text',
+            ],
+        );
+
+        CRUD::addField(
+            [   // CKEditor
+                'name'          => 'body_en',
+                'label'         => 'Body text in English',
+                'type'          => 'ckeditor',
+
+                // optional:
+                // 'extra_plugins' => ['oembed', 'widget'],
+                'options'       => [
+                    'autoGrow_minHeight'   => 100,
+                    'autoGrow_bottomSpace' => 30,
+                    'removePlugins'        => 'resize,maximize',
+                ]
+            ],
+        );
+        CRUD::addField(
+            [   // CKEditor
+                'name'          => 'body_uz',
+                'label'         => 'Body text in Uzbek',
+                'type'          => 'ckeditor',
+
+                // optional:
+                // 'extra_plugins' => ['oembed', 'widget'],
+                'options'       => [
+                    'autoGrow_minHeight'   => 100,
+                    'autoGrow_bottomSpace' => 30,
+                    'removePlugins'        => 'resize,maximize',
+                ]
+            ],
+        );
+        CRUD::addField(
+            [   // CKEditor
+                'name'          => 'body_ru',
+                'label'         => 'Body text in Russian',
+                'type'          => 'ckeditor',
+
+                // optional:
+                // 'extra_plugins' => ['oembed', 'widget'],
+                'options'       => [
+                    'autoGrow_minHeight'   => 100,
+                    'autoGrow_bottomSpace' => 30,
+                    'removePlugins'        => 'resize,maximize',
+                ]
+            ],
+        );
+
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

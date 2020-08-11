@@ -10,7 +10,7 @@ $factory->define(Banners::class, function (Faker $faker) {
         'name' => $faker->name,
         'url' => $faker->url,
         'image' => $faker->word,
-        'status' => $faker->randomElement(["active",""]),
+        'status' => $faker->randomElement(["active","not"]),
         'deadline' => $faker->date(),
     ];
 });
