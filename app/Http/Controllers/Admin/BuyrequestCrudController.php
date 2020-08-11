@@ -116,14 +116,118 @@ class BuyrequestCrudController extends CrudController
                 'type'  => 'text',
             ],
         );
-         CRUD::addField(
+        CRUD::addField(
+            [   // Email
+                'name'  => 'email',
+                'label' => 'Email Address',
+                'type'  => 'email'
+            ],
+        );
+
+        CRUD::addField(
             [   
-                'name'  => 'slug_en',
-                'label' => "Slug En",
+                'name'  => 'company_en',
+                'label' => "Company Name in En",
                 'type'  => 'text',
             ],
         );
 
+        CRUD::addField(
+            [   
+                'name'  => 'company_uz',
+                'label' => "Company Name in Uz",
+                'type'  => 'text',
+            ],
+        );
+
+        CRUD::addField(
+            [   
+                'name'  => 'company_ru',
+                'label' => "Company Name in Ru",
+                'type'  => 'text',
+            ],
+        );
+        CRUD::addField(
+            [   // CKEditor
+                'name'          => 'wants_en',
+                'label'         => 'What he/she wants in English',
+                'type'          => 'ckeditor',
+
+                // optional:
+                // 'extra_plugins' => ['oembed', 'widget'],
+                'options'       => [
+                    'autoGrow_minHeight'   => 100,
+                    'autoGrow_bottomSpace' => 30,
+                    'removePlugins'        => 'resize,maximize',
+                ]
+            ],
+        );
+        CRUD::addField(
+            [   // CKEditor
+                'name'          => 'wants_uz',
+                'label'         => 'What he/she wants in Uzbek',
+                'type'          => 'ckeditor',
+
+                // optional:
+                // 'extra_plugins' => ['oembed', 'widget'],
+                'options'       => [
+                    'autoGrow_minHeight'   => 100,
+                    'autoGrow_bottomSpace' => 30,
+                    'removePlugins'        => 'resize,maximize',
+                ]
+            ],
+        );
+        CRUD::addField(
+            [   // CKEditor
+                'name'          => 'wants_ru',
+                'label'         => 'What he/she wants in Russian',
+                'type'          => 'ckeditor',
+
+                // optional:
+                // 'extra_plugins' => ['oembed', 'widget'],
+                'options'       => [
+                    'autoGrow_minHeight'   => 100,
+                    'autoGrow_bottomSpace' => 30,
+                    'removePlugins'        => 'resize,maximize',
+                ]
+            ],
+        );
+        CRUD::addField(
+            [   
+                'name'  => 'amount_en',
+                'label' => "Amount of goods in En",
+                'type'  => 'text',
+            ],
+        );
+
+        CRUD::addField(
+            [   
+                'name'  => 'amount_uz',
+                'label' => "Amount of goods in Uz",
+                'type'  => 'text',
+            ],
+        );
+
+        CRUD::addField(
+            [   
+                'name'  => 'amount_ru',
+                'label' => "Amount of goods in Ru",
+                'type'  => 'text',
+            ],
+        );
+        CRUD::field('amount_en')->size(4);
+        CRUD::field('amount_uz')->size(4);
+        CRUD::field('amount_ru')->size(4);
+        CRUD::addField(
+            [
+                'label' => "Image",
+                'name' => "image",
+                'type' => 'image',
+                'crop' => true, // set to true to allow cropping, false to disable
+                'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
+                // 'disk'      => 's3_bucket', // in case you need to show images from a different disk
+                // 'prefix'    => 'uploads/images/profile_pictures/' // in case your db value is only the file name (no path), you can use this to prepend your path to the image src (in HTML), before it's shown to the user;
+            ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

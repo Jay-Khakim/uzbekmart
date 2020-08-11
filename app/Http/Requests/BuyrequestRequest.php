@@ -26,7 +26,22 @@ class BuyrequestRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'tag_id' => 'required',
+            'category_id' =>'required',
+            'name_en' => 'min:5|max:255',
+            'name_uz' => 'min:5|max:255',
+            'name_ru' => 'min:5|max:255',
+            'email' => 'required|email',
+            'company_en' => 'required|min:5|max:255',
+            'company_uz' => 'required|min:5|max:255',
+            'company_ru' => 'required|min:5|max:255',
+            'wants_en'	=> 'required|min:5|max:1000',
+            'wants_uz'	=> 'required|min:5|max:1000',
+            'wants_ru'	=> 'required|min:5|max:1000',
+            'amount_en'	=> 'required|min:5|max:20',
+            'amount_ru'	=> 'required|min:5|max:20',
+            'amount_uz'	=> 'required|min:5|max:20',
+            'image' => 'image'
         ];
     }
 
