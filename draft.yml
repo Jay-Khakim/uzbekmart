@@ -82,7 +82,7 @@ models:
     body_en: longtext
     body_uz: longtext
     body_ru: longtext
-    image: string:300
+    image: string:300 nullable
     timestamps: true
     softDeletes: true
     # relationships:
@@ -104,8 +104,8 @@ models:
     desc_ru: longtext
     status: enum:active,not
     image: string:300
-    web: varchar:80 
-    email: string:100
+    web: varchar:80 nullable
+    email: string:100 nullable
     phone: char:20
     address_en: varchar:255
     address_uz: varchar:255
@@ -141,9 +141,9 @@ models:
   Buyrequest:
     tag_id: id 
     category_id: id
-    name_en: string:300
-    name_uz: string:300
-    name_ru: string:300
+    name_en: string:300 nullable
+    name_uz: string:300 nullable
+    name_ru: string:300 nullable
     email: string:100
     company_en: string:200
     company_uz: string:200
@@ -154,7 +154,7 @@ models:
     amount_en: char:40
     amount_ru: char:40
     amount_uz: char:40
-    image: string:300
+    image: string:300 nullable
     timestamps: true
     softDeletes: true
     # relationships:

@@ -17,9 +17,9 @@ class CreateBuyrequestsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('tag_id');
             $table->unsignedBigInteger('category_id');
-            $table->string('name_en', 300);
-            $table->string('name_uz', 300);
-            $table->string('name_ru', 300);
+            $table->string('name_en', 300)->nullable();
+            $table->string('name_uz', 300)->nullable();
+            $table->string('name_ru', 300)->nullable();
             $table->string('email', 100);
             $table->string('company_en', 200);
             $table->string('company_uz', 200);
@@ -30,7 +30,7 @@ class CreateBuyrequestsTable extends Migration
             $table->char('amount_en', 40);
             $table->char('amount_ru', 40);
             $table->char('amount_uz', 40);
-            $table->string('image', 300);
+            $table->string('image', 300)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

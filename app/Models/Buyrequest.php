@@ -34,6 +34,12 @@ class Buyrequest extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+     public function tag(){
+        return $this->belongsToMany('App\Models\Tag'); 
+    }
+    public function category(){
+        return $this->belongsTo('App\Models\Category'); 
+    }
 
     /*
     |--------------------------------------------------------------------------
