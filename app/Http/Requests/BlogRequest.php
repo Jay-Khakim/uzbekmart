@@ -26,7 +26,15 @@ class BlogRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'tag_id' => 'required',
+            'title_en' => 'required|min:4|max:300',
+            'title_uz' => 'required|min:4|max:300',
+            'title_ru' => 'required|min:4|max:300',
+            'slug_en' => 'required|min:4|max:300',
+            'body_en' => 'required|min:4|max:5000',
+            'body_uz' => 'required|min:4|max:5000',
+            'body_ru' => 'required|min:4|max:5000',
+
         ];
     }
 
