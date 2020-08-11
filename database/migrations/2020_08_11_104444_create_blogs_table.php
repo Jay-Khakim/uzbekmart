@@ -23,7 +23,7 @@ class CreateBlogsTable extends Migration
             $table->longText('body_en');
             $table->longText('body_uz');
             $table->longText('body_ru');
-            $table->string('image', 300);
+            $table->string('image', 300)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
