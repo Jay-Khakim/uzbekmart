@@ -34,6 +34,9 @@ class Blog extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+    public function tag(){
+        return $this->belongsToMany('App\Models\Tag'); 
+    }
 
     /*
     |--------------------------------------------------------------------------
