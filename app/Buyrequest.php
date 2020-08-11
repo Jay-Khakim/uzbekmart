@@ -17,11 +17,19 @@ class Buyrequest extends Model
     protected $fillable = [
         'tag_id',
         'category_id',
-        'name',
+        'name_en',
+        'name_uz',
+        'name_ru',
         'email',
-        'company',
-        'wants',
-        'amount',
+        'company_en',
+        'company_uz',
+        'company_ru',
+        'wants_en',
+        'wants_ru',
+        'wants_uz',
+        'amount_en',
+        'amount_ru',
+        'amount_uz',
         'image',
     ];
 

@@ -9,3 +9,4 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('service') }}'><i class='nav-icon la la-question'></i> Services</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('subcategory') }}'><i class='nav-icon la la-question'></i> Subcategories</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('tag') }}'><i class='nav-icon la la-question'></i> Tags</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('banners') }}'><i class='nav-icon la la-question'></i> Banners</a></li>

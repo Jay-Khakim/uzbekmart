@@ -15,9 +15,9 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->integer('subcategory_id')->nullable;
-            $table->integer('category_id')->nullable;
-            $table->integer('tag_id')->nullable;
+            $table->unsignedBigInteger('subcategory_id');
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('tag_id');
             $table->enum('companytype', ["local","foreign"]);
             $table->string('name_en', 300);
             $table->string('name_uz', 300);
@@ -26,7 +26,7 @@ class CreateCompaniesTable extends Migration
             $table->longText('desc_en');
             $table->longText('desc_uz');
             $table->longText('desc_ru');
-            $table->enum('status', ["active","inactive"]);
+            $table->enum('status', ["active",""]);
             $table->string('image', 300);
             $table->string('web');
             $table->string('email', 100);

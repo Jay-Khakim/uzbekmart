@@ -1,8 +1,10 @@
 models: 
   Category: 
     # parent_id: id foreign:categories nullable 
-    name: srting 
-    slug: string unique
+    name_en: string:300
+    name_uz: string:300
+    name_ru: string:300
+    slug_en: string:300 unique
     timestamps: true
     softDeletes: true
     # relationships:
@@ -11,8 +13,10 @@ models:
   Subcategory:
     # category_id: id foreign
     category_id: id
-    name: string 
-    slug: string unique
+    name_en: string:300
+    name_uz: string:300
+    name_ru: string:300
+    slug_en: string:300 unique
     timestamps: true
     softDeletes: true
     # relationships:
@@ -135,13 +139,31 @@ models:
   Buyrequest:
     tag_id: id 
     category_id: id
-    name: string
+    name_en: string:300
+    name_uz: string:300
+    name_ru: string:300
     email: string:100
-    company: string:200
-    wants: longtext
-    amount: char:40
+    company_en: string:200
+    company_uz: string:200
+    company_ru: string:200
+    wants_en: longtext
+    wants_ru: longtext
+    wants_uz: longtext
+    amount_en: char:40
+    amount_ru: char:40
+    amount_uz: char:40
     image: string:300
     timestamps: true
     softDeletes: true
     # relationships:
     #   belongsToMany: Company, Subcategory, Category, Tag
+
+  Models\Banners: 
+    name: string
+    url: string:300
+    image: string:300
+    status: enum:active, inactive
+    deadline: date  #YYYY-MM-DD
+    timestamps: true
+    softDeletes: true
+    

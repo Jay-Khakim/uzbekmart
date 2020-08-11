@@ -1,12 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Category extends Model
+class Banners extends Model
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use SoftDeletes;
 
     /**
@@ -15,10 +16,11 @@ class Category extends Model
      * @var array
      */
     protected $fillable = [
-        'name_en',
-        'name_uz',
-        'name_ru',
-        'slug_en',
+        'name',
+        'url',
+        'image',
+        'status',
+        'deadline',
     ];
 
     /**

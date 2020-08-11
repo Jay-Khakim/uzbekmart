@@ -28,7 +28,7 @@ class CreateServicesTable extends Migration
             $table->longText('desc_uz');
             $table->longText('desc_ru');
             $table->enum('status', ["active",""]);
-            $table->string('image', 300)->nullable();
+            $table->string('image', 300);
             $table->string('web');
             $table->string('email', 100);
             $table->char('phone', 20);

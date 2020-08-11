@@ -85,10 +85,10 @@ class CompanyCrudController extends CrudController
                 'type'      => 'select2',
                 'name'      => 'category_id', // the db column for the foreign key
                 'entity'    => 'category', // the method that defines the relationship in your Model
-                'attribute' => 'name', // foreign key attribute that is shown to user
+                'attribute' => 'name_en', // foreign key attribute that is shown to user
 
                 'options'   => (function ($query) {
-                        return $query->orderBy('name', 'ASC')->get();
+                        return $query->orderBy('name_en', 'ASC')->get();
                     }), // force the related options to be a custom query, instead of all(); you can use this to filter the results show in the select
             ]
         );
@@ -99,27 +99,27 @@ class CompanyCrudController extends CrudController
                 'type'      => 'select2',
                 'name'      => 'subcategory_id', // the db column for the foreign key
                 'entity'    => 'subcategory', // the method that defines the relationship in your Model
-                'attribute' => 'name', // foreign key attribute that is shown to user
+                'attribute' => 'name_en', // foreign key attribute that is shown to user
 
                 'options'   => (function ($query) {
-                        return $query->orderBy('name', 'ASC')->get();
+                        return $query->orderBy('name_en', 'ASC')->get();
                     }), // force the related options to be a custom query, instead of all(); you can use this to filter the results show in the select
             ]
         );
 
-        CRUD::addField(
-            [  // Select2
-                'label'     => "Subcategory",
-                'type'      => 'select2',
-                'name'      => 'subcategory_id', // the db column for the foreign key
-                'entity'    => 'subcategory', // the method that defines the relationship in your Model
-                'attribute' => 'name', // foreign key attribute that is shown to user
+        // CRUD::addField(
+        //     [  // Select2
+        //         'label'     => "Subcategory",
+        //         'type'      => 'select2',
+        //         'name'      => 'subcategory_id', // the db column for the foreign key
+        //         'entity'    => 'subcategory', // the method that defines the relationship in your Model
+        //         'attribute' => 'name', // foreign key attribute that is shown to user
 
-                'options'   => (function ($query) {
-                        return $query->orderBy('name', 'ASC')->get();
-                    }), // force the related options to be a custom query, instead of all(); you can use this to filter the results show in the select
-            ]
-        );
+        //         'options'   => (function ($query) {
+        //                 return $query->orderBy('name', 'ASC')->get();
+        //             }), // force the related options to be a custom query, instead of all(); you can use this to filter the results show in the select
+        //     ]
+        // );
 
         CRUD::addField(
             [  // Select2
@@ -225,7 +225,7 @@ class CompanyCrudController extends CrudController
         CRUD::addField(
             [   // Enum
                 'name'  => 'status',
-                'label' => 'Company-Type',
+                'label' => 'Company Status',
                 'type'  => 'enum'
             ],
         );
