@@ -11,6 +11,7 @@ use App\Http\Requests\CompanyRequest;
 class Company extends Model
 {
     use CrudTrait;
+    // use SoftDeletes;
 
     /*
     |--------------------------------------------------------------------------
@@ -47,14 +48,48 @@ class Company extends Model
         return $this->belongsTo('App\Models\Subcategory'); 
     }
 
+   
+	public function setImageAttribute($value)
+    {
+        $attribute_name = "image";
+        $disk = "public";
+        $destination_path = "img";
+
+        // if the image was erased
+        if ($value==null) {
+            // delete the image from disk
+            \Storage::disk($disk)->delete($this->{$attribute_name});
+
+            // set null in the database column
+            $this->attributes[$attribute_name] = null;
+        }
+
+        // if a base64 was sent, store it in the db
+        if (starts_with($value, 'data:image'))
+        {
+            // 0. Make the image
+            $image = \Image::make($value);
+            // 1. Generate a filename.
+            $filename = md5($value.time()).'.jpg';
+            // 2. Store the image on disk.
+            \Storage::disk($disk)->put($destination_path.'/'.$filename, $image->stream());
+            // 3. Save the path to the database
+            $this->attributes[$attribute_name] = $destination_path.'/'.$filename;
+        }
+    }
 
 
-    // public function image()
+
+
+
+    // public function setImageAttribute($value)
     // {   
-    //     $value =Company::get();
+    //     // $value =Company::get();
     //     $attribute_name = "image";
     //     // or use your own disk, defined in config/filesystems.php
-    //     $disk = config('backpack.base.root_disk_name'); 
+    //     // $disk = config('backpack.base.root_disk_name');
+    //     $disk = config('public'); 
+
     //     // destination path relative to the disk above
     //     $destination_path = "public/uploads/company/"; 
 
@@ -90,6 +125,7 @@ class Company extends Model
     //         $this->attributes[$attribute_name] = $public_destination_path.'/'.$filename;
     //     }
     // }
+
 
     /*
     |--------------------------------------------------------------------------

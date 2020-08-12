@@ -40,7 +40,7 @@ class CompanyRequest extends FormRequest
             'status' => 'required',
             'web'=> 'url',
             'email'=> 'email', 
-            'image' => 'required|image',
+            'image' => 'required',
             'phone' => 'required|integer',
             'address_en'=> 'required',
             'address_uz'=> 'required',

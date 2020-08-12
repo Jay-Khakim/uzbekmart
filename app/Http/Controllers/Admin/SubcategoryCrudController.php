@@ -43,7 +43,11 @@ class SubcategoryCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::setFromDb(); // columns
-
+        CRUD::removeColumn(
+            [
+                'name_uz', 'name_ru', 'desc_en','desc_uz','desc_ru','address_uz','address_ru','address_en'
+            ]
+        );
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -61,7 +65,50 @@ class SubcategoryCrudController extends CrudController
     {
         CRUD::setValidation(SubcategoryRequest::class);
 
-        CRUD::setFromDb(); // fields
+        // CRUD::setFromDb(); // fields
+        CRUD::addField(
+            [  // Select2
+                'label'     => "Category",
+                'type'      => 'select2',
+                'name'      => 'category_id', // the db column for the foreign key
+                'entity'    => 'category', // the method that defines the relationship in your Model
+                'attribute' => 'name_en', // foreign key attribute that is shown to user
+                
+                'options'   => (function ($query) {
+                        return $query->orderBy('name_en', 'ASC')->get();
+                    }), // force the related options to be a custom query, instead of all(); you can use this to filter the results show in the select
+            ]
+        );
+        CRUD::addField(
+            [   
+                'name'  => 'name_en',
+                'label' => "Name En",
+                'type'  => 'text',
+            ],
+        );
+
+        CRUD::addField(
+            [   
+                'name'  => 'name_uz',
+                'label' => "Name Uz",
+                'type'  => 'text',
+            ],
+        );
+
+        CRUD::addField(
+            [   
+                'name'  => 'name_ru',
+                'label' => "Name Ru",
+                'type'  => 'text',
+            ],
+        );
+         CRUD::addField(
+            [   
+                'name'  => 'slug_en',
+                'label' => "Slug En",
+                'type'  => 'text',
+            ],
+        );
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

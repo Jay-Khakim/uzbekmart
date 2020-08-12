@@ -47,9 +47,9 @@ class BannersCrudController extends CrudController
         CRUD::column('image');
         CRUD::column('status');
         CRUD::column('deadline');
-        CRUD::column('deleted_at');
-        CRUD::column('created_at');
-        CRUD::column('updated_at');
+        // CRUD::column('deleted_at');
+        // CRUD::column('created_at');
+        // CRUD::column('updated_at');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -68,11 +68,52 @@ class BannersCrudController extends CrudController
     {
         CRUD::setValidation(BannersRequest::class);
 
-        CRUD::field('name');
-        CRUD::field('url');
-        CRUD::field('image');
-        CRUD::field('status');
-        CRUD::field('deadline');
+        // CRUD::field('name');
+        // CRUD::field('url');
+        // CRUD::field('image')->type('image');
+        // CRUD::field('status');
+        // CRUD::field('deadline');
+
+        CRUD::addField(
+            [   
+                'name'  => 'name',
+                'label' => "Name",
+                'type'  => 'text',
+            ],
+        );
+        CRUD::addField(
+            [   // URL
+                'name'  => 'url',
+                'label' => 'Website',
+                'type'  => 'url'
+            ],
+        );
+        CRUD::addField(
+            [
+                'label' => "Banner",
+                'name' => "image",
+                'type' => 'image',
+                'crop' => true, // set to true to allow cropping, false to disable
+                'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
+                // 'disk'      => 's3_bucket', // in case you need to show images from a different disk
+                // 'prefix'    => 'uploads/images/profile_pictures/' // in case your db value is only the file name (no path), you can use this to prepend your path to the image src (in HTML), before it's shown to the user;
+            ]
+        );
+        CRUD::addField(
+            [   // Enum
+                'name'  => 'status',
+                'label' => 'Company Status',
+                'type'  => 'enum'
+            ],
+        );
+        CRUD::addField(
+
+            [   // Date
+                'name'  => 'deadline',
+                'label' => 'Deadline',
+                'type'  => 'date'
+            ],
+        );
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
