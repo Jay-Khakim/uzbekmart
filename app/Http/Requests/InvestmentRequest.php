@@ -26,7 +26,23 @@ class InvestmentRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'tag_id' => 'required',
+            'category_id' => 'required',
+            'title_en' => 'required|min:5|max:200',
+            'title_ru' => 'required|min:5|max:200',
+            'title_uz' => 'required|min:5|max:200',
+            'slug_en' => 'required|min:5|max:200',
+            'address_en' => 'required|min:5|max:200',
+            'address_ru' => 'required|min:5|max:200',
+            'address_uz' => 'required|min:5|max:200',
+            'amount' => 'required',
+            'payback' => 'required',
+            'avaragepower_en' => 'required',
+            'avaragepower_uz' => 'required',
+            'avaragepower_ru' => 'required',
+            'iir' => 'required',
+            'npv' => 'required',
+            'workplaces' => 'required',
         ];
     }
 
