@@ -26,7 +26,28 @@ class ServiceRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name_en' => 'required|min:5|max:255',
+            'name_uz' => 'required|min:5|max:255',
+            'name_ru' => 'required|min:5|max:255',
+            'service_en' => 'required|min:5|max:255',
+            'service_uz' => 'required|min:5|max:255',
+            'service_ru' => 'required|min:5|max:255',
+            'slug_en' => 'required|min:5|max:255',
+            'company_id'=>'required',
+            // 'subcategory_id'=>'required',
+            'tag_id'=>'required',
+            'companytype'=>'required',
+            'desc_en' => 'required|min:5|max:3000',
+            'desc_uz' => 'required|min:5|max:3000',
+            'desc_ru' => 'required|min:5|max:3000',
+            'status' => 'required',
+            'web'=> 'url',
+            'email'=> 'email', 
+            'image' => 'image',
+            'phone' => 'required|integer',
+            'address_en'=> 'required',
+            'address_uz'=> 'required',
+            'address_ru'=> 'required'
         ];
     }
 

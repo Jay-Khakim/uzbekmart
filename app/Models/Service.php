@@ -34,7 +34,12 @@ class Service extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    public function tag(){
+        return $this->belongsToMany('App\Models\Tag'); 
+    }
+    public function company(){
+        return $this->belongsTo('App\Models\Company'); 
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES
