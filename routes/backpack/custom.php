@@ -24,4 +24,6 @@ Route::group([
     Route::crud('subcategory', 'SubcategoryCrudController');
     Route::crud('tag', 'TagCrudController');
     Route::crud('banners', 'BannersCrudController');
+    Route::crud('message', 'MessageCrudController');
+    Route::crud('subscribe', 'SubscribeCrudController');
 }); // this should be the absolute last line of this file

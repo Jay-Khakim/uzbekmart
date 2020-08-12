@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\BannersRequest;
+use App\Http\Requests\MessageRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class BannersCrudController
+ * Class MessageCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class BannersCrudController extends CrudController
+class MessageCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -29,9 +29,9 @@ class BannersCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Banners::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/banners');
-        CRUD::setEntityNameStrings('banners', 'banners');
+        CRUD::setModel(\App\Models\Message::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/message');
+        CRUD::setEntityNameStrings('message', 'messages');
     }
 
     /**
@@ -43,10 +43,10 @@ class BannersCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::column('name');
-        CRUD::column('url');
-        CRUD::column('image');
-        CRUD::column('status');
-        CRUD::column('deadline');
+        CRUD::column('company');
+        CRUD::column('email');
+        CRUD::column('subject');
+        CRUD::column('body');
         CRUD::column('deleted_at');
         CRUD::column('created_at');
         CRUD::column('updated_at');
@@ -66,13 +66,13 @@ class BannersCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(BannersRequest::class);
+        CRUD::setValidation(MessageRequest::class);
 
         CRUD::field('name');
-        CRUD::field('url');
-        CRUD::field('image');
-        CRUD::field('status');
-        CRUD::field('deadline');
+        CRUD::field('company');
+        CRUD::field('email');
+        CRUD::field('subject');
+        CRUD::field('body');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
