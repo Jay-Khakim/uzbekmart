@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Category extends Model
+class Message extends Model
 {
     use SoftDeletes;
 
@@ -15,11 +15,11 @@ class Category extends Model
      * @var array
      */
     protected $fillable = [
-        'name_en',
-        'name_uz',
-        'name_ru',
-        'slug_en',
-        'image',
+        'name',
+        'company',
+        'email',
+        'subject',
+        'body',
     ];
 
     /**

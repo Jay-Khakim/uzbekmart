@@ -18,6 +18,10 @@ class CategoryCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\CloneOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\BulkCloneOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\BulkDeleteOperation;
+
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -59,6 +63,10 @@ class CategoryCrudController extends CrudController
         CRUD::setValidation(CategoryRequest::class);
 
         CRUD::setFromDb(); // fields
+        CRUD::field('name_en')->size(6);
+        CRUD::field('name_uz')->size(6);
+        CRUD::field('name_ru')->size(6);
+        CRUD::field('slug_en')->size(6);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

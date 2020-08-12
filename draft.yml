@@ -5,6 +5,7 @@ models:
     name_uz: string:300
     name_ru: string:300
     slug_en: string:300 unique
+    image: string:300
     timestamps: true
     softDeletes: true
     # relationships:
@@ -168,4 +169,17 @@ models:
     deadline: date  #YYYY-MM-DD
     timestamps: true
     softDeletes: true
-    
+
+  Models\Message:
+    name: string
+    company: string nullable
+    email: string 
+    subject: string:200
+    body: longtext
+    timestamps: true
+    softDeletes: true
+
+  Models\Subscribe: 
+    email: string
+    timestamps: true
+    softDeletes: true

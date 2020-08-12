@@ -1,14 +1,16 @@
 created:
-    - database/migrations/2020_08_11_115457_create_categories_table.php
-    - database/migrations/2020_08_11_115458_create_subcategories_table.php
-    - database/migrations/2020_08_11_115459_create_companies_table.php
-    - database/migrations/2020_08_11_115500_create_tags_table.php
-    - database/migrations/2020_08_11_115501_create_products_table.php
-    - database/migrations/2020_08_11_115502_create_blogs_table.php
-    - database/migrations/2020_08_11_115503_create_services_table.php
-    - database/migrations/2020_08_11_115504_create_investments_table.php
-    - database/migrations/2020_08_11_115505_create_buyrequests_table.php
-    - database/migrations/2020_08_11_115506_create_banners_table.php
+    - database/migrations/2020_08_12_053810_create_categories_table.php
+    - database/migrations/2020_08_12_053811_create_subcategories_table.php
+    - database/migrations/2020_08_12_053812_create_companies_table.php
+    - database/migrations/2020_08_12_053813_create_tags_table.php
+    - database/migrations/2020_08_12_053814_create_products_table.php
+    - database/migrations/2020_08_12_053815_create_blogs_table.php
+    - database/migrations/2020_08_12_053816_create_services_table.php
+    - database/migrations/2020_08_12_053817_create_investments_table.php
+    - database/migrations/2020_08_12_053818_create_buyrequests_table.php
+    - database/migrations/2020_08_12_053819_create_banners_table.php
+    - database/migrations/2020_08_12_053820_create_messages_table.php
+    - database/migrations/2020_08_12_053821_create_subscribes_table.php
     - app/Category.php
     - app/Subcategory.php
     - app/Company.php
@@ -19,6 +21,8 @@ created:
     - app/Investment.php
     - app/Buyrequest.php
     - app/Models/Banners.php
+    - app/Models/Message.php
+    - app/Models/Subscribe.php
     - database/factories/CategoryFactory.php
     - database/factories/SubcategoryFactory.php
     - database/factories/CompanyFactory.php
@@ -29,6 +33,8 @@ created:
     - database/factories/InvestmentFactory.php
     - database/factories/BuyrequestFactory.php
     - database/factories/Models/BannersFactory.php
+    - database/factories/Models/MessageFactory.php
+    - database/factories/Models/SubscribeFactory.php
 models:
     Models\Blog: {  }
     Models\Buyrequest: {  }
@@ -40,7 +46,7 @@ models:
     Models\Subcategory: {  }
     Models\Tag: {  }
     User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
-    Category: { name_en: 'string:300', name_uz: 'string:300', name_ru: 'string:300', slug_en: 'string:300 unique', timestamps: timestamps, softdeletes: softDeletes }
+    Category: { name_en: 'string:300', name_uz: 'string:300', name_ru: 'string:300', slug_en: 'string:300 unique', image: 'string:300', timestamps: timestamps, softdeletes: softDeletes }
     Subcategory: { category_id: id, name_en: 'string:300', name_uz: 'string:300', name_ru: 'string:300', slug_en: 'string:300 unique', timestamps: timestamps, softdeletes: softDeletes }
     Company: { subcategory_id: id, category_id: id, tag_id: id, companytype: 'enum:local,foreign', name_en: 'string:300', name_uz: 'string:300', name_ru: 'string:300', slug_en: 'string:300 unique', desc_en: longtext, desc_uz: longtext, desc_ru: longtext, status: 'enum:active,not', image: 'string:300', web: 'varchar:80', email: 'string:100', phone: 'char:20', address_en: 'varchar:255', address_uz: 'varchar:255', address_ru: 'varchar:255', timestamps: timestamps, softdeletes: softDeletes }
     Tag: { name: string, slug: 'string unique', timestamps: timestamps, softdeletes: softDeletes }
@@ -50,3 +56,7 @@ models:
     Investment: { tag_id: id, category_id: 'id foreign', title_en: 'string:300', title_uz: 'string:300', title_ru: 'string:300', slug_en: 'string:300 unique', address_en: 'varchar:255', address_uz: 'varchar:255', address_ru: 'varchar:255', amount: 'char:20', avaragepower_en: 'char:50', avaragepower_uz: 'char:50', avaragepower_ru: 'char:50', iir: 'char:10', npv: 'char:20', payback: 'char:10', workplaces: 'char:10', timestamps: timestamps, softdeletes: softDeletes }
     Buyrequest: { tag_id: id, category_id: id, name_en: 'string:300 nullable', name_uz: 'string:300 nullable', name_ru: 'string:300 nullable', email: 'string:100', company_en: 'string:200', company_uz: 'string:200', company_ru: 'string:200', wants_en: longtext, wants_ru: longtext, wants_uz: longtext, amount_en: 'char:40', amount_ru: 'char:40', amount_uz: 'char:40', image: 'string:300 nullable', timestamps: timestamps, softdeletes: softDeletes }
     Models\Banners: { name: string, url: 'string:300', image: 'string:300', status: 'enum:active,not', deadline: date, timestamps: timestamps, softdeletes: softDeletes }
+    Message: { name: string, company: 'string nullable', email: string, subject: 'string:200', body: longtext, timestamps: timestamps, softdeletes: softDeletes }
+    Subscribe: { email: string, timestamps: timestamps, softdeletes: softDeletes }
+    Models\Message: { name: string, company: 'string nullable', email: string, subject: 'string:200', body: longtext, timestamps: timestamps, softdeletes: softDeletes }
+    Models\Subscribe: { email: string, timestamps: timestamps, softdeletes: softDeletes }

@@ -11,5 +11,6 @@ $factory->define(Category::class, function (Faker $faker) {
         'name_uz' => $faker->word,
         'name_ru' => $faker->word,
         'slug_en' => $faker->word,
+        'image' => $faker->word,
     ];
 });
