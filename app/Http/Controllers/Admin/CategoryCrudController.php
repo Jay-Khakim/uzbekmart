@@ -44,6 +44,11 @@ class CategoryCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::setFromDb(); // columns
+        CRUD::removeColumn(
+            [
+                'name_uz', 'name_ru', 'desc_en','desc_uz','desc_ru','address_uz','address_ru','address_en'
+            ]
+        );
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
