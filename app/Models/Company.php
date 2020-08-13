@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Http\Requests\CompanyRequest;
 
+
 class Company extends Model
 {
     use CrudTrait;
@@ -39,7 +40,7 @@ class Company extends Model
     |--------------------------------------------------------------------------
     */
     public function tag(){
-        return $this->belongsToMany('App\Models\Tag'); 
+        return $this->belongsTo('App\Models\Tag'); 
     }
     public function category(){
         return $this->belongsTo('App\Models\Category'); 
