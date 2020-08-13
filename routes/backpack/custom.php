@@ -1,5 +1,5 @@
 <?php
-
+use App\Models\Tag;
 // --------------------------
 // Custom Backpack Routes
 // --------------------------
@@ -26,4 +26,11 @@ Route::group([
     Route::crud('banners', 'BannersCrudController');
     Route::crud('message', 'MessageCrudController');
     Route::crud('subscribe', 'SubscribeCrudController');
+    // Route::get(backpack_view('dashboard'), function (){
+    //     $tags = Tag::get();
+    //     return view('dashboard')->with('tags', $tags);
+    // });
+    // Route::crud(backpack_view('dashboard'))->with
+    Route::get('charts/weekly-new-companies', 'Charts\WeeklyNewCompaniesChartController@response')->name('charts.weekly-new-companies.index');
+    Route::get('charts/pie-chart-products', 'Charts\PieChartProductsChartController@response')->name('charts.pie-chart-products.index');
 }); // this should be the absolute last line of this file
