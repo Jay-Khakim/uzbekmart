@@ -45,9 +45,38 @@ class BlogCrudController extends CrudController
         CRUD::setFromDb(); // columns
         CRUD::removeColumn(
             [
-                'tag_id','title_uz', 'title_ru', 'body_en','body_uz','body_ru'
+                'tag_id','title_uz', 'title_ru', 'slug_en','body_uz','body_ru'
             ]
         );
+        $this->crud->addFilter([
+            'type'  => 'text',
+            'name'  => 'title_en',
+            'label' => 'Title en'
+            ], 
+            false, 
+            function($value) { // if the filter is active
+            $this->crud->addClause('where', 'title_en', 'LIKE', "%$value%");
+        });
+
+        $this->crud->addFilter([
+            'type'  => 'text',
+            'name'  => 'body',
+            'label' => 'body'
+            ], 
+            false, 
+            function($value) { // if the filter is active
+            $this->crud->addClause('where', 'body', 'LIKE', "%$value%");
+            });
+
+        // $this->crud->addFilter([
+        //     'type'  => 'text',
+        //     'name'  => 'companytype',
+        //     'label' => 'Companytype'
+        //     ], 
+        //     false, 
+        //     function($value) { // if the filter is active
+        //     $this->crud->addClause('where', 'companytype', 'LIKE', "%$value%");
+        //     });
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:

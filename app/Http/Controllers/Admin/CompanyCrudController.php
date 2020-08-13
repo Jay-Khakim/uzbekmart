@@ -45,9 +45,39 @@ class CompanyCrudController extends CrudController
         CRUD::setFromDb(); // columns
         CRUD::removeColumn(
             [
-                'tag_id', 'name_uz', 'name_ru', 'desc_en','desc_uz','desc_ru','address_uz','address_ru','address_en'
+                'tag_id', 'name_uz', 'name_ru', 'slug_en', 'desc_en','desc_uz','desc_ru','address_uz','address_ru','address_en'
             ]
         );
+
+        $this->crud->addFilter([
+            'type'  => 'text',
+            'name'  => 'name_en',
+            'label' => 'Name en'
+            ], 
+            false, 
+            function($value) { // if the filter is active
+            $this->crud->addClause('where', 'name_en', 'LIKE', "%$value%");
+        });
+
+        $this->crud->addFilter([
+            'type'  => 'text',
+            'name'  => 'status',
+            'label' => 'Status'
+            ], 
+            false, 
+            function($value) { // if the filter is active
+            $this->crud->addClause('where', 'status', 'LIKE', "%$value%");
+            });
+
+        $this->crud->addFilter([
+            'type'  => 'text',
+            'name'  => 'companytype',
+            'label' => 'Companytype'
+            ], 
+            false, 
+            function($value) { // if the filter is active
+            $this->crud->addClause('where', 'companytype', 'LIKE', "%$value%");
+            });
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -290,6 +320,7 @@ class CompanyCrudController extends CrudController
                 // 'prefix'    => 'uploads/images/profile_pictures/' // in case your db value is only the file name (no path), you can use this to prepend your path to the image src (in HTML), before it's shown to the user;
             ]
         );
+        
     }
 
     /**
