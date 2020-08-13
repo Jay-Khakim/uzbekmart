@@ -45,7 +45,7 @@ class CompanyCrudController extends CrudController
         CRUD::setFromDb(); // columns
         CRUD::removeColumn(
             [
-                'name_uz', 'name_ru', 'desc_en','desc_uz','desc_ru','address_uz','address_ru','address_en'
+                'tag_id', 'name_uz', 'name_ru', 'desc_en','desc_uz','desc_ru','address_uz','address_ru','address_en'
             ]
         );
         /**
@@ -56,12 +56,12 @@ class CompanyCrudController extends CrudController
         CRUD::addColumn(
             [
                 // 1-n relationship
-                'label'     => 'Tag', // Table column heading
+                'label'     => 'Categpry', // Table column heading
                 'type'      => 'select',
-                'name'      => 'tag_id', // the column that contains the ID of that connected entity;
-                'entity'    => 'tag', // the method that defines the relationship in your Model
-                'attribute' => 'name', // foreign key attribute that is shown to user
-                'model'     => "App\Models\Tag", // foreign key model
+                'name'      => 'category_id', // the column that contains the ID of that connected entity;
+                'entity'    => 'category', // the method that defines the relationship in your Model
+                'attribute' => 'name_en', // foreign key attribute that is shown to user
+                'model'     => "App\Models\Category", // foreign key model
             ],
         );
     }

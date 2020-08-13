@@ -34,7 +34,7 @@ class BlogRequest extends FormRequest
             'body_en' => 'required|min:4|max:5000',
             'body_uz' => 'required|min:4|max:5000',
             'body_ru' => 'required|min:4|max:5000',
-            'image' => 'image'
+            'image' => 'required'
 
         ];
     }

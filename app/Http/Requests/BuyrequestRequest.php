@@ -41,7 +41,7 @@ class BuyrequestRequest extends FormRequest
             'amount_en'	=> 'required|min:5|max:20',
             'amount_ru'	=> 'required|min:5|max:20',
             'amount_uz'	=> 'required|min:5|max:20',
-            'image' => 'image'
+            'image' => 'required'
         ];
     }
 

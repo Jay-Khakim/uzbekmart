@@ -26,7 +26,11 @@ class BannersRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required|min:5|max:255',
+            'url' => 'required|url',
+            'image' => 'required',
+            'status' =>'required',
+            'deadline'=> 'required'
         ];
     }
 

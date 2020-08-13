@@ -35,7 +35,7 @@ class ProductRequest extends FormRequest
             'desc_ru' => 'required|min:5|max:3000',
             'tag_id' => 'required',
             'company_id' => 'required',
-            'image' => 'required|image'
+            'image' => 'required'
         ];
     }
 

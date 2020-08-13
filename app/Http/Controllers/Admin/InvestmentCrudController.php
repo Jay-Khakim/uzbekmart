@@ -45,7 +45,7 @@ class InvestmentCrudController extends CrudController
         CRUD::setFromDb(); // columns
         CRUD::removeColumn(
             [
-                'title_uz', 'title_ru', 'slug_en','avaragepower_uz','avaragepower_ru','address_uz','address_ru','address_en'
+                'tag_id','title_uz', 'title_ru', 'slug_en','avaragepower_uz','avaragepower_ru','address_uz','address_ru','address_en'
             ]
         );
         /**
@@ -70,11 +70,11 @@ class InvestmentCrudController extends CrudController
         CRUD::addField(
             [  // Select2
                 'label'     => "Tag",
-                'type'      => 'select2_multiple',
+                'type'      => 'select2',
                 'name'      => 'tag_id', // the db column for the foreign key
                 'entity'    => 'tag', // the method that defines the relationship in your Model
                 'attribute' => 'name', // foreign key attribute that is shown to user
-                'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
+                // 'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
                 // 'select_all' => true, // show Select All and Clear buttons?
                 
                 'options'   => (function ($query) {

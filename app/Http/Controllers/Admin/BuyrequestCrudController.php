@@ -45,7 +45,7 @@ class BuyrequestCrudController extends CrudController
         CRUD::setFromDb(); // columns
         CRUD::removeColumn(
             [
-                'name_uz', 'name_ru','company_uz','company_ru','wants_uz','wants_ru','wants_en', 'amount_uz','amount_ru',
+                'tag_id','name_uz', 'name_ru','company_uz','company_ru','wants_uz','wants_ru','wants_en', 'amount_uz','amount_ru',
             ]
         );
 
@@ -70,11 +70,11 @@ class BuyrequestCrudController extends CrudController
         CRUD::addField(
             [  // Select2
                 'label'     => "Tags",
-                'type'      => 'select2_multiple',
+                'type'      => 'select2',
                 'name'      => 'tag_id', // the db column for the foreign key
                 'entity'    => 'tag', // the method that defines the relationship in your Model
                 'attribute' => 'name', // foreign key attribute that is shown to user
-                'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
+                // 'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
                 // 'select_all' => true, // show Select All and Clear buttons?
 
                 'options'   => (function ($query) {

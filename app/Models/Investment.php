@@ -28,6 +28,7 @@ class Investment extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -35,7 +36,7 @@ class Investment extends Model
     |--------------------------------------------------------------------------
     */
     public function tag(){
-        return $this->belongsToMany('App\Models\Tag'); 
+        return $this->belongsTo('App\Models\Tag'); 
     }
     public function category(){
         return $this->belongsTo('App\Models\Category'); 

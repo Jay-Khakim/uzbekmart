@@ -45,7 +45,7 @@ class ProductCrudController extends CrudController
         CRUD::setFromDb(); // columns
         CRUD::removeColumn(
             [
-                'name_uz', 'name_ru', 'desc_en','desc_uz','desc_ru','address_uz','address_ru','address_en'
+                'tag_id','name_uz', 'name_ru', 'desc_en','desc_uz','desc_ru','address_uz','address_ru','address_en'
             ]
         );
         /**
@@ -69,11 +69,11 @@ class ProductCrudController extends CrudController
         CRUD::addField(
             [  // Select2
                 'label'     => "Tag",
-                'type'      => 'select2_multiple',
+                'type'      => 'select2',
                 'name'      => 'tag_id', // the db column for the foreign key
                 'entity'    => 'tag', // the method that defines the relationship in your Model
                 'attribute' => 'name', // foreign key attribute that is shown to user
-                'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
+                // 'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
                 // 'select_all' => true, // show Select All and Clear buttons?
 
                 'options'   => (function ($query) {
