@@ -32,7 +32,7 @@ class Blog extends Model
     {
         $attribute_name = "image";
         $disk = "public";
-        $destination_path = "img";
+        $destination_path = "img/blogs";
 
         // if the image was erased
         if ($value==null) {

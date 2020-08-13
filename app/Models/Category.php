@@ -32,7 +32,7 @@ class Category extends Model
     {
         $attribute_name = "image";
         $disk = "public";
-        $destination_path = "img";
+        $destination_path = "img/category";
 
         // if the image was erased
         if ($value==null) {

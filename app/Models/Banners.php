@@ -36,7 +36,7 @@ class Banners extends Model
     {
         $attribute_name = "image";
         $disk = "public";
-        $destination_path = "img";
+        $destination_path = "img/banners";
 
         // if the image was erased
         if ($value==null) {

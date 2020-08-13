@@ -31,7 +31,7 @@ class Service extends Model
     {
         $attribute_name = "image";
         $disk = "public";
-        $destination_path = "img";
+        $destination_path = "img/service";
 
         // if the image was erased
         if ($value==null) {

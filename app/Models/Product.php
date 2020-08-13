@@ -32,7 +32,7 @@ class Product extends Model
     {
         $attribute_name = "image";
         $disk = "public";
-        $destination_path = "img";
+        $destination_path = "img/products";
 
         // if the image was erased
         if ($value==null) {
