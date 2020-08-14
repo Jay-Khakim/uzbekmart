@@ -42,7 +42,9 @@ class TagCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        CRUD::setFromDb();
+        CRUD::column('created_at');
+        CRUD::column('updated_at');// columns
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:

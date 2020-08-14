@@ -48,8 +48,8 @@ class BannersCrudController extends CrudController
         CRUD::column('status');
         CRUD::column('deadline');
         // CRUD::column('deleted_at');
-        // CRUD::column('created_at');
-        // CRUD::column('updated_at');
+        CRUD::column('created_at');
+        CRUD::column('updated_at');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:

@@ -43,6 +43,8 @@ class ServiceCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::setFromDb(); // columns
+        CRUD::column('created_at');
+        CRUD::column('updated_at');
         CRUD::removeColumn(
             [
                 'tag_id','slug_en','name_uz','service_uz','service_ru','service_en', 'name_ru', 'desc_en','desc_uz','desc_ru','address_uz','address_ru','address_en'

@@ -43,6 +43,9 @@ class BlogCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::setFromDb(); // columns
+        CRUD::column('created_at');
+        CRUD::column('updated_at');
+        // CRUD::column('deleted_at');
         CRUD::removeColumn(
             [
                 'tag_id','title_uz', 'title_ru', 'slug_en','body_uz','body_ru'

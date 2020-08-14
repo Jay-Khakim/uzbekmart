@@ -43,7 +43,7 @@ class SubscribeCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::column('email');
-        CRUD::column('deleted_at');
+        // CRUD::column('deleted_at');
         CRUD::column('created_at');
         CRUD::column('updated_at');
 

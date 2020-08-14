@@ -47,7 +47,7 @@ class MessageCrudController extends CrudController
         CRUD::column('email');
         CRUD::column('subject');
         CRUD::column('body');
-        CRUD::column('deleted_at');
+        // CRUD::column('deleted_at');
         CRUD::column('created_at');
         CRUD::column('updated_at');
 

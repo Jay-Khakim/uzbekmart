@@ -43,6 +43,9 @@ class BuyrequestCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::setFromDb(); // columns
+        CRUD::column('created_at');
+        CRUD::column('updated_at');
+        // CRUD::column('deleted_at');
         CRUD::removeColumn(
             [
                 'tag_id','name_uz', 'name_ru','company_uz','company_ru','wants_uz','wants_ru','wants_en', 'amount_uz','amount_ru',
