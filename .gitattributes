@@ -3,3 +3,4 @@
 *.scss linguist-vendored
 *.js linguist-vendored
 CHANGELOG.md export-ignore
+storage/backups/Laravel/2020-08-13-11-58-48.zip filter=lfs diff=lfs merge=lfs -text
