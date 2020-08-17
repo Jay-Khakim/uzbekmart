@@ -12,29 +12,33 @@
                             </div>
                             <div id="cate-toggle" class="category-menu-list">
                                 <ul>
-                                    <li class="right-menu"><a href="category/c1.html"><img class="img-fluid" src="assets/images/menu/product-icon/p9.png" alt="" class="mr-3"><span class="ml-1">To'qimachilik </span></a>
-                                        <ul class="cat-mega-menu cat-mega-menu-3">
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Kiyim kechak</a>
-                                                <ul>
-                                                    <li><a href="#21">Ayollar kiyimlari</a></li>
-                                                    <li><a href="#21">Erkaklar kiyimlari</a></li>
-                                                    <li><a href="#21">Bolalar kiyimlari</a></li>
-                                                    <li><a href="#21">Boshqa kiyimlar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Matolar</a>
-                                                <ul>
-                                                    <li><a href="#21">Kiyimlar uchun</a></li>
-                                                    <li><a href="#21">Uy buyumlari uchun</a></li>
-                                                    <li><a href="#21">Dizayn ishlari uchun</a></li>
-                                                    <li><a href="#21">Dekoratsiya ishlari uchun</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="right-menu"><a href="category/c2.html"><img class="img-fluid" src="assets/images/menu/product-icon/p1.png" alt="" class="mr-3"><span class="ml-1">Oziq-ovqat </span></a>
+                                    @foreach ($category as $cat)
+                                        <li class="right-menu"><a href="category/c1.html"><img class="img-fluid" src="assets/images/menu/product-icon/p9.png" alt="" class="mr-3"><span class="ml-1">{{$cat->name_en}} </span></a>
+                                            <ul class="cat-mega-menu cat-mega-menu-3">
+                                                <li class="right-menu cat-mega-title">
+                                                    <a href="#">Kiyim kechak</a>
+                                                    <ul>
+                                                        <li><a href="#21">Ayollar kiyimlari</a></li>
+                                                        <li><a href="#21">Erkaklar kiyimlari</a></li>
+                                                        <li><a href="#21">Bolalar kiyimlari</a></li>
+                                                        <li><a href="#21">Boshqa kiyimlar</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="right-menu cat-mega-title">
+                                                    <a href="#">Matolar</a>
+                                                    <ul>
+                                                        <li><a href="#21">Kiyimlar uchun</a></li>
+                                                        <li><a href="#21">Uy buyumlari uchun</a></li>
+                                                        <li><a href="#21">Dizayn ishlari uchun</a></li>
+                                                        <li><a href="#21">Dekoratsiya ishlari uchun</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        
+                                    @endforeach
+                                </ul>
+                                    {{-- <li class="right-menu"><a href="category/c2.html"><img class="img-fluid" src="assets/images/menu/product-icon/p1.png" alt="" class="mr-3"><span class="ml-1">Oziq-ovqat </span></a>
                                         <ul class="cat-mega-menu">
                                             <li class="right-menu cat-mega-title">
                                                 <a href="#">Mevalar</a>
@@ -80,7 +84,7 @@
                                         <a class="rx-default"><span class="fa fa-list pl-1" style="font-size: 20px;color:blue;padding-left:6px !important"></span><span class="ml-2"> Barchasi</span></a>
                                         <a class="rx-show"><span class="fa fa-window-close pl-1" style="font-size: 20px;color:red;padding-left:6px !important"></span><span class="ml-2">Yopish</a>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </div>
                         </div>
                     </div>

@@ -16,9 +16,7 @@ use App\Models\Tag;
 Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}'], function () {
-    Route::get('/', function () {
-        return view('index');
-    });
+    Route::get('/', 'PageController@index')->name('main');
     Route::get('/tags', function (){
         $tags = Tag::get();
         return view('tags')->with('tags', $tags);
