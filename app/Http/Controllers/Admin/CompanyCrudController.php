@@ -42,7 +42,7 @@ class CompanyCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        // CRUD::setFromDb(); // columns
         CRUD::column('created_at');
         CRUD::column('updated_at');
         CRUD::removeColumn(
@@ -85,17 +85,17 @@ class CompanyCrudController extends CrudController
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
          */
-        // CRUD::addColumn(
-        //     [
-        //         // 1-n relationship
-        //         'label'     => 'Categpry', // Table column heading
-        //         'type'      => 'select',
-        //         'name'      => 'category_id', // the column that contains the ID of that connected entity;
-        //         'entity'    => 'category', // the method that defines the relationship in your Model
-        //         'attribute' => '', // foreign key attribute that is shown to user
-        //         'model'     => "App\Models\Category", // foreign key model
-        //     ],
-        // );
+        CRUD::addColumn(
+            [
+                // 1-n relationship
+                'label'     => 'Categpry', // Table column heading
+                'type'      => 'select',
+                'name'      => 'category_id', // the column that contains the ID of that connected entity;
+                'entity'    => 'category', // the method that defines the relationship in your Model
+                'attribute' => 'name_en', // foreign key attribute that is shown to user
+                'model'     => "App\Models\Category", // foreign key model
+            ],
+        );
     }
 
     /**

@@ -38,53 +38,6 @@
                                     
                                 @endforeach
                             </ul>
-                                {{-- <li class="right-menu"><a href="category/c2.html"><img class="img-fluid" src="assets/images/menu/product-icon/p1.png" alt="" class="mr-3"><span class="ml-1">Oziq-ovqat </span></a>
-                                    <ul class="cat-mega-menu">
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="#">Mevalar</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Olma</a></li>
-                                                <li><a href="shop-left-sidebar.html">Banan</a></li>
-                                                <li><a href="shop-left-sidebar.html">Nok</a></li>
-                                                <li><a href="shop-left-sidebar.html">Uzum</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="#">Quruq mevalar</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Magiz</a></li>
-                                                <li><a href="shop-left-sidebar.html">Turshak</a></li>
-                                                <li><a href="shop-left-sidebar.html">Bodom</a></li>
-                                                <li><a href="shop-left-sidebar.html">Pista</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="right-menu cat-mega-title">
-                                            <a href="#">Shirinliklar</a>
-                                            <ul>
-                                                <li><a href="shop-left-sidebar.html">Shokolat</a></li>
-                                                <li><a href="shop-left-sidebar.html">Konfet</a></li>
-                                                <li><a href="shop-left-sidebar.html">Marmelat</a></li>
-                                                <li><a href="shop-left-sidebar.html">Pecheniya</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="right-menu"><a href="category/c3.html"><img class="img-fluid" src="assets/images/menu/product-icon/p2.png" alt="" class="mr-3"><span class="ml-1">Xom-ashyo </span></a>
-                                </li>
-                                <li class="right-menu"><a href="category/c4.html"><img class="img-fluid" src="assets/images/menu/product-icon/p3.png" alt="" class="mr-3"><span class="ml-1">Kimyoviy moddalar </span></a>
-                                </li>
-                                <li class="right-menu"><a href="category/c5.html"><img class="img-fluid" src="assets/images/menu/product-icon/p4.png" alt="" class="mr-3"><span class="ml-1">Elektronika </span></a></li>
-                                <li class="right-menu"><a href="category/c6.html"><img class="img-fluid" src="assets/images/menu/product-icon/p5.png" alt="" class="mr-3"><span class="ml-1">Mexanika </span></a></li>
-                                <li class="right-menu"><a href="category/c7.html"><img class="img-fluid" src="assets/images/menu/product-icon/p6.png" alt="" class="mr-3"><span class="ml-1">Qurilish</span></a></li>
-                                <li class="right-menu"><a href="category/c8.html"><img class="img-fluid" src="assets/images/menu/product-icon/p7.png" alt="" class="mr-3"><span class="ml-1">O'simliklar </span></a></li>
-                                <li class="right-menu"><a href="category/c9.html"><img class="img-fluid" src="assets/images/menu/product-icon/p8.png" alt="" class="mr-3"><span class="ml-1">Uy uchun </span></a></li>
-                                <li class="rx-child"><a href="category/c10.html"><img class="img-fluid" src="assets/images/menu/product-icon/p10.jpg" alt="" class="mr-3"><span class="ml-1">Tibbiyot </span></a></li>
-                                <li class="rx-child"><a href="category/c11.html"><img class="img-fluid" src="assets/images/menu/product-icon/p11.jpg" alt="" class="mr-3"><span class="ml-1">Qadoqlash </span></a></li>
-                                <li class="rx-parent">
-                                    <a class="rx-default"><span class="fa fa-list pl-1" style="font-size: 20px;color:blue;padding-left:6px !important"></span><span class="ml-2"> Barchasi</span></a>
-                                    <a class="rx-show"><span class="fa fa-window-close pl-1" style="font-size: 20px;color:red;padding-left:6px !important"></span><span class="ml-2">Yopish</a>
-                                </li>
-                            </ul> --}}
                         </div>
                     </div>
                 </div>
@@ -96,11 +49,11 @@
                                 <div class="container">
                                     <div class="slider-content">
                                         <!-- <h5>Янги платформа</h5> -->
-                                        <h2>O'zbekistondagi birinchi </h2>
-                                        <h3>onlayn shourum </h3>
-                                        <h4>Agar bizlarga a'zo bo'lmoqchi bo'lsangiz, biz bilan bog'laning</h4>
+                                        <h2>{{__("The first online showroom")}} </h2>
+                                        <h3>{{__("onlayn shourum ")}}</h3>
+                                        <h4>{{__("If you want to become one of us, please contact with us")}}</h4>
                                         <div class="hiraola-btn-ps_right slide-btn ">
-                                            <a class="hiraola-btn" href="contact.html">Bog'lanish</a>
+                                            <a class="hiraola-btn" href="contact.html">{{__("Contact now")}}</a>
                                         </div>
                                     </div>
                                     <div class="slider-progress"></div>
@@ -140,7 +93,7 @@
                             <div class="category_item px-2">
                                 <a href="category/c1.html" class="item_link">
                                     <div class="mx-auto">
-                                        <img src="/{{$cat->image}}" alt="">
+                                        <img src="/storage/{{$cat->image}}" alt="">
                                     </div>
                                     <div class="category_title mx-auto">
                                         <span> {{$cat->name_en}} </span>
@@ -149,106 +102,7 @@
                             </div>
 
                         @endforeach
-                        <div class="category_item px-2">
-                            <a href="category/c2.html" class="item_link">
-                                <div class="mx-auto">
-                                    <img src="assets/images/menu/product-icon/p1.png" alt="">
-                                </div>
-                                <div class="category_title mx-auto">
-                                <span>Oziq-ovqat</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="category_item px-2">
-                            <a href="category/c3.html" class="item_link">
-                                <div class="mx-auto">
-                                    <img src="assets/images/menu/product-icon/p2.png" alt="">
-                                </div>
-                                <div class="category_title mx-auto">
-                                <span>Xom-ashyo</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="category_item px-2">
-                            <a href="category/c4.html" class="item_link">
-                                <div class="mx-auto">
-                                    <img src="assets/images/menu/product-icon/p3.png" alt="">
-                                </div>
-                                <div class="category_title mx-auto">
-                                <span>Kimyoviy moddalar </span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="category_item px-2">
-                            <a href="category/c5.html" class="item_link">
-                                <div class="mx-auto">
-                                    <img src="assets/images/menu/product-icon/p4.png" alt="">
-                                </div>
-                                <div class="category_title mx-auto">
-                                <span>Elektronika </span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="category_item px-2">
-                            <a href="category/c6.html" class="item_link">
-                                <div class="mx-auto">
-                                    <img src="assets/images/menu/product-icon/p5.png" alt="">
-                                </div>
-                                <div class="category_title mx-auto">
-                                <span>Mexanika</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="category_item px-2">
-                            <a href="category/c7.html" class="item_link">
-                                <div class="mx-auto">
-                                    <img src="assets/images/menu/product-icon/p6.png" alt="">
-                                </div>
-                                <div class="category_title mx-auto">
-                                    <span>Qurilish</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="category_item px-2">
-                            <a href="category/c8.html" class="item_link">
-                                <div class="mx-auto">
-                                    <img src="assets/images/menu/product-icon/p7.png" alt="">
-                                </div>
-                                <div class="category_title mx-auto">
-                                    <span>O'simliklar</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="category_item px-2">
-                            <a href="category/c9.html" class="item_link">
-                                <div class="mx-auto">
-                                    <img src="assets/images/menu/product-icon/p8.png" alt="">
-                                </div>
-                                <div class="category_title mx-auto">
-                                    <span>Uy uchun</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="category_item px-2">
-                            <a href="category/c10.html" class="item_link">
-                                <div class="mx-auto">
-                                    <img src="assets/images/menu/product-icon/p10.jpg" alt="">
-                                </div>
-                                <div class="category_title mx-auto">
-                                    <span>Tibbiyot</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="category_item px-2">
-                            <a href="category/c11.html" class="item_link">
-                                <div class="mx-auto">
-                                    <img src="assets/images/menu/product-icon/p11.jpg" alt="">
-                                </div>
-                                <div class="category_title mx-auto">
-                                    <span>Qadoqlash</span>
-                                </div>
-                            </a>
-                        </div>
+
                     </div>
                 </div>
                 <div id="banner1" class="col grid-half grid-md_half order-md-2 order-lg-3">
@@ -273,31 +127,40 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="hiraola-section_title">
-                        <h4>Mahalliy kompaniyalar</h4>
+                        <h4>{{__("Local companies")}}</h4>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="hiraola-product_slider">
                         <!-- Begin Hiraola's Slide Item Area -->
                         <div class="slide-item">
-                            <div class="single_product">
-                                <div class="product-img">
-                                    <a href="company/local/l68.html">
-                                        <img class="primary-img" src="assets/images/company/local/068.jpg" alt="Hiraola's Product Image">
-                                    </a>
-                                    <span class="sticker-2">New</span>
-                                </div>
-                                <div class="hiraola-product_content">
-                                    <div class="product-desc_info">
-                                        <h5><span class="badge  badge-primary">#Tekstil</span></h5>
-                                        <h6 align="center"><a class="product-name" href="company/local/l68.html"> «AYUP» MCHJ<pre></pre></a></h6>
+
+
+
+
+
+
+                            @foreach ($localcomp as $local)
+                                <div class="single_product">
+                                    <div class="product-img">
+                                        <a href="company/local/l68.html">
+                                            <img class="primary-img" src="/storage/{{$local->image}} " alt=" {{$local->name_en}} ">
+                                        </a>
+                                        <span class="sticker-2">New</span>
+                                    </div>
+                                    <div class="hiraola-product_content">
+                                        <div class="product-desc_info">
+                                            <h5><span class="badge  badge-primary"> {{$local->category->name_en}} </span></h5>
+                                            <h6 align="center"><a class="product-name" href="company/local/l68.html"> {{$local->name_en}}<pre></pre></a></h6>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
+                                
                         </div>
                         <!-- Hiraola's Slide Item Area End Here -->
                         <!-- Begin Hiraola's Slide Item Area -->
-                        <div class="slide-item">
+                        {{-- <div class="slide-item">
                             <div class="single_product">
                                 <div class="product-img">
                                     <a href="company/local/l69.html">
@@ -440,7 +303,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- Hiraola's Slide Item Area End Here -->
                         
                     </div>

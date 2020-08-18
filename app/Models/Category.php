@@ -23,6 +23,10 @@ class Category extends Model
     // protected $hidden = [];
     // protected $dates = [];
 
+    public function company(){
+        return $this->hasMany('App\Models\Company');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS
@@ -59,9 +63,9 @@ class Category extends Model
 
     public static function boot()
     {
-    parent::boot();
-    static::deleting(function($value) {
-    \Storage::disk('public')->delete($value->image);
+        parent::boot();
+        static::deleting(function($value) {
+        \Storage::disk('public')->delete($value->image);
     });
     }
 
@@ -70,6 +74,7 @@ class Category extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+    
 
     /*
     |--------------------------------------------------------------------------

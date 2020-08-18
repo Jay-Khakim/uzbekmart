@@ -16,7 +16,7 @@ class CreateCompaniesTable extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('subcategory_id');
-            $table->unsignedBigInteger('category_id');
+            // $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('tag_id');
             $table->enum('companytype', ["local","foreign"]);
             $table->string('name_en', 300);
@@ -36,6 +36,10 @@ class CreateCompaniesTable extends Migration
             $table->string('address_ru');
             $table->softDeletes();
             $table->timestamps();
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade');
         });
     }
 
