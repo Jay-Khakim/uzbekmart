@@ -76,7 +76,7 @@ class CategoryCrudController extends CrudController
         CRUD::field('slug_en')->size(6);
         CRUD::addField(
             [
-                'label' => "Category icon",
+                'label' => "Category icon. Make it 40x30 px",
                 'name' => "image",
                 'type' => 'image',
                 'crop' => true, // set to true to allow cropping, false to disable

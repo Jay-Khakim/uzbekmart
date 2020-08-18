@@ -57,6 +57,14 @@ class Category extends Model
         }
     }
 
+    public static function boot()
+    {
+    parent::boot();
+    static::deleting(function($value) {
+    \Storage::disk('public')->delete($value->image);
+    });
+    }
+
     /*
     |--------------------------------------------------------------------------
     | RELATIONS

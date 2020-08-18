@@ -14,7 +14,7 @@
     <meta name="keywords" content="Export , Import , e-commerce , Association , Trade , Tashkent , Online market , showroom , shopping , online store , online business , shopping cart">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>O'zbekistonda birinchi onlayn shourum | UzbekMart.com</title>
+    <title>{{__("The first online showroom in Uzbekistan")}} | UzbekMart.com</title>
 
     <link rel="shortcut icon" type="/image/x-icon" href="/assets/images/logo.png">
     <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css">
