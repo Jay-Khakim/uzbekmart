@@ -7,7 +7,7 @@
     "Password": "Parol",
     "Remember Me": "Meni eslab qol",
     "Forgot Your Password?": "Parol esingizdan chiqdimi?",
-    "Register": "Royhatdan o'tish",
+    "Register": "Ro'yxatdan o'tish",
     "Confirm Password": "Parolni qayta tering",
     "Reset Password": "Parolni Yangilash",
     "Send Password Reset Link": "Parolni Yangilanganini Yuborish",
@@ -32,6 +32,15 @@
     "The first online showroom": "O'zbekistondagi birinchi",
     "in Uzbekistan": "onlayn shourum",
     "If you want to become one of us, please contact with us": "Agar bizlarga a'zo bo'lmoqchi bo'lsangiz, biz bilan bog'laning",
-    "Contact now": "Bog'lanish"
-
+    "Contact now": "Bog'lanish",
+    "More": "Barchasi",
+    "Register your company in the first online showroom in Uzbekistan and improve your business": "O'zbekistondagi birinchi onlayn shourumidan ro'yxatdan o'ting va biznesingizni rivojlantiring",
+    "Register": "Ro'yxatdan o'tish",
+    "Under Uzbekistan Export Association": "O'zbekiston Eksportchilar uyushmasi",
+    "Everything is controlled": "Nazorat ostida",
+    "Available Paymet methods": "Mavjud to'lov usullari",
+    "Confidential": "Ishonchli",
+    "Secured by Association": "Uyushma nazorati ostida",
+    "Experienced": "Mahoratli",
+    "2 years experience": "2 yillik tajriba"
 }

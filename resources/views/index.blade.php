@@ -133,14 +133,8 @@
                 <div class="col-lg-12">
                     <div class="hiraola-product_slider">
                         <!-- Begin Hiraola's Slide Item Area -->
-                        <div class="slide-item">
-
-
-
-
-
-
-                            @foreach ($localcomp as $local)
+                        @foreach ($localcomp as $local)
+                            <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="company/local/l68.html">
@@ -150,14 +144,13 @@
                                     </div>
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info">
-                                            <h5><span class="badge  badge-primary"> {{$local->category->name_en}} </span></h5>
+                                            <h5><span class="badge  badge-primary"> #{{$local->category->name_en}} </span></h5>
                                             <h6 align="center"><a class="product-name" href="company/local/l68.html"> {{$local->name_en}}<pre></pre></a></h6>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
-                                
-                        </div>
+                                </div>   
+                            </div>
+                        @endforeach
                         <!-- Hiraola's Slide Item Area End Here -->
                         <!-- Begin Hiraola's Slide Item Area -->
                         {{-- <div class="slide-item">
@@ -310,7 +303,7 @@
                 </div>
             </div> <br>
                 <div  class="hiraola-btn-ps_center  text-center" id="btn21">
-                        <a class="hiraola-btn" href="com-local/com-local.html">Barchasi</a>
+                        <a class="hiraola-btn" href="com-local/com-local.html">{{__("More")}}</a>
                 </div>
         </div>
     </div>
@@ -323,31 +316,34 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="hiraola-section_title">
-                        <h4>Xorijiy kompaniyalar</h4>
+                        <h4>{{__("Foreign companies")}}</h4>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="hiraola-product_slider">
                         <!-- Begin Hiraola's Slide Item Area -->
-                        <div class="slide-item">
-                            <div class="single_product">
-                                <div class="product-img">
-                                    <a href="company/foreign/f15.html">
-                                        <img class="primary-img" src="assets/images/company/foreign/015.jpg" alt="Hiraola's Product Image">
-                                    </a>
-                                    <span class="sticker-2">New</span>
-                                </div>
-                                <div class="hiraola-product_content">
-                                    <div class="product-desc_info">
-                                        <h5><span class="badge  badge-primary">#Mexanika</span></h5>
-                                        <h6 align="center"><a class="product-name" href="company/foreign/f15.html">Nigeria Bonny Light Crude Oil CIF </a></h6>
+                        @foreach ($foreigncomp as $foreign)
+                            
+                            <div class="slide-item">
+                                <div class="single_product">
+                                    <div class="product-img">
+                                        <a href="company/foreign/f15.html">
+                                            <img class="primary-img" src="/storage/{{$foreign->image}} " alt=" {{$foreign->name_en}} ">
+                                        </a>
+                                        <span class="sticker-2">New</span>
+                                    </div>
+                                    <div class="hiraola-product_content">
+                                        <div class="product-desc_info">
+                                            <h5><span class="badge  badge-primary">#{{$foreign->category->name_en}}</span></h5>
+                                            <h6 align="center"><a class="product-name" href="company/foreign/f15.html">{{$foreign->name_en}} </a></h6>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
                         <!-- Hiraola's Slide Item Area End Here -->
                         <!-- Begin Hiraola's Slide Item Area -->
-                        <div class="slide-item">
+                        {{-- <div class="slide-item">
                             <div class="single_product">
                                 <div class="product-img">
                                     <a href="company/foreign/f14.html">
@@ -542,13 +538,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- Hiraola's Slide Item Area End Here -->
                     </div>
                 </div>
             </div><br>
                 <div  class="hiraola-btn-ps_center  text-center" id="btn21">
-                        <a class="hiraola-btn" href="com-foreign/com-foreign.html">Barchasi</a>
+                        <a class="hiraola-btn" href="com-foreign/com-foreign.html">{{__("More")}}</a>
                 </div>
         </div>
     </div><br><br>
@@ -560,9 +556,9 @@
         <div class="row" id="banner11">
             <div class="col-lg-12" align="center">
                 <div class="slider-content">
-                <h3>O'zbekistondagi birinchi onlayn shourumidan ro'yxatdan o'ting va biznesingizni rivojlantiring </h3>
+                <h3>{{__("Register your company in the first online showroom in Uzbekistan and improve your business")}} </h3>
                 <div  class="hiraola-btn-ps_center  text-center pt-4"  id="btn21">
-                        <a class="hiraola-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd_RjwstS1_qq6QK32SxJ7ZCJzwj2jFSUD6CIGmiEvzDc5_5w/viewform?usp=sf_link">Ro'yxatdan o'tish</a>
+                        <a class="hiraola-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd_RjwstS1_qq6QK32SxJ7ZCJzwj2jFSUD6CIGmiEvzDc5_5w/viewform?usp=sf_link">{{__("Register")}}</a>
                 </div>
             </div>
             </div>
@@ -590,8 +586,8 @@
                                 <img src="assets/images/shipping-icon/1.png" alt="Hiraola's Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h6>O'zbekiston Eksportchilar uyushmasi </h6>
-                                <p>Nazorat ostida</p>
+                                <h6>{{__("Under Uzbekistan Export Association")}}</h6>
+                                <p>{{__("Everything is controlled")}}</p>
                             </div>
                         </div>
                     </div>
@@ -601,7 +597,7 @@
                                 <img src="assets/images/shipping-icon/2.png" alt="Hiraola's Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h6>Mavjud to'lov usullari</h6>
+                                <h6>{{__("Available Paymet methods")}}</h6>
                                 <p>Uzcard, Humo, Master/Visa card</p>
                             </div>
                         </div>
@@ -612,8 +608,8 @@
                                 <img src="assets/images/shipping-icon/3.png" alt="Hiraola's Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h6>100% Ishonchli</h6>
-                                <p>Uyushma nazorati ostida</p>
+                                <h6>100% {{__("Confidential")}}</h6>
+                                <p>{{__("Secured by Association")}}</p>
                             </div>
                         </div>
                     </div>
@@ -623,8 +619,8 @@
                                 <img src="assets/images/shipping-icon/4.png" alt="Hiraola's Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h6>Mahoratli</h6>
-                                <p>2 yillik tajriba</p>
+                                <h6>{{__("Experienced")}}</h6>
+                                <p>{{__("2 years experience")}}</p>
                             </div>
                         </div>
                     </div>
