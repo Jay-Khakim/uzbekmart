@@ -55,6 +55,13 @@ class Service extends Model
             $this->attributes[$attribute_name] = $destination_path.'/'.$filename;
         }
     }
+    public static function boot()
+    {
+        parent::boot();
+        static::deleting(function($value) {
+        \Storage::disk('public')->delete($value->image);
+        });
+    }
 
     /*
     |--------------------------------------------------------------------------

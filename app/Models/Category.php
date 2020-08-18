@@ -66,7 +66,7 @@ class Category extends Model
         parent::boot();
         static::deleting(function($value) {
         \Storage::disk('public')->delete($value->image);
-    });
+        });
     }
 
     /*

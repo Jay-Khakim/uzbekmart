@@ -13,7 +13,7 @@ class PageController extends Controller
         $category = Category::all();
         $localcomp = Company::where('companytype', 'local')->with('category')->get();
         $foreigncomp = Company::where("companytype", "foreign")->get();
-        dd($localcomp);
+        // dd($localcomp);
         // dd($category);
         return view('index')->with(compact('category', 'localcomp', 'foreigncomp'));
     }   
