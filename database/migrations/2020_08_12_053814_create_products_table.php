@@ -27,6 +27,10 @@ class CreateProductsTable extends Migration
             $table->string('image', 300);
             $table->softDeletes();
             $table->timestamps();
+            $table->foreign('company_id')
+                ->references('id')
+                ->on('companies')
+                ->onDelete('cascade');
         });
     }
 

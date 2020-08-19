@@ -39,7 +39,7 @@ class Investment extends Model
         return $this->belongsTo('App\Models\Tag'); 
     }
     public function category(){
-        return $this->belongsTo('App\Models\Category'); 
+        return $this->belongsTo('App\Models\Category', 'category_id'); 
     }
 
     /*

@@ -27,6 +27,7 @@ class CreateCompaniesTable extends Migration
             $table->longText('desc_uz');
             $table->longText('desc_ru');
             $table->enum('status', ["active","not"]);
+            $table->enum('level', ["New","Top"])->nullable();
             $table->string('image', 300);
             $table->string('web');
             $table->string('email', 100);
@@ -36,11 +37,15 @@ class CreateCompaniesTable extends Migration
             $table->string('address_ru');
             $table->softDeletes();
             $table->timestamps();
+            $table->foreign('subcategory_id')
+                ->references('id')
+                ->on('subcategories')
+                ->onDelete('cascade');
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories')
                 ->onDelete('cascade');
-        });
+            });
     }
 
     /**

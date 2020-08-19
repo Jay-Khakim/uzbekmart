@@ -14,7 +14,7 @@
                         <div id="cate-toggle" class="category-menu-list">
                             <ul>
                                 @foreach ($category as $cat)
-                                    <li class="right-menu"><a href="category/c1.html"><img class="img-fluid"  src="/storage/{{$cat->image}}" alt="" class="mr-3"><span class="ml-1">{{$cat->name_en}} </span></a>
+                                    <li class="right-menu"><a href="category/c1.html"><img class="img-fluid"  src="/storage/{{$cat->image}}" alt="" class="mr-3"><span class="ml-1">{{$cat->name}} </span></a>
                                         <ul class="cat-mega-menu cat-mega-menu-3">
                                             <li class="right-menu cat-mega-title">
                                                 <a href="#">Kiyim kechak</a>
@@ -139,13 +139,13 @@
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="company/local/l68.html">
-                                            <img class="primary-img" src="/storage/{{$local->image}} " alt=" {{$local->name_en}} ">
+                                            <img class="primary-img" src="/storage/{{$local->image}} " alt=" {{$local->name}} ">
                                         </a>
                                         <span class="sticker-2">New</span>
                                     </div>
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info">
-                                            <h5><span class="badge  badge-primary"> #{{$local->category->name_en}} </span></h5>
+                                            <h5><span class="badge  badge-primary"> #{{$local->category->name}} </span></h5>
                                             <h6 align="center"><a class="product-name" href="company/local/l68.html"> {{$local->name}}<pre></pre></a></h6>
                                         </div>
                                     </div>

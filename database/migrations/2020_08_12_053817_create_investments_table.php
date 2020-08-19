@@ -16,7 +16,7 @@ class CreateInvestmentsTable extends Migration
         Schema::create('investments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('tag_id');
-            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->unsignedBigInteger('category_id');
             $table->string('title_en', 300);
             $table->string('title_uz', 300);
             $table->string('title_ru', 300);
@@ -34,6 +34,10 @@ class CreateInvestmentsTable extends Migration
             $table->char('workplaces', 10);
             $table->softDeletes();
             $table->timestamps();
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade');
         });
     }
 

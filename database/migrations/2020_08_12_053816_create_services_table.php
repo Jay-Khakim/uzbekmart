@@ -37,6 +37,10 @@ class CreateServicesTable extends Migration
             $table->string('address_ru');
             $table->softDeletes();
             $table->timestamps();
+            $table->foreign('company_id')
+                ->references('id')
+                ->on('companies')
+                ->onDelete('cascade');
         });
     }
 

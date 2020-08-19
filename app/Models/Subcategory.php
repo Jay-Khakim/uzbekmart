@@ -35,7 +35,10 @@ class Subcategory extends Model
     |--------------------------------------------------------------------------
     */
     public function category(){
-        return $this->belongsTo('App\Models\Category'); 
+        return $this->belongsTo('App\Models\Category', 'category_id'); 
+    }
+    public function company(){
+        return $this->hasMany('App\Models\Company');
     }
 
     /*

@@ -26,6 +26,16 @@ class Category extends Model
     public function company(){
         return $this->hasMany('App\Models\Company');
     }
+    public function subcategory(){
+        return $this->hasMany('App\Models\Subcategory');
+    }
+    public function investment(){
+        return $this->hasMany('App\Models\Investment');
+    }
+
+    public function buyrequest(){
+        return $this->hasMany('App\Models\Buyrequest');
+    }
 
     /*
     |--------------------------------------------------------------------------
@@ -67,6 +77,18 @@ class Category extends Model
         static::deleting(function($value) {
         \Storage::disk('public')->delete($value->image);
         });
+    }
+
+    protected $lang_fields =[
+        'name', 'desc', 'address'
+    ];
+
+    public function __get($attribute){
+        if (in_array($attribute, $this->lang_fields)) { 
+            $localeSpecificAttribute = $attribute.'_'.app()->getLocale();
+            return $this->{$localeSpecificAttribute};
+        }   
+        return parent::__get($attribute);
     }
 
     /*

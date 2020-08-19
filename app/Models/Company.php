@@ -48,7 +48,14 @@ class Company extends Model
         return $this->belongsTo('App\Models\Category', 'category_id'); 
     }
     public function subcategory(){
-        return $this->belongsTo('App\Models\Subcategory'); 
+        return $this->belongsTo('App\Models\Subcategory', 'subcategory_id'); 
+    }
+
+    public function product(){
+        return $this->hasMany('App\Models\Product');
+    }
+    public function service(){
+        return $this->hasMany('App\Models\Service');
     }
 
    

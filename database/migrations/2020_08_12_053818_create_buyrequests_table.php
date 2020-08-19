@@ -33,6 +33,10 @@ class CreateBuyrequestsTable extends Migration
             $table->string('image', 300)->nullable();
             $table->softDeletes();
             $table->timestamps();
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade');
         });
     }
 
