@@ -43,8 +43,7 @@ class CompanyCrudController extends CrudController
     protected function setupListOperation()
     {
         // CRUD::setFromDb(); // columns
-        CRUD::column('created_at');
-        CRUD::column('updated_at');
+        
         CRUD::removeColumn(
             [
                 'tag_id', 'name_uz', 'name_ru', 'slug_en', 'desc_en','desc_uz','desc_ru','address_uz','address_ru','address_en'
@@ -88,7 +87,7 @@ class CompanyCrudController extends CrudController
         CRUD::addColumn(
             [
                 // 1-n relationship
-                'label'     => 'Categpry', // Table column heading
+                'label'     => 'Category', // Table column heading
                 'type'      => 'select',
                 'name'      => 'category_id', // the column that contains the ID of that connected entity;
                 'entity'    => 'category', // the method that defines the relationship in your Model
@@ -96,6 +95,114 @@ class CompanyCrudController extends CrudController
                 'model'     => "App\Models\Category", // foreign key model
             ],
         );
+
+        CRUD::addColumn(
+            [
+                // 1-n relationship
+                'label'     => 'SubCategory', // Table column heading
+                'type'      => 'select',
+                'name'      => 'subcategory_id', // the column that contains the ID of that connected entity;
+                'entity'    => 'subcategory', // the method that defines the relationship in your Model
+                'attribute' => 'name_en', // foreign key attribute that is shown to user
+                'model'     => "App\Models\Subcategory", // foreign key model
+            ],
+        );
+        // CRUD::addColumn(
+        //     [
+        //         // 1-n relationship
+        //         'label'     => 'Tag', // Table column heading
+        //         'type'      => 'select',
+        //         'name'      => 'tag_id', // the column that contains the ID of that connected entity;
+        //         'entity'    => 'tag', // the method that defines the relationship in your Model
+        //         'attribute' => 'name', // foreign key attribute that is shown to user
+        //         'model'     => "App\Models\Tag", // foreign key model
+        //     ],
+        // );
+
+        CRUD::addColumn(
+            [
+                'name' => 'name_en', // The db column name
+                'label' => "Name", // Table column heading
+                // 'prefix' => "Name: ",
+                // 'suffix' => "(user)",
+                // 'limit' => 120, // character limit; default is 50;
+            ],
+        );
+        CRUD::addColumn(
+            [
+                'name' => 'image', // The db column name
+                'label' => "Company Logo", // Table column heading
+                'type' => 'image',
+                'prefix' => 'storage/',
+                // optional width/height if 25px is not ok with you
+                'height' => '60px',
+                'width' => '60px',
+            ],
+        );
+
+        CRUD::addColumn(
+            [
+                'name' => 'status', // The db column name
+                'label' => "Status", // Table column heading
+                // 'prefix' => ": ",
+                // 'suffix' => "(user)",
+                // 'limit' => 120, // character limit; default is 50;
+            ],
+        );
+        CRUD::addColumn(
+            [
+                'name' => 'level', // The db column name
+                'label' => "Level", // Table column heading
+                // 'prefix' => "Name: ",
+                // 'suffix' => "(user)",
+                // 'limit' => 120, // character limit; default is 50;
+            ],
+        );
+        
+        CRUD::addColumn(
+            [
+                'name' => 'web', // The db column name
+                'label' => "Website", // Table column heading
+                // 'prefix' => "Name: ",
+                // 'suffix' => "(user)",
+                // 'limit' => 120, // character limit; default is 50;
+            ],
+        );
+
+        CRUD::addColumn(
+            [
+                'name' => 'email', // The db column name
+                'label' => "Email", // Table column heading
+                // 'prefix' => "Name: ",
+                // 'suffix' => "(user)",
+                // 'limit' => 120, // character limit; default is 50;
+            ],
+        );
+
+        CRUD::addColumn(
+            [
+                'name' => 'phone', // The db column name
+                'label' => "Phone", // Table column heading
+                // "type" => "number",
+                // 'prefix' => "Name: ",
+                // 'suffix' => "(user)",
+                // 'limit' => 120, // character limit; default is 50;
+            ],
+        );
+
+        CRUD::addColumn(
+            [
+                'name' => 'address_en', // The db column name
+                'label' => "Address", // Table column heading
+                // 'prefix' => "Name: ",
+                // 'suffix' => "(user)",
+                // 'limit' => 120, // character limit; default is 50;
+            ],
+        );
+
+        
+        CRUD::column('created_at');
+        CRUD::column('updated_at');
     }
 
     /**
@@ -164,10 +271,18 @@ class CompanyCrudController extends CrudController
                     }), // force the related options to be a custom query, instead of all(); you can use this to filter the results show in the select
             ]
         );
-         CRUD::addField(
+        CRUD::addField(
             [   // Enum
                 'name'  => 'status',
                 'label' => 'Company Status',
+                'type'  => 'enum'
+            ],
+        );
+
+        CRUD::addField(
+            [   // Enum
+                'name'  => 'level',
+                'label' => 'Company Level',
                 'type'  => 'enum'
             ],
         );

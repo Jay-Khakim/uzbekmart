@@ -44,7 +44,17 @@ class BannersCrudController extends CrudController
     {
         CRUD::column('name');
         CRUD::column('url');
-        CRUD::column('image');
+        CRUD::addColumn(
+            [
+                'name' => 'image', // The db column name
+                'label' => "Banner Image", // Table column heading
+                'type' => 'image',
+                'prefix' => 'storage/',
+                // optional width/height if 25px is not ok with you
+                'height' => '60px',
+                'width' => '60px',
+            ],
+        );
         CRUD::column('status');
         CRUD::column('deadline');
         // CRUD::column('deleted_at');

@@ -42,7 +42,35 @@ class InvestmentCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        // CRUD::setFromDb(); // columns
+        CRUD::addColumn(
+            [
+                // 1-n relationship
+                'label'     => 'Category', // Table column heading
+                'type'      => 'select',
+                'name'      => 'category_id', // the column that contains the ID of that connected entity;
+                'entity'    => 'category', // the method that defines the relationship in your Model
+                'attribute' => 'name_en', // foreign key attribute that is shown to user
+                'model'     => "App\Models\Category", // foreign key model
+            ],
+        );
+        CRUD::column('title_en');
+        CRUD::column('address_en');
+        CRUD::addColumn(
+            [
+                'name' => 'amount', // The db column name
+                'label' => "Amount in $", // Table column heading
+                "type" => "number",
+                // 'prefix' => "Name: ",
+                // 'suffix' => "(user)",
+                // 'limit' => 120, // character limit; default is 50;
+            ],
+        );
+        CRUD::column('awaragepower_en');
+        CRUD::column('iir');
+        CRUD::column('npv');
+        CRUD::column('payback');
+        CRUD::column('workplaces');
         CRUD::column('created_at');
         CRUD::column('updated_at');
         CRUD::removeColumn(

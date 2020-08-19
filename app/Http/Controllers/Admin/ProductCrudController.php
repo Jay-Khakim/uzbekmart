@@ -42,12 +42,36 @@ class ProductCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        // CRUD::setFromDb(); // columns
+        CRUD::addColumn(
+            [
+                // 1-n relationship
+                'label'     => 'Company', // Table column heading
+                'type'      => 'select',
+                'name'      => 'comapny_id', // the column that contains the ID of that connected entity;
+                'entity'    => 'company', // the method that defines the relationship in your Model
+                'attribute' => 'name_en', // foreign key attribute that is shown to user
+                'model'     => "App\Models\Company", // foreign key model
+            ],
+        );
+        CRUD::column('name_en');
+        CRUD::column('desc_en');
+        CRUD::addColumn(
+            [
+                'name' => 'image', // The db column name
+                'label' => "Product Image", // Table column heading
+                'type' => 'image',
+                'prefix' => 'storage/',
+                // optional width/height if 25px is not ok with you
+                'height' => '60px',
+                'width' => '60px',
+            ],
+        );
         CRUD::column('created_at');
         CRUD::column('updated_at');
         CRUD::removeColumn(
             [
-                'tag_id','name_uz', 'name_ru', 'desc_en','desc_uz','desc_ru','address_uz','address_ru','address_en'
+                'tag_id','name_uz', 'name_ru','desc_uz','desc_ru','address_uz','address_ru','address_en'
             ]
         );
         /**

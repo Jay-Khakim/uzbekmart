@@ -42,7 +42,20 @@ class BlogCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        // CRUD::setFromDb(); // columns
+        CRUD::column('title_en');
+        CRUD::column('body_en');
+        CRUD::addColumn(
+            [
+                'name' => 'image', // The db column name
+                'label' => "Blog Image", // Table column heading
+                'type' => 'image',
+                'prefix' => 'storage/',
+                // optional width/height if 25px is not ok with you
+                'height' => '60px',
+                'width' => '60px',
+            ],
+        );
         CRUD::column('created_at');
         CRUD::column('updated_at');
         // CRUD::column('deleted_at');

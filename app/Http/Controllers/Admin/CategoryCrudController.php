@@ -43,7 +43,28 @@ class CategoryCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        // CRUD::setFromDb(); // columns
+        CRUD::addColumn(
+            [
+                'name' => 'name_en', // The db column name
+                'label' => "Name", // Table column heading
+                // 'prefix' => "Name: ",
+                // 'suffix' => "(user)",
+                // 'limit' => 120, // character limit; default is 50;
+            ],
+        );
+        CRUD::addColumn(
+            [
+                'name' => 'image', // The db column name
+                'label' => "Company Logo", // Table column heading
+                'type' => 'image',
+                'prefix' => 'storage/',
+                // optional width/height if 25px is not ok with you
+                'height' => '40px',
+                'width' => '40px',
+            ],
+        );
+
         CRUD::column('created_at');
         CRUD::column('updated_at');
         CRUD::removeColumn(

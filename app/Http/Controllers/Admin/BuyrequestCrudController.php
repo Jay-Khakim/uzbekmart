@@ -42,7 +42,34 @@ class BuyrequestCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        // CRUD::setFromDb(); // columns
+        CRUD::addColumn(
+            [
+                // 1-n relationship
+                'label'     => 'Category', // Table column heading
+                'type'      => 'select',
+                'name'      => 'category_id', // the column that contains the ID of that connected entity;
+                'entity'    => 'category', // the method that defines the relationship in your Model
+                'attribute' => 'name_en', // foreign key attribute that is shown to user
+                'model'     => "App\Models\Category", // foreign key model
+            ],
+        );
+        CRUD::column('name_en');
+        CRUD::column('email');
+        CRUD::column('company_en');
+        CRUD::column('wants_en');
+        CRUD::column('amount_en');
+        CRUD::addColumn(
+            [
+                'name' => 'image', // The db column name
+                'label' => "Image", // Table column heading
+                'type' => 'image',
+                'prefix' => 'storage/',
+                // optional width/height if 25px is not ok with you
+                'height' => '60px',
+                'width' => '60px',
+            ],
+        );
         CRUD::column('created_at');
         CRUD::column('updated_at');
         // CRUD::column('deleted_at');
