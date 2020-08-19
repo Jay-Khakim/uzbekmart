@@ -5,7 +5,7 @@
             <div class="col-lg-12">
                 <div class="product-tab">
                     <div class="hiraola-tab_title">
-                        <h4>Hamkorlar</h4>
+                        <h4>@lang("Partners")</h4>
                     </div>
                 </div>
                 <div class="col-lg-12">
@@ -21,7 +21,7 @@
                             </div>
                             <div class="hiraola-product_content">
                                 <div class="product-desc_info" style="padding-bottom: 28px;">
-                                    <h6 align="center"><a class="product-name" href="javascript:void(0)">Oʻzbekiston Respublikasi Prezidenti Administratsiyasi</a></h6>
+                                    <h6 align="center"><a class="product-name" href="javascript:void(0)">@lang("The Prezident Administration of the Republic of Uzbekistan")</a></h6>
                                 </div>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                             </div>
                             <div class="hiraola-product_content">
                                 <div class="product-desc_info" style="padding-bottom: 40px;">
-                                    <h6 align="center"><a class="product-name" href="javascript:void(0)">O`zbekiston Respublikasi Vazirlar Mahkamasi</a></h6>
+                                    <h6 align="center"><a class="product-name" href="javascript:void(0)">@lang("Cabinet of Ministers of the Republic of Uzbekistan")</a></h6>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                             </div>
                             <div class="hiraola-product_content">
                                 <div class="product-desc_info" style="padding-bottom: 40px;">
-                                    <h6 align="center"><a class="product-name" href="javascript:void(0)">O`zbekiston Respublikasi Oliy Majlis Senati</a></h6>
+                                    <h6 align="center"><a class="product-name" href="javascript:void(0)">@lang("The Senate of 'Oliy Majlis' of the Republic of Uzbekistan")</a></h6>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,7 @@
                             </div>
                             <div class="hiraola-product_content">
                                 <div class="product-desc_info" style="padding-bottom: 40px;">
-                                    <h6 align="center"><a class="product-name" href="javascript:void(0)">O`zbekiston Respublikasi Tashqi ishlar vazirligi</a></h6>
+                                    <h6 align="center"><a class="product-name" href="javascript:void(0)">@lang("Misnistry of Foreign Affairs of the Republic of Uzbekistan")</a></h6>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +89,7 @@
                             </div>
                             <div class="hiraola-product_content">
                                 <div class="product-desc_info pt-2">
-                                    <h6 align="center"><a class="product-name" href="javascript:void(0)">O`zbekiston Respublikasi Tashqi Savdo va Investitsiyalar vazirligi</a></h6>
+                                    <h6 align="center"><a class="product-name" href="javascript:void(0)">@lang("Ministry of Investment and Foreign Trade of the Republic of Uzbekistan")</a></h6>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                             </div>
                             <div class="hiraola-product_content">
                                 <div class="product-desc_info pt-1">
-                                    <h6 align="center"><a class="product-name" href="javascript:void(0)">O`zbekiston Respublikasi Iqtisodiy  taraqqiyot va Kambag`allikni qisqartirish vazirligi</a></h6>
+                                    <h6 align="center"><a class="product-name" href="javascript:void(0)">@lang("Misnistry of Economic Development and Poverty Reduction of the Republic of Uzbekistan")</a></h6>
                                 </div>
                             </div>
                         </div>

@@ -1,7 +1,7 @@
 {
     "Laravel": "добро пожаловать!",
     "Docs": "документы",
-    "Name": "имя",
+    "Name": "Имя",
     "News": "Новости",
     "E-Mail Address": "Адрес электронной почты",
 
@@ -36,6 +36,25 @@
     "Confidential": "Kонфиденциально",
     "Secured by Association": "Обеспечено Ассоциацией",
     "Experienced": "Опытный",
-    "2 years experience": "2-летний опыт работы"
+    "2 years experience": "2-летний опыт работы",
+    "Products": "Продукты",
+    "Partners": "Партнеры",
+    "Customers": "Клиенты",
+    "The Prezident Administration of the Republic of Uzbekistan": "Администрация Президента Республики Узбекистан",
+    "Cabinet of Ministers of the Republic of Uzbekistan": "Кабинет Министров Республики Узбекистан",
+    "The Senate of 'Oliy Majlis' of the Republic of Uzbekistan": "Сенат. Верховая Палата Олий Мажлиса Республики Узбекистан",
+    "Misnistry of Foreign Affairs of the Republic of Uzbekistan": "Министерство Иностранных Дел Республики Узбекистан",
+    "Ministry of Investment and Foreign Trade of the Republic of Uzbekistan": "Министерство Ивестиции и Внешней Торговли Республики Узбекистан",
+    "Misnistry of Economic Development and Poverty Reduction of the Republic of Uzbekistan": "Министерство Экономического Развития и Сокращение Бедности Республики Узбекистан",
+    "Leave your message": "Оставьте сообщение",
+    "Enter your name": "Введите имя",
+    "E-mail": "Электронная почта",
+    "Enter your email": "Введите электронную почту",
+    "Subject": "Тема",
+    "Enter your subject": "Введите тему",
+    "Message": "Сообщение",
+    "Leave your Message": "Оставьте сообщение",
+    "Send": "Отправить"
+
 
 }

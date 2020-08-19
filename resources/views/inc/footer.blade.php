@@ -1,40 +1,43 @@
  <!-- Begin Hiraola's Modal Area -->
+    
         <div class="modal fade modal-wrapper" id="exampleModalCenter1">
             <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <div class="modal-inner-area sp-area row">
-                            <div class="col-xl-12 col-lg-12 col-md-12 text-center">
-                                <div class="sp-content">
-                                    <div class="sp-heading">
-                                        <h3><a href="#">Xabar yuborish</a></h3>
+                <div class="container">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div class="modal-inner-area sp-area row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 text-center">
+                                    <div class="sp-content">
+                                        <div class="sp-heading">
+                                            <h3><a href="#">@lang("Leave your message")</a></h3>
+                                        </div>
+                                        <div class="contact-form-container text-center" align="center">
+                                            <form id="contact-form"  action="#2" method="post" name="contactform">
+                                                <div class="col-md-12">
+                                                    <div id="name_error" class="error text-center"> <b>@lang("Name")</b></div>
+                                                        <input id="name" class="form-control" name="name" type="text" placeholder="@lang("Enter your name")" required><br>
+
+                                                    <div id="email_error" class="error"><b>@lang("E-mail")</b></div>
+                                                        <input id="email" class="form-control" name="email" type="email" placeholder="@lang('Enter your email')" required><br>
+
+                                                    <div id="subject_error" class="error"><b>@lang("Subject")</b></div>
+                                                        <input id="subject" class="form-control" name="subject" type="text" placeholder="@lang('Enter your subject')" required><br>
+                                                </div><!-- /.col-md-6 -->
+
+                                                <div class="col-md-12">
+                                                    <div id="message_error" class="error"><b>@lang("Message")</b></div>
+                                                    <textarea id="your_message" class="form-control" name="your_message" placeholder="@lang('Leave your Message')" rows="4" required></textarea><br>
+
+                                                    <div id="submit">
+                                                        <button type="submit" id="send_message" class="btn btn-lg btn-primary full-width btn-effect">@lang("Send")</button>
+                                                    </div><!-- /#submit -->
+                                                </div><!-- /.col-md-6 -->
+                                            </form><!-- /#contact-form -->
+                                        </div>
                                     </div>
-                                    <div class="contact-form-container text-center" align="center">
-                                        <form id="contact-form"  action="#2" method="post" name="contactform">
-                                            <div class="col-md-12">
-                                                <div id="name_error" class="error text-center"> <b>F.I.O</b></div>
-                                                    <input id="name" class="form-control" name="name" type="text" placeholder="F.I.O ni kiriting" required><br>
-
-                                                <div id="email_error" class="error"><b>E-mail</b></div>
-                                                     <input id="email" class="form-control" name="email" type="email" placeholder="Elektron manzilni kiriting" required><br>
-
-                                                 <div id="subject_error" class="error"><b>Mavzu</b></div>
-                                                     <input id="subject" class="form-control" name="subject" type="text" placeholder="mavzuni kiriting" required><br>
-                                            </div><!-- /.col-md-6 -->
-
-                                            <div class="col-md-12">
-                                                <div id="message_error" class="error"><b>Xabar</b></div>
-                                                <textarea id="your_message" class="form-control" name="your_message" placeholder="Xabaringizni qoldiring" rows="4" required></textarea><br>
-
-                                                <div id="submit">
-                                                    <button type="submit" id="send_message" class="btn btn-lg btn-primary full-width btn-effect">Yuborish</button>
-                                                </div><!-- /#submit -->
-                                            </div><!-- /.col-md-6 -->
-                                        </form><!-- /#contact-form -->
-                                     </div>
                                 </div>
                             </div>
                         </div>
