@@ -8,7 +8,8 @@
                 <div id="slider01" class="col grid-half order-md-2 order-lg-1">
                     <div class="category-menu">
                         <div class="category-heading">
-                            <h2 class="categories-toggle"><span>{{__("Categories")}}</span></h2>
+                            {{-- {{__("Categories")}} --}}
+                            <h2 class="categories-toggle"><span>@lang('Categories')</span></h2>
                         </div>
                         <div id="cate-toggle" class="category-menu-list">
                             <ul>
@@ -145,7 +146,7 @@
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info">
                                             <h5><span class="badge  badge-primary"> #{{$local->category->name_en}} </span></h5>
-                                            <h6 align="center"><a class="product-name" href="company/local/l68.html"> {{$local->name_en}}<pre></pre></a></h6>
+                                            <h6 align="center"><a class="product-name" href="company/local/l68.html"> {{$local->name}}<pre></pre></a></h6>
                                         </div>
                                     </div>
                                 </div>   
@@ -335,7 +336,13 @@
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info">
                                             <h5><span class="badge  badge-primary">#{{$foreign->category->name_en}}</span></h5>
-                                            <h6 align="center"><a class="product-name" href="company/foreign/f15.html">{{$foreign->name_en}} </a></h6>
+                                            <h6 align="center"><a class="product-name" href="company/foreign/f15.html"> @php
+                                              if(strlen($foreign->name_en)> 15){
+                                                  echo substr($foreign->name_en, 0, 15)."...";
+                                              }else {
+                                                  echo $foreign->name_en;
+                                              }  
+                                            @endphp  </a></h6>
                                         </div>
                                     </div>
                                 </div>
