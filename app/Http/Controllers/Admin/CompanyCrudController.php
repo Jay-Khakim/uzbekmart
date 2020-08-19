@@ -139,7 +139,15 @@ class CompanyCrudController extends CrudController
                 'width' => '60px',
             ],
         );
-
+        CRUD::addColumn(
+            [
+                'name' => 'companytype', // The db column name
+                'label' => "Company Type", // Table column heading
+                // 'prefix' => ": ",
+                // 'suffix' => "(user)",
+                // 'limit' => 120, // character limit; default is 50;
+            ],
+        );
         CRUD::addColumn(
             [
                 'name' => 'status', // The db column name

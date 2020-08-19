@@ -199,7 +199,7 @@ class ProductCrudController extends CrudController
 
         CRUD::addField(
             [
-                'label' => "Company Logo",
+                'label' => "Product image",
                 'name' => "image",
                 'type' => 'image',
                 'crop' => true, // set to true to allow cropping, false to disable
