@@ -25,4 +25,9 @@ class PageController extends Controller
         $localcomp = Company::where('companytype', 'local')->with('category')->paginate(20);
         return view('local-comp')->with('localcomp', $localcomp);
     }
+
+    public function foreigncomp(){
+        $foreigncomp = Company::where('companytype', 'foreign')->with('category')->paginate(20);
+        return view('foreign-comp')->with('foreigncomp', $foreigncomp);
+    }
 }

@@ -74,7 +74,7 @@
                                         <li class="dropdown-holder"><a href="javascript:void(0)">{{__("Companies")}}</a>
                                             <ul class="hm-dropdown">
                                                 <li><a href="{{route('local-comp' ,app()->getLocale())}}">{{__("Local companies")}}</a></li>
-                                                <li><a href="com-foreign/com-foreign.html">{{__("Foreign companies")}}</a></li>
+                                                <li><a href="{{route('foreign-comp' ,app()->getLocale())}}">{{__("Foreign companies")}}</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="service.html">{{__("Services")}}</a>

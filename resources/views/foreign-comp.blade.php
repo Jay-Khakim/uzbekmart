@@ -5,11 +5,11 @@
     <div class="breadcrumb-area">
         <div class="container">
             <div class="breadcrumb-content">
-                <h2>@lang("Local companies")</h2>
+                <h2>@lang("Foreign companies")</h2>
                 <ul>
                     <li><a href="{{route("main", app()->getLocale())}}">@lang("Home")</a></li>
                     <li>@lang("Companies")</a></li>
-                    <li class="active">@lang("Local companies")</li>
+                    <li class="active">@lang("Foreign companies")</li>
                 </ul>
             </div>
         </div>
@@ -33,8 +33,8 @@
                                         <option value="1">@lang("Relevance")</option>
                                         <option value="2">@lang("Name, A to Z")</option>
                                         <option value="3">@lang("Name, Z to A")</option>
-                                        <option value="5">@lang("Model (A - Z)")</option>
-                                        <option value="5">@lang("Model (Z - A)")</option>
+                                        <option value="5">@lang("Latest")</option>
+                                        <option value="5">@lang("Oldest")</option>
                                     </select>
                                 </div>
                             </div>
@@ -42,13 +42,13 @@
                         <div class="shop-product-wrap grid gridview-5 row">
 
                             {{-- Single company field --}}
-                            @foreach ($localcomp as $local)
+                            @foreach ($foreigncomp as $foreign)
                                 <div class="col-lg-4">
                                     <div class="slide-item">
                                         <div class="single_product">
                                             <div class="product-img">
-                                                <a href="../company/local/l31.html">
-                                                    <img class="primary-img" src="/storage/{{$local->image}}" alt="{{$local->name}}">
+                                                <a href="../company/foreign/l31.html">
+                                                    <img class="primary-img" src="/storage/{{$foreign->image}}" alt="{{$foreign->name}}">
                                                 </a>
 
                                                 <span class="sticker-2">New</span>
@@ -56,8 +56,8 @@
                                             <br>
                                             <div class="hiraola-product_content">
                                                 <div class="product-desc_info">
-                                                    <h5><span class="badge  badge-primary"> #{{$local->category->name}} </span></h5>
-                                                    <h6 align="center"><a class="product-name" href="../company/local/l31.html"> {{$local->name}} </a></h6>
+                                                    <h5><span class="badge  badge-primary"> #{{$foreign->category->name}} </span></h5>
+                                                    <h6 align="center"><a class="product-name" href="../company/foreign/l31.html"> {{$foreign->name}} </a></h6>
                                                     
                                                 </div>
                                             </div>
@@ -66,13 +66,13 @@
                                     <div class="list-slide_item">
                                         <div class="single_product">
                                             <div class="product-img">
-                                                <a href="../company/local/l31.html">
-                                                    <img class="primary-img" src=" {{$local->image}}" alt="{{$local->name}} ">
+                                                <a href="../company/foreign/l31.html">
+                                                    <img class="primary-img" src=" {{$foreign->image}}" alt="{{$foreign->name}} ">
                                                 </a>
                                             </div>
                                             <div class="hiraola-product_content">
                                                 <div class="product-desc_info">
-                                                    <h6><a class="product-name" href="../company/local/l31.html"> {{$local->name}} </a></h6>
+                                                    <h6><a class="product-name" href="../company/foreign/l31.html"> {{$foreign->name}} </a></h6>
                                                     
                                                     <div class="product-short_desc">
                                                         <p>{{$local->desc}}</p>
