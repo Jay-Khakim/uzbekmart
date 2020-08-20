@@ -20,13 +20,13 @@
                                 <div class="ht-menu">
                                     <ul style="display: inline-block;">
                                         <li>
-                                            <a href="{{ url('/uz') }}"><img src="assets/images/menu/icon/3.jpg" alt="JB's Language Icon">Uz</a>
+                                            <a href="{{ route(Route::currentRouteName(), 'uz') }}"><img src="/assets/images/menu/icon/3.jpg" alt="JB's Language Icon">Uz</a>
                                         </li>
                                         <li>
-                                            <a href="{{ url('/en') }}"><img src="assets/images/menu/icon/1.jpg" alt="JB's Language Icon">En</a>
+                                            <a href="{{ route(Route::currentRouteName(), 'en') }}"><img src="/assets/images/menu/icon/1.jpg" alt="JB's Language Icon">En</a>
                                         </li>
                                         <li>
-                                            <a href="{{ url('/ru') }}"><img src="assets/images/menu/icon/2.jpg" alt="JB's Language Icon">Ru</a>
+                                            <a href="{{ route(Route::currentRouteName(), 'ru') }}"><img src="/assets/images/menu/icon/2.jpg" alt="JB's Language Icon">Ru</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -41,7 +41,7 @@
                         <div class="col-lg-3">
                             <div class="header-logo">
                                 <a href="index.html">
-                                    <img src="assets/images/menu/logo/1.png" alt="Uzbekmart's Header Logo">
+                                    <img src="/assets/images/menu/logo/1.png" alt="Uzbekmart's Header Logo">
                                 </a>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                         <div class="col-md-4 col-sm-4 d-lg-none d-block">
                             <div class="header-logo">
                                 <a href="index.html">
-                                    <img src="assets/images/menu/logo/2.png" alt="Hiraola's Header Logo">
+                                    <img src="/assets/images/menu/logo/2.png" alt="Hiraola's Header Logo">
                                 </a>
                             </div>
                         </div>
@@ -70,10 +70,10 @@
                             <div class="main-menu_area">
                                 <nav>
                                     <ul>
-                                        <li><a href="index.html">{{__("Home")}}</a> </li>
-                                        <li class="dropdown-holder"><a href="index.html">{{__("Companies")}}</a>
+                                        <li><a href=" {{route('main' ,app()->getLocale())}}">{{__("Home")}}</a> </li>
+                                        <li class="dropdown-holder"><a href="javascript:void(0)">{{__("Companies")}}</a>
                                             <ul class="hm-dropdown">
-                                                <li><a href="com-local/com-local.html">{{__("Local companies")}}</a></li>
+                                                <li><a href="{{route('local-comp' ,app()->getLocale())}}">{{__("Local companies")}}</a></li>
                                                 <li><a href="com-foreign/com-foreign.html">{{__("Foreign companies")}}</a></li>
                                             </ul>
                                         </li>
@@ -122,9 +122,9 @@
                             <ul class="mobile-menu" >
                                 <li class="menu-item" id="nav">
                                     <h5 align="center" style="display: inline-block">
-                                        <a id="nav" href="{{ url('/uz') }}"><img src="assets/images/menu/icon/3.jpg" alt="JB's Language Icon">Uz</a>
-                                        <a id="nav" href="{{ url('/en') }}"><img src="assets/images/menu/icon/1.jpg" alt="JB's Language Icon">En</a>
-                                        <a id="nav" href="{{ url('/ru') }}"><img src="assets/images/menu/icon/2.jpg" alt="JB's Language Icon">Ru</a>
+                                        <a id="nav" href="{{ url('/uz') }}"><img src="/assets/images/menu/icon/3.jpg" alt="JB's Language Icon">Uz</a>
+                                        <a id="nav" href="{{ url('/en') }}"><img src="/assets/images/menu/icon/1.jpg" alt="JB's Language Icon">En</a>
+                                        <a id="nav" href="{{ url('/ru') }}"><img src="/assets/images/menu/icon/2.jpg" alt="JB's Language Icon">Ru</a>
                                     </h5>
                                 </li> 
                             </ul>
