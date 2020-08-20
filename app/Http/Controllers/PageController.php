@@ -19,5 +19,10 @@ class PageController extends Controller
         // dd($localcomp);
         // dd($category);
         return view('index')->with(compact('category', 'localcomp', 'foreigncomp', 'companies', 'products'));
-    }   
+    } 
+    
+    public function localcomp(){
+        $localcomp = Company::where('companytype', 'local')->with('category')->paginate(20);
+        return view('local-comp')->with('localcomp', $localcomp);
+    }
 }

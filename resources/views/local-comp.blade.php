@@ -1,0 +1,126 @@
+@extends('layouts.app')
+@section('content')
+
+{{-- Header section --}}
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <h2>@lang("Local companies")</h2>
+                <ul>
+                    <li><a href="{{route("main", app()->getLocale())}}">@lang("Home")</a></li>
+                    <li>@lang("Companies")</a></li>
+                    <li class="active">@lang("Local companies")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{{-- End of  Header section --}}
+
+<!-- Begin Hiraola's Content Wrapper Area -->
+        <div class="hiraola-content_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="shop-toolbar">
+                            <div class="product-view-mode">
+                                <a class=" grid-3" data-target="gridview-3" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="fa fa-th"></i></a>
+                                {{-- <a class="list" data-target="listview" data-toggle="tooltip" data-placement="top" title="List View"><i class="fa fa-th-list"></i></a> --}}
+                            </div>
+                            <div class="product-item-selection_area">
+                                <div class="product-short">
+                                    <label class="select-label">Short By:</label>
+                                    <select class="nice-select">
+                                        <option value="1">Relevance</option>
+                                        <option value="2">Name, A to Z</option>
+                                        <option value="3">Name, Z to A</option>
+                                        <option value="5">Model (A - Z)</option>
+                                        <option value="5">Model (Z - A)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-product-wrap grid gridview-5 row">
+
+                            {{-- Single company field --}}
+                            @foreach ($localcomp as $local)
+                                <div class="col-lg-4">
+                                    <div class="slide-item">
+                                        <div class="single_product">
+                                            <div class="product-img">
+                                                <a href="../company/local/l31.html">
+                                                    <img class="primary-img" src="/storage/{{$local->image}}" alt="{{$local->name}}">
+                                                </a>
+
+                                                <span class="sticker-2">New</span>
+                                            </div>
+                                            <br>
+                                            <div class="hiraola-product_content">
+                                                <div class="product-desc_info">
+                                                    <h6 align="center"><a class="product-name" href="../company/local/l31.html"> {{$local->name}} </a></h6>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-slide_item">
+                                        <div class="single_product">
+                                            <div class="product-img">
+                                                <a href="../company/local/l31.html">
+                                                    <img class="primary-img" src=" {{$local->image}}" alt="{{$local->name}} ">
+                                                </a>
+                                            </div>
+                                            <div class="hiraola-product_content">
+                                                <div class="product-desc_info">
+                                                    <h6><a class="product-name" href="../company/local/l31.html"> {{$local->name}} </a></h6>
+                                                    
+                                                    <div class="product-short_desc">
+                                                        <p>{{$local->desc}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="add-actions">
+                                                    <ul>
+                                                        <li><a class="hiraola-add_cart" href="../company/local/l31.html" data-toggle="tooltip" data-placement="top" title="More info">@lang("More")</a></li>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            
+                            {{-- Single company field --}}
+
+                            
+                        </div>
+                        {{-- <div class="row">
+                            <div class="col-lg-12">
+                                <div class="hiraola-paginatoin-area">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <ul class="hiraola-pagination-box">
+                                                <li class="active"><a href="javascript:void(0)">1</a></li>
+                                                <li><a href="com-local2.html">2</a></li>
+                                                <li><a href="com-local3.html">3</a></li>
+                                                <li><a class="Next" href="javascript:void(0)"><i
+                                                        class="ion-ios-arrow-right"></i></a></li>
+                                                <li><a class="Next" href="com-local2.html">>|</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <div class="product-select-box">
+                                                <div class="product-short">
+                                                    <p>Showing 1 to 12 of 25 (3 Pages)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hiraola's Content Wrapper Area End Here -->
+@endsection

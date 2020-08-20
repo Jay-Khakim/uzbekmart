@@ -30,6 +30,39 @@
 
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+     <script type="text/javascript">
+        $(document).ready(function() {
+            $("a").tooltip({ selector: '[data-toggle=tooltip]' });
+        });
+    </script>
+    <script>
+    $( function() {
+        $( document ).tooltip();
+    } );
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="/assets/js/vendor/popper.min.js"></script>
+    <script src="/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="/assets/js/plugins/slick.min.js"></script>
+    <script src="/assets/js/plugins/countdown.js"></script>
+    <script src="/assets/js/plugins/jquery.barrating.min.js"></script>
+    <script src="/assets/js/plugins/jquery.counterup.js"></script>
+    <script src="/assets/js/plugins/jquery.nice-select.js"></script>
+    <script src="/assets/js/plugins/jquery.sticky-sidebar.js"></script>
+    <script src="/assets/js/plugins/jquery-ui.min.js"></script>
+    <script src="/assets/js/plugins/jquery.ui.touch-punch.min.js"></script>
+    <script src="/assets/js/plugins/lightgallery.min.js"></script>
+    <!-- <script src="/assets/js/plugins/scroll-top.js"></script> -->
+    <script src="/assets/js/plugins/theia-sticky-sidebar.min.js"></script>
+    <script src="/assets/js/plugins/waypoints.min.js"></script>
+    <script src="/assets/js/plugins/instafeed.min.js"></script>
+    <script src="/assets/js/plugins/jquery.elevateZoom-3.0.8.min.js"></script>
+    <script src="/assets/js/main.js"></script>
     
 
     <!-- Fonts -->
@@ -69,24 +102,6 @@
     </div>
 
     {{-- Scripts --}}
-    <script src="/assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
-    <script src="/assets/js/vendor/popper.min.js"></script>
-    <script src="/assets/js/vendor/bootstrap.min.js"></script>
-    <script src="/assets/js/plugins/slick.min.js"></script>
-    <script src="/assets/js/plugins/countdown.js"></script>
-    <script src="/assets/js/plugins/jquery.barrating.min.js"></script>
-    <script src="/assets/js/plugins/jquery.counterup.js"></script>
-    <script src="/assets/js/plugins/jquery.nice-select.js"></script>
-    <script src="/assets/js/plugins/jquery.sticky-sidebar.js"></script>
-    <script src="/assets/js/plugins/jquery-ui.min.js"></script>
-    <script src="/assets/js/plugins/jquery.ui.touch-punch.min.js"></script>
-    <script src="/assets/js/plugins/lightgallery.min.js"></script>
-    <!-- <script src="/assets/js/plugins/scroll-top.js"></script> -->
-    <script src="/assets/js/plugins/theia-sticky-sidebar.min.js"></script>
-    <script src="/assets/js/plugins/waypoints.min.js"></script>
-    <script src="/assets/js/plugins/instafeed.min.js"></script>
-    <script src="/assets/js/plugins/jquery.elevateZoom-3.0.8.min.js"></script>
-    <script src="/assets/js/main.js"></script>
+    
 </body>
 </html>

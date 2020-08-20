@@ -99,15 +99,15 @@
                                         </form>
                                 </div>
                             <div class="header-right_area">
-                                {{-- <ul>
-                                    <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter1"><a href="javascript:void(0)" title="Message"><i class="ion-ios-email-outline"></i></a></li>
-                                    <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter2"><a href="javascript:void(0)" title="Message"><i class="ion-ios-telephone-outline"></i></a></li>
+                                <ul>
+                                    {{-- <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter1"><a href="javascript:void(0)" title="Message"><i class="ion-ios-email-outline"></i></a></li>
+                                    <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter2"><a href="javascript:void(0)" title="Message"><i class="ion-ios-telephone-outline"></i></a></li> --}}
                                     <li>
                                         <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn color--white d-lg-none d-block">
                                             <i class="ion-navicon"></i>
                                         </a>
                                     </li>
-                                </ul> --}}
+                                </ul>
                             </div>
                         </div>
                     </div>

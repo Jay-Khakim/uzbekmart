@@ -15,7 +15,7 @@
                         <div class="single_product">
                             <div class="product-img">
                                 <a href="javascript:void(0)">
-                                    <img class="primary-img" src="assets/images/partners/p10.jpg" alt="Hiraola's Product Image">
+                                    <img class="primary-img" src="/assets/images/partners/p10.jpg" alt="Hiraola's Product Image">
                                 </a>
                                 
                             </div>
@@ -32,7 +32,7 @@
                         <div class="single_product">
                             <div class="product-img">
                                 <a href="javascript:void(0)">
-                                    <img class="primary-img" src="assets/images/partners/p10.jpg" alt="Hiraola's Product Image">
+                                    <img class="primary-img" src="/assets/images/partners/p10.jpg" alt="Hiraola's Product Image">
                                 </a>
                                 
                             </div>
@@ -49,7 +49,7 @@
                         <div class="single_product">
                             <div class="product-img">
                                 <a href="javascript:void(0)">
-                                    <img class="primary-img" src="assets/images/partners/p11.jpg" alt="Hiraola's Product Image">
+                                    <img class="primary-img" src="/assets/images/partners/p11.jpg" alt="Hiraola's Product Image">
                                 </a>
                                 
                             </div>
@@ -66,7 +66,7 @@
                         <div class="single_product">
                             <div class="product-img">
                                 <a href="javascript:void(0)">
-                                    <img class="primary-img" src="assets/images/partners/p10.jpg" alt="Hiraola's Product Image">
+                                    <img class="primary-img" src="/assets/images/partners/p10.jpg" alt="Hiraola's Product Image">
                                 </a>
                                 
                             </div>
@@ -83,7 +83,7 @@
                         <div class="single_product">
                             <div class="product-img">
                                 <a href="javascript:void(0)">
-                                    <img class="primary-img" src="assets/images/partners/p10.jpg" alt="Hiraola's Product Image">
+                                    <img class="primary-img" src="/assets/images/partners/p10.jpg" alt="Hiraola's Product Image">
                                 </a>
                                 
                             </div>
@@ -100,7 +100,7 @@
                         <div class="single_product">
                             <div class="product-img">
                                 <a href="javascript:void(0)">
-                                    <img class="primary-img" src="assets/images/partners/p10.jpg" alt="Hiraola's Product Image">
+                                    <img class="primary-img" src="/assets/images/partners/p10.jpg" alt="Hiraola's Product Image">
                                 </a>
                                 
                             </div>

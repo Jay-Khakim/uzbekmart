@@ -17,6 +17,9 @@ Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}'], function () {
     Route::get('/', 'PageController@index')->name('main');
+    Route::get('/local-comp', 'PageController@localcomp')->name('local-comp');
+
+
     Route::get('/tags', function (){
         $tags = Tag::get();
         return view('tags')->with('tags', $tags);

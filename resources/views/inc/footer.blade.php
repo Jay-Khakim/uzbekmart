@@ -119,7 +119,7 @@
 
                                 <div class="footer-widgets_logo">
                                     <a href="#">
-                                        <img src="assets/images/footer/logo/1.png" alt="Hiraola's Footer Logo">
+                                        <img src="/assets/images/footer/logo/1.png" alt="Hiraola's Footer Logo">
                                     </a>
                                 </div>
 
