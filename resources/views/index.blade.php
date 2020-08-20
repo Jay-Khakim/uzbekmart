@@ -220,7 +220,14 @@
                 <div class="slider-content">
                 <h3>{{__("Register your company in the first online showroom in Uzbekistan and improve your business")}} </h3>
                 <div  class="hiraola-btn-ps_center  text-center pt-4"  id="btn21">
-                        <a class="hiraola-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd_RjwstS1_qq6QK32SxJ7ZCJzwj2jFSUD6CIGmiEvzDc5_5w/viewform?usp=sf_link">{{__("Register")}}</a>
+                        <a class="hiraola-btn" 
+                        @if(app()->getLocale() === 'en')
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSc7sTFRqxgyR_1MKlXPxHzOndlaBgLPYqt8iWWzzQaYmgmHgQ/viewform"
+                        @else
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSd_RjwstS1_qq6QK32SxJ7ZCJzwj2jFSUD6CIGmiEvzDc5_5w/viewform?usp=sf_link"
+                        @endif>
+                        {{__("Register")}}</a>
+                        {{-- 'https://docs.google.com/forms/d/e/1FAIpQLSc7sTFRqxgyR_1MKlXPxHzOndlaBgLPYqt8iWWzzQaYmgmHgQ/viewform' : 'https://docs.google.com/forms/d/e/1FAIpQLSd_RjwstS1_qq6QK32SxJ7ZCJzwj2jFSUD6CIGmiEvzDc5_5w/viewform?usp=sf_link' --}}
                 </div>
             </div>
             </div>
