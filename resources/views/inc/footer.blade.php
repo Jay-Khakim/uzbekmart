@@ -125,7 +125,7 @@
 
 
                                 <div class="widget-short_desc">
-                                    <p>O'zbekistonda birinchi bor - O'zbekiston Eksportchilar Uyushmasining onlayn shourumи.
+                                    <p>@lang("The first in Uzbekistan online showroom of the Association of Exporters of Uzbekistan")
                                     </p>
                                 </div>
                                 <div class="hiraola-social_link">
@@ -164,28 +164,28 @@
                                 <div class="row">
                                     <div class="col-lg-3">
                                         <div class="footer-widgets_title">
-                                            <h6>Sahifalar</h6>
+                                            <h6>@lang("Pages")</h6>
                                         </div>
                                         <div class="footer-widgets">
                                             <ul>
-                                                <li><a href="blog.html">Yangiliklar</a></li>
-                                                <li><a href="faq.html">Yordam</a></li>
-                                                <li><a href="about-us.html">Biz Haqimizda</a></li>
-                                                <li><a href="reklama.html">Reklama berish</a></li>
+                                                <li><a href="blog.html">@lang("Blog")</a></li>
+                                                <li><a href="faq.html">@lang("Services")</a></li>
+                                                <li><a href="about-us.html">@lang("About Us")</a></li>
+                                                <li><a href="reklama.html">@lang("Advertise")</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="col-lg-5">
                                         <div class="footer-widgets_info">
                                             <div class="footer-widgets_title">
-                                                <h6>Bog'lanish</h6>
+                                                <h6>@lang("Contacts")</h6>
                                             </div>
                                             <div class="widgets-essential_stuff">
                                                 <ul>
-                                                    <li class="hiraola-address"><i class="ion-ios-location"></i><span>Мanzil:</span>O'zbekiston Respublikasi, Tashkent shahar, Olmazor tumani, Korakamish ko'chasi, 8А</li>
-                                                    <li class="hiraola-phone"><i class="ion-ios-telephone"></i><span>Теlefon:</span> <a href="tel://+998951454502">+99895 145 45 02</a>
+                                                    <li class="hiraola-address"><i class="ion-ios-location"></i><span>@lang("Address"):</span>@lang("8A Korakamish Str., Almazar region, Tashkent city, Uzbekistan")</li>
+                                                    <li class="hiraola-phone"><i class="ion-ios-telephone"></i><span>@lang("Phone"):</span> <a href="tel://+998951454502">+99895 145 45 02</a>
                                                     </li>
-                                                    <li class="hiraola-email"><i class="ion-android-mail"></i><span>E-mail:</span> <a href="mailto://info@uzbekmart.com">info@uzbekmart.com</a></li>
+                                                    <li class="hiraola-email"><i class="ion-android-mail"></i><span>@lang("E-mail"):</span> <a href="mailto://info@uzbekmart.com">info@uzbekmart.com</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -193,20 +193,20 @@
                                     <div class="col-lg-4">
                                         <div class="instagram-container footer-widgets_area">
                                             <div class="footer-widgets_title">
-                                                <h6>Yangiliklarga obuna</h6>
+                                                <h6>@lang("Subscribe for news")</h6>
                                             </div>
                                             <div class="widget-short_desc">
-                                                <p>Barcha yangiliklardan xabardor boʼlish uchun obuna boʼling</p>
+                                                <p>@lang("Subscribe to our newsletters now and stay up-to-date with new collections")</p>
                                             </div>
                                             <div class="newsletter-form_wrap">
                                                 <form action="https://uzbekmart.us17.list-manage.com/subscribe/post?u=2b6a4310f302a46f5382b290f&amp;id=c642c400d8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletters-form validate" target="_blank" novalidate>
                                                     <div id="mc_embed_signup_scroll">
-                                                        <div id="mc-form" class="mc-form subscribe-form">
+                                                        {{-- <div id="mc-form" class="mc-form subscribe-form">
                                                             <input id="mc-email" class="newsletter-input" type="email" autocomplete="off" placeholder="E-mail qoldiring" />
                                                             <button class="newsletter-btn" id="mc-submit">
                                                                 <i class="ion-android-mail" aria-hidden="true"></i>
                                                             </button>
-                                                        </div>
+                                                        </div> --}}
                                                     </div>
                                                 </form>
                                             </div>
@@ -224,8 +224,8 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="copyright">
-                                    <marquee><p>!Diqqat! Sayt test rejimida ishlamoqda. Noqulayliklar uchun uzr so'raymiz!</p></marquee>
-                                    <span> &copy; 2020 Barcha huquqlar himoyalangan<a href="http://exportuz.com/"> ExportUz.com</a></span>
+                                    <marquee><p>@lang("Attention! The site is running in test mode. Sorry for the inconvenience!")</p></marquee>
+                                    <span> &copy; 2020 @lang("All rights reserved")<a href="http://exportuz.com/"> ExportUz.com</a></span>
 
                                 </div>
                             </div>
