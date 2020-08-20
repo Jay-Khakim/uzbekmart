@@ -12,8 +12,8 @@ class PageController extends Controller
 {
     public function index(){
         $category = Category::all();
-        $localcomp = Company::where('companytype', 'local')->with('category')->get();
-        $foreigncomp = Company::where("companytype", "foreign")->with('category')->get();
+        $localcomp = Company::where('companytype', 'local')->with('category')->orderBy("id", "desc")->take(8)->get();
+        $foreigncomp = Company::where("companytype", "foreign")->with('category')->orderBy("id", "desc")->take(8)->get();
         $companies = Company::all();
         $products = Product::all();
         // dd($localcomp);
