@@ -78,7 +78,11 @@
     "Description": "Описание компании",
     "Company Products": "Товары компании",
     "Not found": "Не найдено",
-    "Related Products": "Похожие Товары"
+    "Related Products": "Похожие Товары",
+    "Type": "Тип",
+    "Company": "Компания",
+    "Product Description": "Описания товара"
+
 
 
 

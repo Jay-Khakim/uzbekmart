@@ -48,19 +48,21 @@
                             <div class="sp-heading">
                                 <h5><a href="{{route('product-show', ['language' => 'ru', 'id' => $company->id, 'pid'=>$single->id])}}">{{$single->name}}</a></h5>
                             </div>
-                            <span class="reference">
-                                @if($company->companytype === 'local')
-                                    @lang("Local company")
-                                @else 
-                                    @lang("Foreign company")
-                                @endif
-                            </span>
+                            
                             <hr>
                             <div class="sp-essential_stuff">
                                 <ul>
                                     <h5><span class="badge  badge-primary">#{{$company->category->name}}</span></h5>
                                     <br>
-                                    <li><b>@lang("Company"): </b> <span>&nbsp;&nbsp; <a href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$company->id])}}">{{$company->name}}</a> </span></li>
+                                    <li><b>@lang("Company"): </b> <span>&nbsp;&nbsp; <a href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$company->id])}}">{{$company->name}}</a> </span> </li>
+                                    <br>
+                                    <li> <b>@lang("Type"):&nbsp;&nbsp; </b>
+                                        @if($company->companytype === 'local')
+                                            @lang("Local company")
+                                        @else 
+                                            @lang("Foreign company")
+                                        @endif
+                                    </li>
                                     <br>
                                     <li><b>@lang("Website"): </b><span>&nbsp;&nbsp;
                                         @if($single->web)
@@ -89,7 +91,7 @@
                     <div class="sp-product-tab_nav ">
                         <div class="product-tab">
                             <ul class="nav product-menu">
-                                <li><a class="active" data-toggle="tab" href="#description"><span>@lang("Description")</span></a></li>
+                                <li><a class="active" data-toggle="tab" href="#description"><span>@lang("Product Description")</span></a></li>
                             </ul>
                         </div>
                         <div class="tab-content hiraola-tab_content">
