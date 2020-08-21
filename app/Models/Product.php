@@ -76,6 +76,10 @@ class Product extends Model
         return $this->belongsTo('App\Models\Company', 'company_id'); 
     }
 
+    public function category(){
+        return $this->belongsTo('App\Models\Category', 'category_id'); 
+    }
+
     protected $lang_fields =[
         'name', 'desc'
     ];

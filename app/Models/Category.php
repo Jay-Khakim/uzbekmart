@@ -36,6 +36,9 @@ class Category extends Model
     public function buyrequest(){
         return $this->hasMany('App\Models\Buyrequest');
     }
+    public function product(){
+        return $this->hasMany('App\Models\Product');
+    }
 
     /*
     |--------------------------------------------------------------------------
