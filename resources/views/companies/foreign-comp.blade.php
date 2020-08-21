@@ -89,7 +89,7 @@
                                                     <h6><a class="product-name" href="{{route('comp-show', [app()->getLocale(), $foreign->id])}}"> {{$foreign->name}} </a></h6>
                                                     
                                                     <div class="product-short_desc">
-                                                        <p>{{$local->desc}}</p>
+                                                        <p>{{$foreign->desc}}</p>
                                                     </div>
                                                 </div>
                                                 <div class="add-actions">
