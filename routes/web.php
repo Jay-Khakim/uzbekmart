@@ -19,6 +19,7 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/', 'PageController@index')->name('main');
     Route::get('/local-comp', 'PageController@localcomp')->name('local-comp');
     Route::get('/foreign-comp', 'PageController@foreigncomp')->name('foreign-comp');
+    Route::get('/company/{id}', 'PageController@companyshow')->name('comp-show');
 
 
     Route::get('/tags', function (){

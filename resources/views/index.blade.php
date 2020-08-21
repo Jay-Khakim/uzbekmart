@@ -1,4 +1,15 @@
 @extends('layouts.app')
+@section('language')
+    <li>
+        <a href="{{ url( 'uz') }}"><img src="/assets/images/menu/icon/3.jpg" alt="JB's Language Icon">Uz</a>
+    </li>
+    <li>
+        <a href="{{ url('en') }}"><img src="/assets/images/menu/icon/1.jpg" alt="JB's Language Icon">En</a>
+    </li>
+    <li>
+        <a href="{{ url('ru') }}"><img src="/assets/images/menu/icon/2.jpg" alt="JB's Language Icon">Ru</a>
+    </li>
+@endsection
 
 @section('content')
     {{-- @include('inc.left-side-category') --}}
@@ -145,7 +156,7 @@
                                     </div>
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info">
-                                            <h5><span class="badge  badge-primary"> #{{$local->category->name}} </span></h5>
+                                            <h5><span class="badge badge-primary"> #{{$local->category->name}} </span></h5>
                                             <h6 align="center"><a class="product-name" href="company/local/l68.html"> {{$local->name}}<pre></pre></a></h6>
                                         </div>
                                     </div>
@@ -219,17 +230,17 @@
             <div class="col-lg-12" align="center">
                 <div class="slider-content">
                 <h3>{{__("Register your company in the first online showroom in Uzbekistan and improve your business")}} </h3>
-                <div  class="hiraola-btn-ps_center  text-center pt-4"  id="btn21">
+                    <div  class="hiraola-btn-ps_center  text-center pt-4"  id="btn21">
                         <a class="hiraola-btn" 
-                        @if(app()->getLocale() === 'en')
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSc7sTFRqxgyR_1MKlXPxHzOndlaBgLPYqt8iWWzzQaYmgmHgQ/viewform"
-                        @else
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSd_RjwstS1_qq6QK32SxJ7ZCJzwj2jFSUD6CIGmiEvzDc5_5w/viewform?usp=sf_link"
-                        @endif>
-                        {{__("Register")}}</a>
-                        {{-- 'https://docs.google.com/forms/d/e/1FAIpQLSc7sTFRqxgyR_1MKlXPxHzOndlaBgLPYqt8iWWzzQaYmgmHgQ/viewform' : 'https://docs.google.com/forms/d/e/1FAIpQLSd_RjwstS1_qq6QK32SxJ7ZCJzwj2jFSUD6CIGmiEvzDc5_5w/viewform?usp=sf_link' --}}
+                            @if(app()->getLocale() === 'en')
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSc7sTFRqxgyR_1MKlXPxHzOndlaBgLPYqt8iWWzzQaYmgmHgQ/viewform"
+                            @else
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSd_RjwstS1_qq6QK32SxJ7ZCJzwj2jFSUD6CIGmiEvzDc5_5w/viewform?usp=sf_link"
+                            @endif>
+                            {{__("Register")}}</a>
+                            {{-- 'https://docs.google.com/forms/d/e/1FAIpQLSc7sTFRqxgyR_1MKlXPxHzOndlaBgLPYqt8iWWzzQaYmgmHgQ/viewform' : 'https://docs.google.com/forms/d/e/1FAIpQLSd_RjwstS1_qq6QK32SxJ7ZCJzwj2jFSUD6CIGmiEvzDc5_5w/viewform?usp=sf_link' --}}
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
@@ -252,7 +263,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="shipping-item">
                             <div class="shipping-icon">
-                                <img src="assets/images/shipping-icon/1.png" alt="Hiraola's Shipping Icon">
+                                <img src="/assets/images/shipping-icon/1.png" alt="Hiraola's Shipping Icon">
                             </div>
                             <div class="shipping-content">
                                 <h6>{{__("Under Uzbekistan Export Association")}}</h6>
@@ -263,7 +274,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="shipping-item">
                             <div class="shipping-icon">
-                                <img src="assets/images/shipping-icon/2.png" alt="Hiraola's Shipping Icon">
+                                <img src="/assets/images/shipping-icon/2.png" alt="Hiraola's Shipping Icon">
                             </div>
                             <div class="shipping-content">
                                 <h6>{{__("Available Paymet methods")}}</h6>
@@ -285,7 +296,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="shipping-item">
                             <div class="shipping-icon">
-                                <img src="assets/images/shipping-icon/4.png" alt="Hiraola's Shipping Icon">
+                                <img src="/assets/images/shipping-icon/4.png" alt="Hiraola's Shipping Icon">
                             </div>
                             <div class="shipping-content">
                                 <h6>{{__("Experienced")}}</h6>

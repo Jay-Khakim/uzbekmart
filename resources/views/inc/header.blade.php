@@ -19,15 +19,8 @@
                             <div class="ht-right_area">
                                 <div class="ht-menu">
                                     <ul style="display: inline-block;">
-                                        <li>
-                                            <a href="{{ route(Route::currentRouteName(), 'uz') }}"><img src="/assets/images/menu/icon/3.jpg" alt="JB's Language Icon">Uz</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route(Route::currentRouteName(), 'en') }}"><img src="/assets/images/menu/icon/1.jpg" alt="JB's Language Icon">En</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route(Route::currentRouteName(), 'ru') }}"><img src="/assets/images/menu/icon/2.jpg" alt="JB's Language Icon">Ru</a>
-                                        </li>
+                                        @yield('language')
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -40,7 +33,7 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="header-logo">
-                                <a href="index.html">
+                                <a href=" {{route('main' ,app()->getLocale())}}">
                                     <img src="/assets/images/menu/logo/1.png" alt="Uzbekmart's Header Logo">
                                 </a>
                             </div>
