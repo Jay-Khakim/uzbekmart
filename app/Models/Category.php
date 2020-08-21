@@ -80,7 +80,7 @@ class Category extends Model
     }
 
     protected $lang_fields =[
-        'name', 'desc', 'address'
+        'name'  
     ];
 
     public function __get($attribute){

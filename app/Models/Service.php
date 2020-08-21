@@ -63,6 +63,18 @@ class Service extends Model
         });
     }
 
+    protected $lang_fields =[
+        'name', 'service', 'desc', 'address'
+    ];
+
+    public function __get($attribute){
+        if (in_array($attribute, $this->lang_fields)) { 
+            $localeSpecificAttribute = $attribute.'_'.app()->getLocale();
+            return $this->{$localeSpecificAttribute};
+        }   
+        return parent::__get($attribute);
+    }
+
     /*
     |--------------------------------------------------------------------------
     | RELATIONS

@@ -65,6 +65,18 @@ class Blog extends Model
         });
     }
 
+    protected $lang_fields =[
+        'title', 'body'
+    ];
+
+    public function __get($attribute){
+        if (in_array($attribute, $this->lang_fields)) { 
+            $localeSpecificAttribute = $attribute.'_'.app()->getLocale();
+            return $this->{$localeSpecificAttribute};
+        }   
+        return parent::__get($attribute);
+    }
+
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
