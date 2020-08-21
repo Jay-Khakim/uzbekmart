@@ -12,7 +12,9 @@
     "Home": "Главная",
     "Companies": "Компании",
     "Local companies": "Местные компании",
+    "Local company": "Местная компаная",
     "Foreign companies": "Иностранные компании",
+    "Foreign company": "Иностранная компаная",
     "Services": "Услуги",
     "Blog": "Блог",
     "For investors": "Для инвесторов",
@@ -70,7 +72,12 @@
     "Name, A to Z": "Имя, от А до Я",
     "Name, Z to A": "Имя, от Я до А",
     "Latest": "По дате: Новое",
-    "Oldest": "По дате: Старое"
+    "Oldest": "По дате: Старое",
+    "Company type": "Тип компании",
+    "Not exist yet": "Пока не существует",
+    "Description": "Описание компании",
+    "Company Products": "Товары компании",
+    "Not found": "Не найдено"
 
 
 

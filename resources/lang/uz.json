@@ -18,7 +18,9 @@
     "Home": "Asosiy",
     "Companies": "Korxonalar",
     "Local companies": "Mahalliy korxonalar",
+    "Local company": "Mahalliy korxona",
     "Foreign companies": "Xorijiy korxonalar",
+    "Foreign company": "Xorijiy korxona",
     "Services": "Xizmatlar",
     "Blog": "Yangiliklar",
     "For investors": "Investorlar uchun",
@@ -76,7 +78,12 @@
     "Name, A to Z": "Nomi, A dan Z gacha",
     "Name, Z to A": "Nomi, Z dan A gacha",
     "Latest": "Vaqti: Yangi ",
-    "Oldest": "Vaqti: Oldin"
+    "Oldest": "Vaqti: Oldin",
+    "Company type": "Korxona turi",
+    "Not exist yet": "Hali mavjud emas",
+    "Description": "Korxona haqida",
+    "Company Products": "Korxona mahsulotlari",
+    "Not found": "Hech nima topilmadi"
 
 
 

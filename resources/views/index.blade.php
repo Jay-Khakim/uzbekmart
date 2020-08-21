@@ -149,7 +149,7 @@
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
-                                        <a href="company/local/l68.html">
+                                        <a href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$local->id])}}">
                                             <img class="primary-img" src="/storage/{{$local->image}} " alt=" {{$local->name}} ">
                                         </a>
                                         <span class="sticker-2">New</span>
@@ -192,19 +192,19 @@
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
-                                        <a href="company/foreign/f15.html">
-                                            <img class="primary-img" src="/storage/{{$foreign->image}} " alt=" {{$foreign->name_en}} ">
+                                        <a href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$foreign->id])}}">
+                                            <img class="primary-img" src="/storage/{{$foreign->image}} " alt=" {{$foreign->name}} ">
                                         </a>
                                         <span class="sticker-2">New</span>
                                     </div>
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info">
-                                            <h5><span class="badge  badge-primary">#{{$foreign->category->name_en}}</span></h5>
+                                            <h5><span class="badge  badge-primary">#{{$foreign->category->name}}</span></h5>
                                             <h6 align="center"><a class="product-name" href="company/foreign/f15.html"> @php
-                                              if(strlen($foreign->name_en)> 15){
-                                                  echo substr($foreign->name_en, 0, 15)."...";
+                                              if(strlen($foreign->name)> 15){
+                                                  echo substr($foreign->name, 0, 15)."...";
                                               }else {
-                                                  echo $foreign->name_en;
+                                                  echo $foreign->name;
                                               }  
                                             @endphp  </a></h6>
                                         </div>

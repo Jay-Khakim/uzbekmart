@@ -33,7 +33,8 @@ class PageController extends Controller
 
     public function companyshow($language, $id){
         $company = Company::with('category')->find($id);
+        $products= Product::with('company')->where('company_id', $id)->paginate(5);
 
-        return view('companies.comp-show')->with('company', $company);
+        return view('companies.comp-show')->with(compact('company', 'products'));
     }
 }
