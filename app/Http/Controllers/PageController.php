@@ -55,4 +55,14 @@ class PageController extends Controller
         $one_categories = Company::where('category_id', $id)->with('category')->paginate(20);
         return view('companies.categ-show')->with(compact('one_categories', 'categories', 'cat_id'));
     }
+
+    public function subcategoryshow($language, $cid, $sid){   //$cid  = category id, $sid=subcategory id
+        $category= Category::find($cid);
+        $subcategory = Subcategory::find($sid);
+        // $subcategory = Category::where('category_id', $id);
+        $cat_id = $cid;
+        $subcat_id = $sid;
+        $one_subcategories = Company::where('subcategory_id', $sid)->with('category')->with('subcategory')->paginate(20);
+        return view('companies.subcat-show')->with(compact('one_subcategories', 'category', 'subcategory', 'cat_id', 'subcat_id'));
+    }
 }

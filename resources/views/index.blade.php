@@ -31,7 +31,7 @@
                                                     <ul id="ul_top_hypers">
                                                         @foreach ($subcategories as $subcat)
                                                             @if($subcat->category_id === $cat->id)
-                                                                <li>/ <a href="" class="a_top_hypers"> {{$subcat->name}} </a></li>
+                                                                <li>/ <a href="{{route('subcategory-show', ['language'=>app()->getLocale(), 'cid'=>$cat->id, 'sid'=> $subcat->id])}}" class="a_top_hypers"> {{$subcat->name}} </a></li>
                                                             @endif
                                                         @endforeach
                                                     </ul>
