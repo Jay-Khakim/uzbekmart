@@ -21,6 +21,7 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/foreign-comp', 'PageController@foreigncomp')->name('foreign-comp');
     Route::get('/company/{id}', 'PageController@companyshow')->name('comp-show');
     Route::get('/company/{id}/{pid}', 'PageController@productshow')->name('product-show');
+    Route::get('/category/{id}', 'PageController@categoryshow')->name('category-show');
 
 
     Route::get('/tags', function (){

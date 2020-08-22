@@ -25,27 +25,19 @@
                         <div id="cate-toggle" class="category-menu-list">
                             <ul>
                                 @foreach ($category as $cat)
-                                    <li class="right-menu"><a href="category/c1.html"><img class="img-fluid"  src="/storage/{{$cat->image}}" alt="" class="mr-3"><span class="ml-1">{{$cat->name}} </span></a>
+                                    <li class="right-menu"><a href="{{route('category-show', ['language'=>app()->getLocale(), 'id'=>$cat->id])}}"><img class="img-fluid"  src="/storage/{{$cat->image}}" alt="" class="mr-3"><span class="ml-1">{{$cat->name}} </span></a>
                                         <ul class="cat-mega-menu cat-mega-menu-3">
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Kiyim kechak</a>
-                                                <ul>
-                                                    <li><a href="#21">Ayollar kiyimlari</a></li>
-                                                    <li><a href="#21">Erkaklar kiyimlari</a></li>
-                                                    <li><a href="#21">Bolalar kiyimlari</a></li>
-                                                    <li><a href="#21">Boshqa kiyimlar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="right-menu cat-mega-title">
-                                                <a href="#">Matolar</a>
-                                                <ul>
-                                                    <li><a href="#21">Kiyimlar uchun</a></li>
-                                                    <li><a href="#21">Uy buyumlari uchun</a></li>
-                                                    <li><a href="#21">Dizayn ishlari uchun</a></li>
-                                                    <li><a href="#21">Dekoratsiya ishlari uchun</a></li>
-                                                </ul>
-                                            </li>
+                                                <div id="div_top_hypers">
+                                                    <ul id="ul_top_hypers">
+                                                        @foreach ($subcategories as $subcat)
+                                                            @if($subcat->category_id === $cat->id)
+                                                                <li>/ <a href="" class="a_top_hypers"> {{$subcat->name}} </a></li>
+                                                            @endif
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
                                         </ul>
+                                    </li>
                                     </li>
                                     
                                 @endforeach
@@ -103,7 +95,7 @@
                         @foreach ($category as $cat)
                             
                             <div class="category_item px-2">
-                                <a href="category/c1.html" class="item_link">
+                                <a href="{{route('category-show', ['language'=>app()->getLocale(), 'id'=>$cat->id])}}" class="item_link">
                                     <div class="mx-auto">
                                         <img src="/storage/{{$cat->image}}" alt="">
                                     </div>
@@ -217,7 +209,7 @@
                 </div>
             </div><br>
                 <div  class="hiraola-btn-ps_center  text-center" id="btn21">
-                        <a class="hiraola-btn" href="com-foreign/com-foreign.html">{{__("More")}}</a>
+                        <a class="hiraola-btn" href="{{route('foreign-comp' ,app()->getLocale())}}">{{__("More")}}</a>
                 </div>
         </div>
     </div><br><br>

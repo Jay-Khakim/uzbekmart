@@ -12,13 +12,14 @@ class PageController extends Controller
 {
     public function index(){
         $category = Category::all();
+        $subcategories= Subcategory::all();
         $localcomp = Company::where('companytype', 'local')->with('category')->orderBy("id", "desc")->take(8)->get();
         $foreigncomp = Company::where("companytype", "foreign")->with('category')->orderBy("id", "desc")->take(8)->get();
         $companies = Company::all();
         $products = Product::all();
         // dd($localcomp);
         // dd($category);
-        return view('index')->with(compact('category', 'localcomp', 'foreigncomp', 'companies', 'products'));
+        return view('index')->with(compact('category', 'subcategories', 'localcomp', 'foreigncomp', 'companies', 'products'));
     } 
     
     public function localcomp(){
@@ -46,5 +47,12 @@ class PageController extends Controller
         $products= Product::with('category')->where('category_id', $category)->paginate(5);
 
         return view('companies.product-show')->with(compact('company', 'products', 'single'));
+    }
+
+    public function categoryshow($language, $id){
+        $categories = Category::all();
+        $cat_id = $id;
+        $one_categories = Company::where('category_id', $id)->with('category')->paginate(20);
+        return view('companies.categ-show')->with(compact('one_categories', 'categories', 'cat_id'));
     }
 }
