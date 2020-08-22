@@ -128,10 +128,10 @@
                     </div>
                 </div>
 
-                @if(count($products)>0)
-                    @foreach ($products as $product)
-                        <div class="col-lg-12">
-                            <div class="hiraola-product_slider-3">
+                <div class="col-lg-12">
+                    <div class="hiraola-product_slider-3">
+                        @if(count($products)>0)
+                            @foreach ($products as $product)
                                 <!-- Begin Hiraola's Slide Item Area -->
                                 <div class="slide-item">
                                     <div class="single_product">
@@ -145,38 +145,21 @@
                                             <div class="product-desc_info">
                                                 <br>
                                                 <h6 align="center"><a class="product-name" href="product/l20-1.html">{{$product->name}}</a></h6>
-                                                
-                                                {{-- <div class="additional-add_action">
-                                                    <ul>
-                                                        <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion-eye"></i></a></li>
-                                                    </ul>
-                                                </div> --}}
-                                                {{-- <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li><i class="fa fa-star-of-david"></i></li>
-                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    </ul>
-                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Hiraola's Slide Item Area End Here -->
 
-                            </div>
-                        </div>
-                    @endforeach
-                @else
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@lang("Not found")
-                @endif
-            
+                            @endforeach
+                        @else
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@lang("Not found")
+                        @endif
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- Hiraola's Product Area Two End Here -->
-
 
 @endsection

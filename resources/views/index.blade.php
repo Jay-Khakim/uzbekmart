@@ -168,7 +168,7 @@
                 </div>
             </div> <br>
                 <div  class="hiraola-btn-ps_center  text-center" id="btn21">
-                        <a class="hiraola-btn" href="com-local/com-local.html">{{__("More")}}</a>
+                        <a class="hiraola-btn" href="{{route('local-comp' ,app()->getLocale())}}">{{__("More")}}</a>
                 </div>
         </div>
     </div>

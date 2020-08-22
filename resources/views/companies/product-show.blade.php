@@ -123,10 +123,10 @@
                     </div>
                 </div>
 
-                @if(count($products)>0)
-                    @foreach ($products as $product)
-                        <div class="col-lg-12">
-                            <div class="hiraola-product_slider-3">
+                <div class="col-lg-12">
+                    <div class="hiraola-product_slider-3">
+                        @if(count($products)>0)
+                            @foreach ($products as $product)
                                 <!-- Begin Hiraola's Slide Item Area -->
                                 <div class="slide-item">
                                     <div class="single_product">
@@ -146,13 +146,12 @@
                                     </div>
                                 </div>
                                 <!-- Hiraola's Slide Item Area End Here -->
-
-                            </div>
-                        </div>
-                    @endforeach
-                @else
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@lang("Not found")
-                @endif
+                            @endforeach
+                        @else
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@lang("Not found")
+                        @endif
+                    </div>        
+                </div>
             
             </div>
         </div>
