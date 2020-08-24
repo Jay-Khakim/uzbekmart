@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Subcategory;
 use App\Models\Company;
 use App\Models\Product;
+use App\Models\Service;
 
 class PageController extends Controller
 {
@@ -72,5 +73,11 @@ class PageController extends Controller
 
     public function checkcompany(){
         return view('services.check-company');
+    }
+
+    public function services()
+    {   
+        $services = Service::all();
+        return view('services.services')->with('services', $services);
     }
 }

@@ -177,7 +177,7 @@ class ServiceCrudController extends CrudController
         CRUD::addField(
             [   
                 'name'  => 'service_en',
-                'label' => "Name En",
+                'label' => "Service En",
                 'type'  => 'text',
             ],
         );
@@ -185,7 +185,7 @@ class ServiceCrudController extends CrudController
         CRUD::addField(
             [   
                 'name'  => 'service_uz',
-                'label' => "Name Uz",
+                'label' => "Service Uz",
                 'type'  => 'text',
             ],
         );
@@ -193,7 +193,7 @@ class ServiceCrudController extends CrudController
         CRUD::addField(
             [   
                 'name'  => 'service_ru',
-                'label' => "Name Ru",
+                'label' => "Service Ru",
                 'type'  => 'text',
             ],
         );

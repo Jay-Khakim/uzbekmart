@@ -74,7 +74,7 @@
                                             <ul class="hm-dropdown">
                                                 <li><a href="{{route('services-for-investors', app()->getLocale())}}">{{__("For investors")}}</a></li>
                                                 <li><a href="{{route('check-company', app()->getLocale())}}">{{__("Check for company")}}</a></li>
-                                                <li><a href="service.html">{{__("Other services")}}</a></li>
+                                                <li><a href="{{route('services', app()->getLocale())}}">{{__("Other services")}}</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="project.html">{{__("Investment projects")}}</a></li>
@@ -164,7 +164,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="service.html">
+                                            <a href="{{route('services', app()->getLocale())}}">
                                                 <span class="mm-text">{{__("Other services")}}</span>
                                             </a>
                                         </li>
