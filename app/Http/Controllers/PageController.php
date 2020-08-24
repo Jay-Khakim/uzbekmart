@@ -65,4 +65,8 @@ class PageController extends Controller
         $one_subcategories = Company::where('subcategory_id', $sid)->with('category')->with('subcategory')->paginate(20);
         return view('companies.subcat-show')->with(compact('one_subcategories', 'category', 'subcategory', 'cat_id', 'subcat_id'));
     }
+
+    public function forinvestors(){
+        return view('services.for-investors');
+    }
 }

@@ -10,6 +10,12 @@
         <a href="{{route('product-show', ['language' => 'ru', 'id' => $company->id, 'pid'=>$single->id])}}"><img src="/assets/images/menu/icon/2.jpg" alt="JB's Language Icon">Ru</a>
     </li>
 @endsection
+
+@section('lang-mobile')
+    <a href="{{route('product-show', ['language' => 'uz', 'id' => $company->id, 'pid'=>$single->id])}}"><img src="/assets/images/menu/icon/3.jpg" alt="JB's Language Icon">Uz</a>
+    <a href="{{route('product-show', ['language' => 'en', 'id' => $company->id, 'pid'=>$single->id])}}"><img src="/assets/images/menu/icon/1.jpg" alt="JB's Language Icon">En</a>
+    <a href="{{route('product-show', ['language' => 'ru', 'id' => $company->id, 'pid'=>$single->id])}}"><img src="/assets/images/menu/icon/2.jpg" alt="JB's Language Icon">Ru</a>
+@endsection
 @section('content')
 <!-- Begin Hiraola's Breadcrumb Area -->
     <div class="breadcrumb-area">

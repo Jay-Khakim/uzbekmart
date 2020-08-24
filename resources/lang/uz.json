@@ -73,7 +73,7 @@
     "Attention! The site is running in test mode. Sorry for the inconvenience!": "Diqqat! Sayt test rejimida ishlamoqda. Noqulayliklar uchun uzr so'raymiz!",
     "All rights reserved": "Barcha huquqlar himoyalangan",
     "Local Companies": "MAHALLIY KOMPANIYALAR",
-    "Short By": "Saralash",
+    "Sort By": "Saralash",
     "Relevance": "Aloqadorlik",
     "Name, A to Z": "Nomi, A dan Z gacha",
     "Name, Z to A": "Nomi, Z dan A gacha",
@@ -87,7 +87,21 @@
     "Related Products": "O'xshah maxsulotlar",
     "Type": "Turi",
     "Company": "Korxona",
-    "Product Description": "Maxsulot Xaqida"
+    "Product Description": "Maxsulot Xaqida",
+    "Complex services for investors": "Investorlarga kompleks xizmat ko'rsatish",
+    "Type of services for investors": "Investorlar uchun xizmat turlari",
+    "Juristical": "Huquqiy",
+    "Tax": "Soliq",
+    "Organizing": "Tashkiliy",
+    "Finding partners": "Hamkor topish",
+    "Juristical services": "Huquqiy xizmatlar",
+    "8A, Korakamish street, Olmazor region, Tahskent city, Uzbekistan": "O'zbekiston Respublikasi, Tashkent shahar, Olmazor tumani, Korakamish ko'chasi, 8А",
+    "Name of personnel:": "Xodim nomi:",
+    "Abdurakhmonov Bakhodir": "Abduraxmonov Bahodir",
+    "Contact": "Bog'lanish",
+    "Tax services": "Soliq xizmatlari",
+    "Organizing services": "Tashkiliy xizmatlar",
+    "Finding partners services": "Hamkor topish xizmatlar"
 
 
 

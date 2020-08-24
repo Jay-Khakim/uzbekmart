@@ -11,6 +11,12 @@
         <a href="{{route('local-comp', 'ru') }}"><img src="/assets/images/menu/icon/2.jpg" alt="JB's Language Icon">Ru</a>
     </li>
 @endsection
+
+@section('lang-mobile')
+    <a href="{{route('local-comp', 'uz')}}"><img src="/assets/images/menu/icon/3.jpg" alt="JB's Language Icon">Uz</a>
+    <a href="{{route('local-comp', 'en')}}"><img src="/assets/images/menu/icon/1.jpg" alt="JB's Language Icon">En</a>
+    <a href="{{route('local-comp', 'ru')}}"><img src="/assets/images/menu/icon/2.jpg" alt="JB's Language Icon">Ru</a>
+@endsection
 @section('content')
 
 {{-- Header section --}}
@@ -40,7 +46,7 @@
                             </div>
                             <div class="product-item-selection_area">
                                 <div class="product-short">
-                                    <label class="select-label">@lang("Short By"):</label>
+                                    <label class="select-label">@lang("Sort By"):</label>
                                     <select class="nice-select">
                                         <option value="1">@lang("Relevance")</option>
                                         <option value="2">@lang("Name, A to Z")</option>

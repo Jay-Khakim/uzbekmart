@@ -70,9 +70,9 @@
                                                 <li><a href="{{route('foreign-comp' ,app()->getLocale())}}">{{__("Foreign companies")}}</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="service.html">{{__("Services")}}</a>
+                                        <li><a href="javascript:void(0)">{{__("Services")}}</a>
                                             <ul class="hm-dropdown">
-                                                <li><a href="service1.html">{{__("For investors")}}</a></li>
+                                                <li><a href="{{route('services-for-investors', app()->getLocale())}}">{{__("For investors")}}</a></li>
                                                 <li><a href="service2.html">{{__("Check for company")}}</a></li>
                                                 <li><a href="service.html">{{__("Other services")}}</a></li>
                                             </ul>
@@ -115,9 +115,7 @@
                             <ul class="mobile-menu" >
                                 <li class="menu-item" id="nav">
                                     <h5 align="center" style="display: inline-block">
-                                        <a id="nav" href="{{ url('/uz') }}"><img src="/assets/images/menu/icon/3.jpg" alt="JB's Language Icon">Uz</a>
-                                        <a id="nav" href="{{ url('/en') }}"><img src="/assets/images/menu/icon/1.jpg" alt="JB's Language Icon">En</a>
-                                        <a id="nav" href="{{ url('/ru') }}"><img src="/assets/images/menu/icon/2.jpg" alt="JB's Language Icon">Ru</a>
+                                        @yield('lang-mobile')
                                     </h5>
                                 </li> 
                             </ul>
@@ -131,33 +129,38 @@
                         <nav class="offcanvas-navigation">
                             <ul class="mobile-menu">
                                 <li class="menu-item-has-children">
-                                    <a href="index.html">
+                                    <a href="{{route('main' ,app()->getLocale())}}">
                                         <span class="mm-text">{{__("Home")}}</span>
                                     </a>
                                 </li>
-                                <li class="menu-item-has-children active"><a href="index.html"><span
+                                <li class="menu-item-has-children active"><a href="javascript:void(0)"><span
                                         class="mm-text">{{__("Companies")}}</span></a>
                                     <ul class="sub-menu">
                                         <li>
-                                            <a href="com-local/com-local.html">
+                                            <a href="{{route('local-comp' ,app()->getLocale())}}">
                                                 <span class="mm-text">{{__("Local companies")}}</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="com-foreign/com-foreign.html">
+                                            <a href="{{route('foreign-comp' ,app()->getLocale())}}">
                                                 <span class="mm-text">{{__("Foreign companies")}}</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children active">
-                                    <a href="service.html">
+                                    <a href="javascript:void(0)">
                                         <span class="mm-text">{{__("Services")}}</span>
                                     </a>
                                     <ul class="sub-menu">
                                         <li>
-                                            <a href="service1.html">
+                                            <a href="{{route('services-for-investors', app()->getLocale())}}">
                                                 <span class="mm-text">{{__("For investors")}}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <span class="mm-text">{{__("Check for company")}}</span>
                                             </a>
                                         </li>
                                         <li>

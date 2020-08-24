@@ -23,6 +23,9 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/company/{id}/{pid}', 'PageController@productshow')->name('product-show');
     Route::get('/category/{id}', 'PageController@categoryshow')->name('category-show');
     Route::get('/subcategory/{cid}/{sid}', 'PageController@subcategoryshow')->name('subcategory-show');
+    Route::get('/services/for-inevstors', 'PageController@forinvestors')->name('services-for-investors');
+
+    
 
 
     Route::get('/tags', function (){

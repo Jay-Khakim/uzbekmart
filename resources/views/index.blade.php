@@ -11,6 +11,12 @@
     </li>
 @endsection
 
+@section('lang-mobile')
+    <a href="{{ url('uz')}}"><img src="/assets/images/menu/icon/3.jpg" alt="JB's Language Icon">Uz</a>
+    <a href="{{ url('en')}}"><img src="/assets/images/menu/icon/1.jpg" alt="JB's Language Icon">En</a>
+    <a href="{{ url('ru')}}"><img src="/assets/images/menu/icon/2.jpg" alt="JB's Language Icon">Ru</a>
+@endsection
+
 @section('content')
     {{-- @include('inc.left-side-category') --}}
     <div class="slider-with-category_menu">
