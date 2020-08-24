@@ -69,4 +69,8 @@ class PageController extends Controller
     public function forinvestors(){
         return view('services.for-investors');
     }
+
+    public function checkcompany(){
+        return view('services.check-company');
+    }
 }

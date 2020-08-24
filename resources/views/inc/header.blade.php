@@ -73,7 +73,7 @@
                                         <li><a href="javascript:void(0)">{{__("Services")}}</a>
                                             <ul class="hm-dropdown">
                                                 <li><a href="{{route('services-for-investors', app()->getLocale())}}">{{__("For investors")}}</a></li>
-                                                <li><a href="service2.html">{{__("Check for company")}}</a></li>
+                                                <li><a href="{{route('check-company', app()->getLocale())}}">{{__("Check for company")}}</a></li>
                                                 <li><a href="service.html">{{__("Other services")}}</a></li>
                                             </ul>
                                         </li>
@@ -159,7 +159,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="javascript:void(0)">
+                                            <a href="{{route('check-company', app()->getLocale())}}">
                                                 <span class="mm-text">{{__("Check for company")}}</span>
                                             </a>
                                         </li>

@@ -24,6 +24,7 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/category/{id}', 'PageController@categoryshow')->name('category-show');
     Route::get('/subcategory/{cid}/{sid}', 'PageController@subcategoryshow')->name('subcategory-show');
     Route::get('/services/for-inevstors', 'PageController@forinvestors')->name('services-for-investors');
+    Route::get('/services/check-company', 'PageController@checkcompany')->name('check-company');
 
     
 
