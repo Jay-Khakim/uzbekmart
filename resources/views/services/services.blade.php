@@ -97,14 +97,14 @@
                                     <div class="slide-item">
                                         <div class="single_product">
                                             <div class="product-img">
-                                                <a href="single-product.html">
+                                                <a href="{{route('service-show', [app()->getLocale(), $service->id])}}">
                                                     <img class="primary-img" src="/storage/{{$service->image}}" alt=" {{$service->name}} ">
                                                 </a>
                                             </div>
                                             <div class="hiraola-product_content">
                                                 <div class="product-desc_info">
-                                                    <h6 align="center">@lang("Company"): <a class="product-name" href="single-product.html"> {{$service->company->name}} </a></h6>
-                                                    <h6 align="center">@lang("Service"): <a class="product-name" href="single-product.html"> {{$service->name}} </a></h6>
+                                                    <h6 align="center">@lang("Company"): <a class="product-name" href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$service->company->id])}}"> {{$service->company->name}} </a></h6>
+                                                    <h6 align="center">@lang("Service"): <a class="product-name" href="{{route('service-show', [app()->getLocale(), $service->id])}}"> {{$service->name}} </a></h6>
                                                     <div class="additional-add_action">
                                                         <ul>
                                                             <li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Quick View"><i
@@ -118,21 +118,21 @@
                                     <div class="list-slide_item">
                                         <div class="single_product">
                                             <div class="product-img">
-                                                <a href="service/s1.html">
+                                                <a href="{{route('service-show', [app()->getLocale(), $service->id])}}">
                                                     <img class="primary-img" src="/storage/{{$service->image}}" alt="{{$service->name}}">
                                                 </a>
                                             </div>
                                             <div class="hiraola-product_content">
                                                 <div class="product-desc_info">
-                                                    <h6>@lang("Company"):  <a class="product-name" href="service/s1.html">{{$service->company->name}}</a></h6>
-                                                    <h6>@lang("Service"): <a class="product-name" href="single-product.html"> {{$service->name}} </a></h6>
+                                                    <h6>@lang("Company"):  <a class="product-name" href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$service->company->id])}}">{{$service->company->name}}</a></h6>
+                                                    <h6>@lang("Service"): <a class="product-name" href="{{route('service-show', [app()->getLocale(), $service->id])}}"> {{$service->name}} </a></h6>
                                                     <div class="product-short_desc">
                                                         <p> {{$service->desc}} </p>
                                                     </div>
                                                 </div>
                                                 <div class="add-actions">
                                                     <ul>
-                                                        <li><a class="hiraola-add_cart" href="service/s1.html" data-toggle="tooltip" data-placement="top" title="Batafsil Information">@lang("More")</a></li>
+                                                        <li><a class="hiraola-add_cart" href="{{route('service-show', [app()->getLocale(), $service->id])}}" data-toggle="tooltip" data-placement="top" title="Batafsil Information">@lang("More")</a></li>
                                                         
                                                     </ul>
                                                 </div>

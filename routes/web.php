@@ -26,6 +26,8 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/services/for-inevstors', 'PageController@forinvestors')->name('services-for-investors');
     Route::get('/services/check-company', 'PageController@checkcompany')->name('check-company');
     Route::get('/services', 'PageController@services')->name('services');
+    Route::get('/service/{id}', 'PageController@serviceshow')->name('service-show');
+
 
 
     

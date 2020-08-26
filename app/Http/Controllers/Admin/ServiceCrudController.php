@@ -57,7 +57,7 @@ class ServiceCrudController extends CrudController
         CRUD::addColumn(
             [
                 'name' => 'name_en', // The db column name
-                'label' => "Name", // Table column heading
+                'label' => "Type", // Table column heading
                 // 'prefix' => "Name: ",
                 // 'suffix' => "(user)",
                 // 'limit' => 120, // character limit; default is 50;
@@ -154,7 +154,7 @@ class ServiceCrudController extends CrudController
         CRUD::addField(
             [   
                 'name'  => 'name_en',
-                'label' => "Name En",
+                'label' => "Type of service in English",
                 'type'  => 'text',
             ],
         );
@@ -162,7 +162,7 @@ class ServiceCrudController extends CrudController
         CRUD::addField(
             [   
                 'name'  => 'name_uz',
-                'label' => "Name Uz",
+                'label' => "Type of service in Uzbek",
                 'type'  => 'text',
             ],
         );
@@ -170,14 +170,14 @@ class ServiceCrudController extends CrudController
         CRUD::addField(
             [   
                 'name'  => 'name_ru',
-                'label' => "Name Ru",
+                'label' => "Type of service in Russian",
                 'type'  => 'text',
             ],
         );
         CRUD::addField(
             [   
                 'name'  => 'service_en',
-                'label' => "Service En",
+                'label' => "Name of Service En",
                 'type'  => 'text',
             ],
         );
@@ -185,7 +185,7 @@ class ServiceCrudController extends CrudController
         CRUD::addField(
             [   
                 'name'  => 'service_uz',
-                'label' => "Service Uz",
+                'label' => "Name of Service Uz",
                 'type'  => 'text',
             ],
         );
@@ -193,7 +193,7 @@ class ServiceCrudController extends CrudController
         CRUD::addField(
             [   
                 'name'  => 'service_ru',
-                'label' => "Service Ru",
+                'label' => "Name of Service Ru",
                 'type'  => 'text',
             ],
         );

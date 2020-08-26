@@ -80,4 +80,12 @@ class PageController extends Controller
         $services = Service::all();
         return view('services.services')->with('services', $services);
     }
+
+    public function serviceshow($language, $id){
+        // $company = Company::with('category')->find($id);
+        $service_id = $id;
+        $service= Service::find($id);
+
+        return view('services.service-show')->with(compact('service', 'service_id'));
+    }
 }
