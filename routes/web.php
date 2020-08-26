@@ -19,14 +19,20 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/', 'PageController@index')->name('main');
     Route::get('/local-comp', 'PageController@localcomp')->name('local-comp');
     Route::get('/foreign-comp', 'PageController@foreigncomp')->name('foreign-comp');
+    
     Route::get('/company/{id}', 'PageController@companyshow')->name('comp-show');
     Route::get('/company/{id}/{pid}', 'PageController@productshow')->name('product-show');
+    
     Route::get('/category/{id}', 'PageController@categoryshow')->name('category-show');
     Route::get('/subcategory/{cid}/{sid}', 'PageController@subcategoryshow')->name('subcategory-show');
+    
     Route::get('/services/for-inevstors', 'PageController@forinvestors')->name('services-for-investors');
     Route::get('/services/check-company', 'PageController@checkcompany')->name('check-company');
     Route::get('/services', 'PageController@services')->name('services');
     Route::get('/service/{id}', 'PageController@serviceshow')->name('service-show');
+
+    Route::get('/investments', 'PageController@investments')->name('investments');
+    
 
 
 

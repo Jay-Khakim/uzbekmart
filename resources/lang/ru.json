@@ -100,7 +100,25 @@
     "Write code <br/> in the picture": "Введите код <br/> на рисунке",
     "Service type": "Тип услуги",
     "Website": "Сайт",
-    "About Service": "Об услуги"
+    "About Service": "Об услуги",
+    "price": "цена",
+    "Amount of investments: USD": "Объем инвестиций: USD",
+    "Regions": "Регионы",
+    "Tashkent city": "г. Ташкент",
+    "Tashkent region": "Ташкентская областьs",
+    "Andijan region": "Андижанская область",
+    "Bukhara region": "Бухарская область",
+    "Fergana regiron": "Ферганская облать",
+    "Jizzakh region": "Джиззакская область",
+    "Khorezm region": "Хорезмская облать",
+    "Namangan region": "Наманганская область",
+    "Navoiy region": "Навоинская область",
+    "Kashkadarya region": "Кашкадаринская область",
+    "Karakalpakstan Republic": "Республика Каракалпакистан",
+    "Samarkhand region": "Самаркандская область",
+    "Sirdarya region": "Cырдарьинская область ",
+    "Surkhandarya region": "Cурхандарьинская область",
+    "Select": "Выбрать"
 
 
 

@@ -8,6 +8,7 @@ use App\Models\Subcategory;
 use App\Models\Company;
 use App\Models\Product;
 use App\Models\Service;
+use App\Models\Investment;
 
 class PageController extends Controller
 {
@@ -87,5 +88,11 @@ class PageController extends Controller
         $service= Service::find($id);
 
         return view('services.service-show')->with(compact('service', 'service_id'));
+    }
+
+    public function investments(){
+        $categories = Category::all();
+        $investments = Investment::with('category')->paginate(20);
+        return view('investments.investments')->with(compact('categories', 'investments'));
     }
 }
