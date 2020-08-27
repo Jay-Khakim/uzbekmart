@@ -28,6 +28,17 @@ class Investment extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+    protected $lang_fields =[
+        'title', 'avaragepower', 'address'
+    ];
+
+    public function __get($attribute){
+        if (in_array($attribute, $this->lang_fields)) { 
+            $localeSpecificAttribute = $attribute.'_'.app()->getLocale();
+            return $this->{$localeSpecificAttribute};
+        }   
+        return parent::__get($attribute);
+    }
     
 
     /*

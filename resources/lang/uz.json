@@ -109,7 +109,7 @@
     "Website": "Veb-sayt",
     "About Service": "Xizmat xaqida",
     "price": "qiymati",
-    "Amount of investments: USD": "Investitsiyalar hajmi: USD",
+    "Amount of investments: ": "Investitsiyalar hajmi: ",
     "Regions": "Viloyatlar",
     "Tashkent city": "Toshkent shahar",
     "Tashkent region": "Toshkent viloyati",
@@ -125,7 +125,15 @@
     "Samarkhand region": "Samarqand viloyati",
     "Sirdarya region": "Sirdaryo viloyati",
     "Surkhandarya region": "Surxondaryo viloyati",
-    "Select": "Tanlash"
+    "Select": "Tanlash",
+    "Project name": "Loyiha nomi",
+    "Category": "Turkum",
+    "Avarage power": "O'lchov miqdori",
+    "Amount ($ mln)": "Umumiy qiymati ($ mln)",
+    "IRR (fin), for 10 years (%)": "IRR (fin), 10 yil uchun (%)",
+    "NPV (fin), for 10 years (%)": "NPC (fin), 10 yil uchun (%)",
+    "Payback (mounths)": "Qoplanish muddati (oy)",
+    "Work places": "Ish o'rinlar"
 
 
 

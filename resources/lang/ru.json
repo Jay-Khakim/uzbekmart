@@ -102,7 +102,7 @@
     "Website": "Сайт",
     "About Service": "Об услуги",
     "price": "цена",
-    "Amount of investments: USD": "Объем инвестиций: USD",
+    "Amount of investments: ": "Объем инвестиций: ",
     "Regions": "Регионы",
     "Tashkent city": "г. Ташкент",
     "Tashkent region": "Ташкентская областьs",
@@ -118,7 +118,11 @@
     "Samarkhand region": "Самаркандская область",
     "Sirdarya region": "Cырдарьинская область ",
     "Surkhandarya region": "Cурхандарьинская область",
-    "Select": "Выбрать"
+    "Select": "Выбрать",
+    "Project name": "Project name in russian",
+    "Category": "Category in russian",
+    "Avarage power": "O'lchov miqdori",
+    "Amount ($ mln)": "Umumiy qiymati in russian ($ mln)"
 
 
 

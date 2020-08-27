@@ -41,18 +41,27 @@
                         <div class="hiraola-sidebar-catagories_area">
                             <div class="hiraola-sidebar_categories">
                                 <div class="hiraola-categories_title">
-                                    <h5 align="center">@lang("Amount of investments: USD")</h5>
+                                    <h5 align="center">@lang("Amount of investments: ")</h5>
+                                    <h5 align="center">$
+                                        @php
+                                            $sum = 0;
+                                            foreach($investments as $invest){
+                                                $sum = $sum + $invest->amount;
+                                            }
+                                            echo $sum;
+                                        @endphp 
+                                    </h5>
                                 </div>
-                                <div class="price-filter">
+                                {{-- <div class="price-filter">
                                     <div id="slider-range"></div>
                                     <div class="price-slider-amount">
                                         <div class="label-input">
                                             <label>@lang("price") : </label>
                                             <input type="text" id="amount" name="price" placeholder="Add Your Price" />
                                         </div>
-                                        {{-- <button type="button">Filter</button> --}}
+                                        <button type="button">Filter</button>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             
                             <div class="category-module hiraola-sidebar_categories">
@@ -111,153 +120,75 @@
                             </div>
                             <div id="sort1" class="product-item-selection_area">
                                 <div class="product-short">
-                                    <label class="select-label">Tarmoqlar:</label><br>
+                                    <label class="select-label">@lang("Categories"):</label><br>
                                     <select class="nice-select">
-                                        <option value="1">Tanlash</option>
-                                        <option value="2">Qurilish materiallari</option>
-                                        <option value="3">Oziq-ovqat sanoati </option>
-                                        <option value="4">Yengil sanoat</option>
-                                        <option value="5">Qishloq xo‘jaligi</option>
-                                        <option value="5">Boshqa sanoat</option>
-                                        <option value="5">Mashinasozlik</option>
-                                        <option value="5">Elektrtexnika sanoati </option>
-                                        <option value="5">Kimyo sanoati</option>
-                                        <option value="5">Xizmat ko‘rsatish</option>
+                                        <option value="selected">@lang("Select")</option>
+                                        @foreach ($categories as $cat)
+                                            <option value=" {{$cat->name_en}} ">{{$cat->name}}</option>     
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
-                            <h4 align="center"><input type="button" name="sort" id="btn22" class="btn btn-primary" value="Izlash"></h4>
+                            <h4 align="center"><input type="button" name="sort" id="btn22" class="btn btn-primary" value="@lang('Search')"></h4>
                             
                         </div>
-                        <div class="shop-product-wrap grid gridview-3 row">
+                        <div class="shop-product-wrap grid listview row">
                             
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="company/local/l32.html">
-                                                <img class="primary-img" src="assets/images/company/local/032.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <span class="sticker-2">New</span>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6 align="center"><a class="product-name" href="company/local/l32.html">“UNICHEM” MCHJ</a></h6>
-                                                
+                            @foreach ($investments as $invest)
+                                <div class="col-lg-4">
+                                    {{-- <div class="slide-item">
+                                        <div class="single_product">
+                                            <div class="product-img">
+                                                <a href="company/local/l32.html">
+                                                    <img class="primary-img" src="/assets/images/i/01.jpg" alt="{{$invest->title}}">
+                                                </a>
+                                                <span class="sticker-2">New</span>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="company/local/l32.html">
-                                                <img class="primary-img" src="assets/images/company/local/032.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="company/local/l32.html">“UNICHEM” MCHJ</a></h6>
-                                                
-                                                <div class="product-short_desc">
-                                                    <p>Selikon, germetika mahsulotlari</p>
+                                            <div class="hiraola-product_content">
+                                                <div class="product-desc_info">
+                                                    <h6 align="center"><a class="product-name" href="company/local/l32.html">“ {{$invest->title}} "</a></h6>
+                                                    
                                                 </div>
                                             </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="company/local/l32.html" data-toggle="tooltip" data-placement="top" title="More info">Batafsil</a></li>
-                                                    </li>
-                                                </ul>
+                                        </div>
+                                    </div> --}}
+                                    <div class="list-slide_item">
+                                        <div class="single_product">
+                                            <div class="product-img">
+                                                <a href="company/local/l32.html">
+                                                    <img class="primary-img" src="/assets/images/i/01.jpg" alt="{{$invest->title}}">
+                                                </a>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="company/local/l32.html">
-                                                <img class="primary-img" src="assets/images/company/local/032.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <span class="sticker-2">New</span>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6 align="center"><a class="product-name" href="company/local/l32.html">“UNICHEM” MCHJ</a></h6>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="company/local/l32.html">
-                                                <img class="primary-img" src="assets/images/company/local/032.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="company/local/l32.html">“UNICHEM” MCHJ</a></h6>
-                                                
-                                                <div class="product-short_desc">
-                                                    <p>Selikon, germetika mahsulotlari</p>
+                                            <div class="hiraola-product_content">
+                                                <div class="product-desc_info">
+                                                    <h4><a class="product-name" href="company/local/l32.html">“{{$invest->title}}"</a></h4>
+                                                    
+                                                    <div class="product-short_desc">
+                                                        {{-- <p>{{$invest->amount}}</p> --}}
+                                                        <b>@lang("Address"): </b>{{$invest->address}}<br>
+                                                        <b>@lang("Project name"):</b> {{$invest->title}} <br>
+                                                        <b>@lang("Category"):</b> {{$invest->category->name}}<br>
+                                                        <b>@lang("Avarage power")</b>: {{$invest->avaragepower}}<br>
+                                                        <b>@lang("Amount ($ mln)")</b>: {{$invest->amount}} <br>
+                                                        <b>@lang("IRR (fin), for 10 years (%)")</b>: {{$invest->iir}} <br>
+                                                        <b>@lang("NPV (fin), for 10 years (%)")</b>: {{$invest->npv}} <br>
+                                                        <b>@lang("Payback (mounths)")</b>: {{$invest->payback}} <br>
+                                                        <b>@lang("Work places")</b>: {{$invest->workplaces}} <br>
+                                                        <b>@lang("Phone")</b>: +998 71 145 45 02 <br>
+                                                        
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="company/local/l32.html" data-toggle="tooltip" data-placement="top" title="More info">Batafsil</a></li>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="slide-item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="company/local/l32.html">
-                                                <img class="primary-img" src="assets/images/company/local/032.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                            <span class="sticker-2">New</span>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6 align="center"><a class="product-name" href="company/local/l32.html">“UNICHEM” MCHJ</a></h6>
-                                                
+                                                {{-- <div class="add-actions">
+                                                    <ul>
+                                                        <li><a class="hiraola-add_cart" href="company/local/l32.html" data-toggle="tooltip" data-placement="top" title="More info">Batafsil</a></li>
+                                                        </li>
+                                                    </ul>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="list-slide_item">
-                                    <div class="single_product">
-                                        <div class="product-img">
-                                            <a href="company/local/l32.html">
-                                                <img class="primary-img" src="assets/images/company/local/032.jpg" alt="Hiraola's Product Image">
-                                            </a>
-                                        </div>
-                                        <div class="hiraola-product_content">
-                                            <div class="product-desc_info">
-                                                <h6><a class="product-name" href="company/local/l32.html">“UNICHEM” MCHJ</a></h6>
-                                                
-                                                <div class="product-short_desc">
-                                                    <p>Selikon, germetika mahsulotlari</p>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul>
-                                                    <li><a class="hiraola-add_cart" href="company/local/l32.html" data-toggle="tooltip" data-placement="top" title="More info">Batafsil</a></li>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            @endforeach
                         {{-- <div class="row">
                             <div class="col-lg-12">
                                 <div class="hiraola-paginatoin-area">
