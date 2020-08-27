@@ -22,7 +22,7 @@ class CreateCompaniesTable extends Migration
             $table->string('name_en', 300);
             $table->string('name_uz', 300);
             $table->string('name_ru', 300);
-            $table->string('slug_en', 300)->unique();
+            $table->string('slug_en', 300)->unique()->nullable();
             $table->longText('desc_en');
             $table->longText('desc_uz');
             $table->longText('desc_ru');

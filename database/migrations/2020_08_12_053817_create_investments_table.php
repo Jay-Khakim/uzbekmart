@@ -20,7 +20,7 @@ class CreateInvestmentsTable extends Migration
             $table->string('title_en', 300);
             $table->string('title_uz', 300);
             $table->string('title_ru', 300);
-            $table->string('slug_en', 300)->unique();
+            $table->string('slug_en', 300)->unique()->nullable();
             $table->string('address_en');
             $table->string('address_uz');
             $table->string('address_ru');

@@ -19,7 +19,7 @@ class CreateSubcategoriesTable extends Migration
             $table->string('name_en', 300);
             $table->string('name_uz', 300);
             $table->string('name_ru', 300);
-            $table->string('slug_en', 300)->unique();
+            $table->string('slug_en', 300)->unique()->nullable();
             $table->softDeletes();
             $table->timestamps();
             $table->foreign('category_id')

@@ -33,6 +33,10 @@ Route::group(['prefix' => '{language}'], function () {
 
     Route::get('/investments', 'PageController@investments')->name('investments');
     
+    Route::get('/buy-requests', 'PageController@buyrequest')->name('buy-request');
+    Route::get('/single-request/{id}', 'PageController@singlerequest')->name('single-request');
+
+    
 
 
 

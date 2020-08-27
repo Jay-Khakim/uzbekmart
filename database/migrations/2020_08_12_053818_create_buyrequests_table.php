@@ -30,6 +30,10 @@ class CreateBuyrequestsTable extends Migration
             $table->char('amount_en', 40);
             $table->char('amount_ru', 40);
             $table->char('amount_uz', 40);
+            $table->char('phone', 40);
+            $table->string('address_en', 200);
+            $table->string('address_uz', 200);
+            $table->string('address_ru', 200);
             $table->string('image', 300)->nullable();
             $table->softDeletes();
             $table->timestamps();

@@ -30,7 +30,7 @@ class BlogRequest extends FormRequest
             'title_en' => 'required|min:4|max:300',
             'title_uz' => 'required|min:4|max:300',
             'title_ru' => 'required|min:4|max:300',
-            'slug_en' => 'required|min:4|max:300',
+            'slug_en' => 'max:300',
             'body_en' => 'required|min:4|max:5000',
             'body_uz' => 'required|min:4|max:5000',
             'body_ru' => 'required|min:4|max:5000',

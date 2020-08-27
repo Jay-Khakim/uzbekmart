@@ -29,7 +29,7 @@ class ProductRequest extends FormRequest
             'name_en' => 'required|min:5|max:255',
             'name_uz' => 'required|min:5|max:255',
             'name_ru' => 'required|min:5|max:255',
-            'slug_en' => 'required|min:5|max:255',
+            'slug_en' => 'max:255',
             'desc_en' => 'required|min:5|max:3000',
             'desc_uz' => 'required|min:5|max:3000',
             'desc_ru' => 'required|min:5|max:3000',

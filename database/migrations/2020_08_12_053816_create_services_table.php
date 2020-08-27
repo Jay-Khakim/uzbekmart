@@ -23,7 +23,7 @@ class CreateServicesTable extends Migration
             $table->string('service_en', 300);
             $table->string('service_uz', 300);
             $table->string('service_ru', 300);
-            $table->string('slug_en', 300)->unique();
+            $table->string('slug_en', 300)->unique()->nullable();
             $table->longText('desc_en');
             $table->longText('desc_uz');
             $table->longText('desc_ru');

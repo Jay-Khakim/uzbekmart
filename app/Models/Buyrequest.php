@@ -65,7 +65,7 @@ class Buyrequest extends Model
     }
 
     protected $lang_fields =[
-        'name', 'company', 'wants', 'amount'
+        'name', 'company', 'wants', 'amount', 'address'
     ];
 
     public function __get($attribute){

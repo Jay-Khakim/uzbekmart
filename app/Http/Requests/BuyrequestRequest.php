@@ -35,12 +35,16 @@ class BuyrequestRequest extends FormRequest
             'company_en' => 'required|min:5|max:255',
             'company_uz' => 'required|min:5|max:255',
             'company_ru' => 'required|min:5|max:255',
+            'address_en' => 'required|min:5|max:255',
+            'address_uz' => 'required|min:5|max:255',
+            'address_ru' => 'required|min:5|max:255',
             'wants_en'	=> 'required|min:5|max:1000',
             'wants_uz'	=> 'required|min:5|max:1000',
             'wants_ru'	=> 'required|min:5|max:1000',
             'amount_en'	=> 'required|min:5|max:20',
             'amount_ru'	=> 'required|min:5|max:20',
             'amount_uz'	=> 'required|min:5|max:20',
+            'phone' => 'required',
             'image' => 'required'
         ];
     }

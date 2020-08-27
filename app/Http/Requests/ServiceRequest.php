@@ -32,7 +32,7 @@ class ServiceRequest extends FormRequest
             'service_en' => 'required|min:5|max:255',
             'service_uz' => 'required|min:5|max:255',
             'service_ru' => 'required|min:5|max:255',
-            'slug_en' => 'required|min:5|max:255',
+            'slug_en' => 'max:255',
             'company_id'=>'required',
             // 'subcategory_id'=>'required',
             'tag_id'=>'required',

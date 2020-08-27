@@ -129,7 +129,7 @@ class BuyrequestCrudController extends CrudController
         CRUD::addField(
             [   
                 'name'  => 'name_en',
-                'label' => "Name in En",
+                'label' => "Title of what do you want in En",
                 'type'  => 'text',
             ],
         );
@@ -137,7 +137,7 @@ class BuyrequestCrudController extends CrudController
         CRUD::addField(
             [   
                 'name'  => 'name_uz',
-                'label' => "Name in Uz",
+                'label' => "Title of what do you want in Uz",
                 'type'  => 'text',
             ],
         );
@@ -145,7 +145,7 @@ class BuyrequestCrudController extends CrudController
         CRUD::addField(
             [   
                 'name'  => 'name_ru',
-                'label' => "Name in Ru",
+                'label' => "Title of what do you want in Ru",
                 'type'  => 'text',
             ],
         );
@@ -251,6 +251,40 @@ class BuyrequestCrudController extends CrudController
         CRUD::field('amount_en')->size(4);
         CRUD::field('amount_uz')->size(4);
         CRUD::field('amount_ru')->size(4);
+        CRUD::addField(
+            [   
+                'name'  => 'address_en',
+                'label' => "Address in En",
+                'type'  => 'text',
+            ],
+        );
+        CRUD::addField(
+            [   
+                'name'  => 'address_uz',
+                'label' => "Address in Uz",
+                'type'  => 'text',
+            ],
+        );
+        CRUD::addField(
+            [   
+                'name'  => 'address_ru',
+                'label' => "Address in Ru",
+                'type'  => 'text',
+            ],
+        );
+
+       CRUD::addField(
+            [   // Number
+                'name' => 'phone',
+                'label' => 'Phone Number',
+                'type' => 'number',
+                
+                // optionals
+                // 'attributes' => ["step" => "any"], // allow decimals
+                'prefix'     => "+",
+                // 'suffix'     => ".00",
+            ],
+        );
         CRUD::addField(
             [
                 'label' => "Image",

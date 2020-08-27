@@ -31,7 +31,7 @@ class InvestmentRequest extends FormRequest
             'title_en' => 'required|min:5|max:200',
             'title_ru' => 'required|min:5|max:200',
             'title_uz' => 'required|min:5|max:200',
-            'slug_en' => 'required|min:5|max:200',
+            'slug_en' => 'max:200',
             'address_en' => 'required|min:5|max:200',
             'address_ru' => 'required|min:5|max:200',
             'address_uz' => 'required|min:5|max:200',

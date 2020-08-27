@@ -5,7 +5,7 @@
     "News": "Новости",
     "E-Mail Address": "Адрес электронной почты",
 
-    "Categories": "КАТЕГОРИИ",
+    "Categories": "Категории",
     "The first online showroom in Uzbekistan": "Первый онлайн шоурум в Узбекистане",
     "Call center": "Колл-центр",
     "Enter your search key": "Введите ключ поиска",
@@ -120,9 +120,18 @@
     "Surkhandarya region": "Cурхандарьинская область",
     "Select": "Выбрать",
     "Project name": "Project name in russian",
-    "Category": "Category in russian",
+    "Category": "Категория",
     "Avarage power": "O'lchov miqdori",
-    "Amount ($ mln)": "Umumiy qiymati in russian ($ mln)"
+    "Amount ($ mln)": "Umumiy qiymati in russian ($ mln)",
+    "IRR (fin), for 10 years (%)": "ИРР, для 10 лет (%)",
+    "NPV (fin), for 10 years (%)": "НПВ, для 10 лет (%)",
+    "Payback (mounths)": "Окупаемость (месяц )",
+    "Work places": "Рабочие места",
+    "Buy or Request": "Запросы",
+    "Request": "Оставить запрос",
+    "Published at": "Опубликовано",
+    "Customer": "Заказчик",
+    "How mush": "Сколько"
 
 
 

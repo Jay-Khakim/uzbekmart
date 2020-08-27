@@ -9,6 +9,7 @@ use App\Models\Company;
 use App\Models\Product;
 use App\Models\Service;
 use App\Models\Investment;
+use App\Models\Buyrequest;
 
 class PageController extends Controller
 {
@@ -94,5 +95,17 @@ class PageController extends Controller
         $categories = Category::all();
         $investments = Investment::with('category')->paginate(20);
         return view('investments.investments')->with(compact('categories', 'investments'));
+    }
+
+    public function buyrequest(){
+        $categories = Category::all();
+        $buyrequests = Buyrequest::with('category')->paginate(20);
+        return view('buy-request.buy-request')->with(compact('categories', 'buyrequests'));
+    }
+
+    public function singlerequest($language, $id){
+        $buyrequest = Buyrequest::with('category')->find($id);
+
+        return view('buy-request.single-request')->with('buyrequest', $buyrequest);
     }
 }
