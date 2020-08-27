@@ -93,8 +93,8 @@
                     <div class="col-lg-9 order-1 order-lg-2">
                         <div class="shop-toolbar">
                             <div class="product-view-mode">
-                                <a class="active grid-3" data-target="gridview-3" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="fa fa-th"></i></a>
-                                <a class="list" data-target="listview" data-toggle="tooltip" data-placement="top" title="List View"><i class="fa fa-th-list"></i></a>
+                                {{-- <a class="active grid-3" data-target="gridview-3" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="fa fa-th"></i></a> --}}
+                                <a class=" active list" data-target="listview" data-toggle="tooltip" data-placement="top" title="List View"><i class="fa fa-th-list"></i></a>
                             </div>
                              <div class="product-item-selection_area">
                                 <div class="product-short">
