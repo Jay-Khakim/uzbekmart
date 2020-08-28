@@ -79,7 +79,7 @@
                                         </li>
                                         <li><a href="{{route('investments', app()->getLocale())}}">{{__("Investment projects")}}</a></li>
                                         <li><a href="{{route('buy-request', app()->getLocale())}}">{{__("Buy/Requests")}}</a></li>
-                                        <li><a href="contact.html">{{__("Contacts")}}</a></li>
+                                        <li><a href="{{route("contacts", app()->getLocale())}}">{{__("Contacts")}}</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -182,7 +182,7 @@
                                     </a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="contact.html">
+                                    <a href="{{route("contacts", app()->getLocale())}}">
                                         <span class="mm-text">{{__("Contacts")}}</span>
                                     </a>
                                 </li>

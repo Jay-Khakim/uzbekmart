@@ -108,4 +108,8 @@ class PageController extends Controller
 
         return view('buy-request.single-request')->with('buyrequest', $buyrequest);
     }
+
+    public function contacts(){
+        return view('contacts');
+    }
 }
