@@ -59,7 +59,7 @@
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
-                                        <a href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$cat_id])}}">
+                                        <a href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$one->id])}}">
                                             <img class="primary-img" src="/storage/{{$one->image}}" alt="{{$one->name}}">
                                         </a>
 
