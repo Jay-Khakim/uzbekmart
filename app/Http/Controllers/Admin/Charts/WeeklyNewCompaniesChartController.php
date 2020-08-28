@@ -18,7 +18,7 @@ class WeeklyNewCompaniesChartController extends ChartController
 
         // MANDATORY. Set the labels for the dataset points
         $this->chart->labels([
-            'Today', 'Week'
+            'Week'
         ]);
 
         // RECOMMENDED. Set URL that the ChartJS library should call, to get its data using AJAX.
@@ -36,12 +36,22 @@ class WeeklyNewCompaniesChartController extends ChartController
      */
     public function data()
     {
-        $companies_created_today = \App\Models\Tag::whereDate('created_at', date('Y-m-d'))->count();
+        $companies_created_week = \App\Models\Company::where('created_at', '>=', now()->subDays(7))->where('created_at', '<=', now())->count();
 
         $this->chart->dataset('Companies', 'bar', [
-                    $companies_created_today ,
+                    $companies_created_week ,
                 ])
             ->color('rgba(205, 32, 31, 1)')
             ->backgroundColor('rgba(205, 32, 31, 0.4)');
     }
-}
+    public function data1()
+    {
+        $companies_created_week = \App\Models\Category::where('created_at', '>=', now()->subDays(7))->where('created_at', '<=', now())->count();
+
+        $this->chart->dataset('Categories', 'bar', [
+                    $companies_created_week ,
+                ])
+            ->color('rgba(205, 32, 31, 1)')
+            ->backgroundColor('rgba(205, 32, 31, 0.4)');
+    }
+}   
