@@ -4,7 +4,7 @@
         <a href="{{route('product-show', ['language' => 'uz', 'id' => $company->id, 'pid'=>$single->id])}}"><img src="/assets/images/menu/icon/3.jpg" alt="JB's Language Icon">Uz</a>
     </li>
     <li>
-        <a href="{{ route('product-show', ['language' => 'en', 'id' => $company->id, 'pid'=>$single->id])}}"><img src="/assets/images/menu/icon/1.jpg" alt="JB's Language Icon">En</a>
+        <a href="{{route('product-show', ['language' => 'en', 'id' => $company->id, 'pid'=>$single->id])}}"><img src="/assets/images/menu/icon/1.jpg" alt="JB's Language Icon">En</a>
     </li>
     <li>
         <a href="{{route('product-show', ['language' => 'ru', 'id' => $company->id, 'pid'=>$single->id])}}"><img src="/assets/images/menu/icon/2.jpg" alt="JB's Language Icon">Ru</a>
@@ -25,7 +25,7 @@
                 <ul>
                     <li><a href="{{route('main' ,app()->getLocale())}}">@lang("Home")</a></li>
                     <li class="active">
-                        @if($company->companytype === 'local')
+                        @if($single->company->companytype === 'local')
                             @lang("Local company")
                         @else 
                             @lang("Foreign company")
@@ -52,30 +52,26 @@
                     <div class="col-lg-7 col-md-7">
                         <div class="sp-content">
                             <div class="sp-heading">
-                                <h5><a href="{{route('product-show', ['language' => 'ru', 'id' => $company->id, 'pid'=>$single->id])}}">{{$single->name}}</a></h5>
+                                <h5><a href="{{route('product-show', ['language' => 'ru', 'id' => $single->company->id, 'pid'=>$single->id])}}">{{$single->name}}</a></h5>
                             </div>
                             
                             <hr>
                             <div class="sp-essential_stuff">
                                 <ul>
-                                    <h5><span class="badge  badge-primary">#{{$company->category->name}}</span></h5>
+                                    <h5><span class="badge  badge-primary">#{{$single->company->category->name}}</span></h5>
                                     <br>
-                                    <li><b>@lang("Company"): </b> <span>&nbsp;&nbsp; <a href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$company->id])}}">{{$company->name}}</a> </span> </li>
+                                    <li><b>@lang("Company"): </b> <span>&nbsp;&nbsp; <a href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$single->company->id])}}">{{$company->name}}</a> </span> </li>
                                     <br>
                                     <li> <b>@lang("Type"):&nbsp;&nbsp; </b>
-                                        @if($company->companytype === 'local')
+                                        @if($single->company->companytype === 'local')
                                             @lang("Local company")
                                         @else 
                                             @lang("Foreign company")
                                         @endif
                                     </li>
                                     <br>
-                                    <li><b>@lang("Website"): </b><span>&nbsp;&nbsp;
-                                        @if($single->web)
-                                            <a href="{{$single->web}}">{{$single->web}}</a>
-                                        @else 
-                                            @lang("Not exist yet")
-                                        @endif
+                                    <li><b>@lang("Website"): <a href="{{$single->company->web}}">{{$single->company->web}}</a></b><span>&nbsp;&nbsp;
+                                        
                                     </span>
                                     </li>
                                     <br>
@@ -137,7 +133,7 @@
                                 <div class="slide-item">
                                     <div class="single_product">
                                         <div class="product-img">
-                                            <a href="{{route('product-show', ['language'=>app()->getLocale(), 'id'=>$company->id, 'pid'=>$product->id])}}">
+                                            <a href="{{route('product-show', ['language'=>app()->getLocale(), 'id'=>$product->company->id, 'pid'=>$product->id])}}">
                                                 <img class="primary-img" src="/storage/{{$product->image}} " alt="{{$product->name}}">
                                             </a>
                                             {{-- <span class="sticker-2">{{$product->name}}</span> --}}
