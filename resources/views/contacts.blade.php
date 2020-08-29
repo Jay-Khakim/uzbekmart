@@ -24,7 +24,7 @@
             <div class="breadcrumb-content">
                 <h2>@lang("Contacts")</h2>
                 <ul>
-                    <li><a href="index.html">@lang("Home")</a></li>
+                    <li><a href="{{route("main", app()->getLocale())}}">@lang("Home")</a></li>
                     <li class="active">@lang("Contacts")</li>
                 </ul>
             </div>
