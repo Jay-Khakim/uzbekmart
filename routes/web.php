@@ -38,6 +38,9 @@ Route::group(['prefix' => '{language}'], function () {
 
     Route::get('/contacts', 'PageController@contacts')->name('contacts');
 
+    Route::get('/blog', 'PageController@blogs')->name('blogs');
+    Route::get('/blog/{id}', 'PageController@blog')->name('single-blog');
+
 
     
 

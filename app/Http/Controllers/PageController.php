@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\Service;
 use App\Models\Investment;
 use App\Models\Buyrequest;
+use App\Models\Blog;
 
 class PageController extends Controller
 {
@@ -111,5 +112,15 @@ class PageController extends Controller
 
     public function contacts(){
         return view('contacts');
+    }
+
+    public function blogs(){
+        $blogs = Blog::all();
+        return view('blog.blogs')->with('blogs', $blogs);
+    }
+
+    public function blog($language, $id){
+        $blog = Blog::find($id);
+        return view('blog.blog')->with('blog', $blog);
     }
 }
