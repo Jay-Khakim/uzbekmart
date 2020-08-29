@@ -26,9 +26,9 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_en' => 'required|min:5|max:255',
-            'name_uz' => 'required|min:5|max:255',
-            'name_ru' => 'required|min:5|max:255',
+            'name_en' => 'required|min:2|max:255',
+            'name_uz' => 'required|min:2|max:255',
+            'name_ru' => 'required|min:2|max:255',
             'slug_en' => 'max:255',
             'desc_en' => 'required|min:5|max:3000',
             'desc_uz' => 'required|min:5|max:3000',

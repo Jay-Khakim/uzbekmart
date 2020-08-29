@@ -27,9 +27,9 @@ class SubcategoryRequest extends FormRequest
     {
         return [
             // 'categoty_id' => 'required',
-            'name_en' => 'required|min:5|max:255',
-            'name_uz' => 'required|min:5|max:255',
-            'name_ru' => 'required|min:5|max:255',
+            'name_en' => 'required|min:2|max:255',
+            'name_uz' => 'required|min:2|max:255',
+            'name_ru' => 'required|min:2|max:255',
             'slug_en' => 'max:255',
         ];
     }
