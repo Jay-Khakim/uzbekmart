@@ -127,4 +127,8 @@ class PageController extends Controller
     public function faq(){
         return view('faq');
     }
+
+    public function advertise(){
+        return view('advertise');
+    }
 }

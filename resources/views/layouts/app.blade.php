@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="/assets/css/plugins/lightgallery.min.css">
     <link rel="stylesheet" href="/assets/css/plugins/nice-select.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    @yield('css')
 
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
