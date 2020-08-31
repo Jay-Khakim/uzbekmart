@@ -123,4 +123,8 @@ class PageController extends Controller
         $blog = Blog::find($id);
         return view('blog.blog')->with('blog', $blog);
     }
+
+    public function faq(){
+        return view('faq');
+    }
 }

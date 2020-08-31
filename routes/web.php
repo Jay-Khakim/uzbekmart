@@ -41,6 +41,7 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/blog', 'PageController@blogs')->name('blogs');
     Route::get('/blog/{id}', 'PageController@blog')->name('single-blog');
 
+    Route::get('/faq', 'PageController@faq')->name('faq');
 
     
 

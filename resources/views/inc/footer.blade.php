@@ -169,7 +169,7 @@
                                         <div class="footer-widgets">
                                             <ul>
                                                 <li><a href=" {{route('blogs', app()->getLocale())}} ">@lang("Blog")</a></li>
-                                                <li><a href="faq.html">@lang("Services")</a></li>
+                                                <li><a href="{{route('faq', app()->getLocale())}}">@lang("FAQ")</a></li>
                                                 <li><a href="about-us.html">@lang("About Us")</a></li>
                                                 <li><a href="reklama.html">@lang("Advertise")</a></li>
                                             </ul>
