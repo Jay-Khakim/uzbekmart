@@ -155,13 +155,13 @@
                                     <div class="list-slide_item">
                                         <div class="single_product">
                                             <div class="product-img">
-                                                <a href="company/local/l32.html">
+                                                <a href="javascript:void(0)">
                                                     <img class="primary-img" src="/assets/images/i/01.jpg" alt="{{$invest->title}}">
                                                 </a>
                                             </div>
                                             <div class="hiraola-product_content">
                                                 <div class="product-desc_info">
-                                                    <h4><a class="product-name" href="company/local/l32.html">“{{$invest->title}}"</a></h4>
+                                                    <h4><a class="product-name" href="javascript:void(0)">“{{$invest->title}}"</a></h4>
                                                     
                                                     <div class="product-short_desc">
                                                         {{-- <p>{{$invest->amount}}</p> --}}
@@ -178,12 +178,6 @@
                                                         
                                                     </div>
                                                 </div>
-                                                {{-- <div class="add-actions">
-                                                    <ul>
-                                                        <li><a class="hiraola-add_cart" href="company/local/l32.html" data-toggle="tooltip" data-placement="top" title="More info">Batafsil</a></li>
-                                                        </li>
-                                                    </ul>
-                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
