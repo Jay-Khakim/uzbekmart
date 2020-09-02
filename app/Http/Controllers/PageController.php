@@ -131,4 +131,10 @@ class PageController extends Controller
     public function advertise(){
         return view('advertise');
     }
+
+    public function aboutus(){
+        $companies = Company::all();
+        $products = Product::all();
+        return view('about')->with(compact('companies', 'products'));
+    }
 }

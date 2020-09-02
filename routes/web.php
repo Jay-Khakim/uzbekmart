@@ -45,6 +45,8 @@ Route::group(['prefix' => '{language}'], function () {
 
     Route::get('/advertise', 'PageController@advertise')->name('advertise');
 
+    Route::get('/about-us', 'PageController@aboutus')->name('about-us');
+
 
     
 

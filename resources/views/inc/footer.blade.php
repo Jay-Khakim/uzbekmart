@@ -170,7 +170,7 @@
                                             <ul>
                                                 <li><a href=" {{route('blogs', app()->getLocale())}} ">@lang("Blog")</a></li>
                                                 <li><a href="{{route('faq', app()->getLocale())}}">@lang("FAQ")</a></li>
-                                                <li><a href="about-us.html">@lang("About Us")</a></li>
+                                                <li><a href="{{route('about-us', app()->getLocale())}}">@lang("About Us")</a></li>
                                                 <li><a href="{{route('advertise', app()->getLocale())}}">@lang("Advertise")</a></li>
                                             </ul>
                                         </div>
