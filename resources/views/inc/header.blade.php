@@ -40,10 +40,15 @@
                         </div>
                         <div class="col-lg-9">
                             <div class="hm-form_area">
-                                <form action="#" class="hm-searchbox">
-                                    <input type="text" placeholder="{{__("Enter your search key")}} ...">
+                                <form action="{{route('search', app()->getLocale())}}" class="hm-searchbox" type="get">
+                                    <input type="search" name="query" placeholder="{{__("Enter your search key")}} ...">
                                     <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
                                 </form>
+                                {{-- <form action="{{url('search'), app()->getLocale()}}" class="hm-searchbox" type="get">
+                                    @csrf
+                                    <input style="border-radius: 8px;" name="query" type="search" placeholder="{{__("Search")}}...">
+                                    <button style=" padding: 3px;"  class="search_btn" type="submit"><i class="ion-ios-search-strong" style="color: white;"></i></button>
+                                </form> --}}
                             </div>
                         </div>
                     </div>
@@ -86,10 +91,11 @@
                         </div>
                         <div class="col-lg-3 col-md-8 col-sm-8">
                             <div id="search21" class="mobile-menu_btn offcanvas-inner_search pt-2 d-lg-none d-block" align="center">
-                                        <form action="#" class="hm-searchbox">
-                                                <input style="border-radius: 8px;" type="text" placeholder="{{__("Search")}}...">
-                                                <button style=" padding: 3px;"  class="search_btn" type="submit"><i class="ion-ios-search-strong" style="color: white;"></i></button>
-                                        </form>
+                                <form action="{{url('search'), app()->getLocale()}}" class="hm-searchbox" type="get">
+                                    @csrf
+                                    <input style="border-radius: 8px;" name="query" type="search" placeholder="{{__("Search")}}...">
+                                    <button style=" padding: 3px;"  class="search_btn" type="submit"><i class="ion-ios-search-strong" style="color: white;"></i></button>
+                                </form>
                                 </div>
                             <div class="header-right_area">
                                 <ul>

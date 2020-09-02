@@ -38,7 +38,7 @@ class PageController extends Controller
 
     public function companyshow($language, $id){
         $company = Company::with('category')->find($id);
-        $products= Product::with('company')->where('company_id', $id)->paginate(5);
+        $products= Product::with('company')->where('company_id', $id)->get();
 
         return view('companies.comp-show')->with(compact('company', 'products'));
     }
@@ -136,5 +136,97 @@ class PageController extends Controller
         $companies = Company::all();
         $products = Product::all();
         return view('about')->with(compact('companies', 'products'));
+    }
+
+    public function search(){
+        $stat_companies = Company::all();
+        $stat_products = Product::all();
+        $stat_blogs = Blog::all();
+        $stat_services = Service::all();
+        $stat_buyrequests = Buyrequest::all();
+        $search_text = $_GET['query'];
+        $companies = Company::where('name_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('name_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('name_ru', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('desc_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('desc_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('desc_ru', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('companytype', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('email', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('address_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('address_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('address_ru', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('web', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('phone', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('email', 'LIKE', '%'.$search_text.'%')
+        ->with('category')->get();
+
+        $products = Product::where('name_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('name_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('name_ru', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('desc_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('desc_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('desc_ru', 'LIKE', '%'.$search_text.'%')
+        ->with('company')->get();
+
+        $blogs = Blog::where('title_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('title_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('title_ru', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('body_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('body_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('body_ru', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('created_at', 'LIKE', '%'.$search_text.'%')->get();
+
+        $buyrequests = Buyrequest::where('name_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('name_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('name_ru', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('amount_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('amount_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('amount_ru', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('phone', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('created_at', 'LIKE', '%'.$search_text.'%')->get();
+
+        $investments = Investment::where('title_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('title_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('title_ru', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('address_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('address_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('address_ru', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('avaragepower_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('avaragepower_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('avaragepower_ru', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('amount', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('iir', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('npv', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('payback', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('workplaces', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('created_at', 'LIKE', '%'.$search_text.'%')->get();
+
+        $services = Service::where('service_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('service_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('service_ru', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('desc_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('desc_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('desc_ru', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('address_en', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('address_uz', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('address_ru', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('phone', 'LIKE', '%'.$search_text.'%')
+        ->orWhere('created_at', 'LIKE', '%'.$search_text.'%')->get();
+
+
+        return view('search')->with(compact(
+            'companies',
+            'products',
+            "blogs",
+            'buyrequests',
+            'investments',
+            'services',
+            'stat_companies',
+            'stat_products',
+            'stat_blogs',
+            'stat_services',
+            'stat_buyrequests'
+        ));
     }
 }

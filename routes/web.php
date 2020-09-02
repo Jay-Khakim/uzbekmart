@@ -47,6 +47,8 @@ Route::group(['prefix' => '{language}'], function () {
 
     Route::get('/about-us', 'PageController@aboutus')->name('about-us');
 
+    Route::get('/search', 'PageController@search')->name('search');
+
 
     
 
