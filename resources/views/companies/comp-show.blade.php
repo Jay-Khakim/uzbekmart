@@ -149,7 +149,7 @@
                                         <div class="hiraola-product_content">
                                             <div class="product-desc_info">
                                                 <br>
-                                                <h6 align="center"><a class="product-name" href="product/l20-1.html">{{$product->name}}</a></h6>
+                                                <h6 align="center"><a class="product-name" href="{{route('product-show', ['language'=>app()->getLocale(), 'id'=>$company->id, 'pid'=>$product->id])}}">{{$product->name}}</a></h6>
                                             </div>
                                         </div>
                                     </div>
