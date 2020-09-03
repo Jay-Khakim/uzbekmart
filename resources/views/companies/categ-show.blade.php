@@ -48,6 +48,15 @@
                                 <a class=" grid-3" data-target="gridview-3" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="fa fa-th"></i></a>
                                 {{-- <a class="list" data-target="listview" data-toggle="tooltip" data-placement="top" title="List View"><i class="fa fa-th-list"></i></a> --}}
                             </div>
+                            <span>@lang('Totally'): 
+                                {{count($one_categories)}}
+                                @if (count($one_categories)>1)
+                                    @lang('companies')
+                                @else 
+                                    @lang('company')
+                                @endif
+
+                            </span>
                             {{-- <div class="product-item-selection_area">
                                 <div class="product-short">
                                     <label class="select-label">@lang("Sort By"):</label>
@@ -69,7 +78,7 @@
                                     <div class="slide-item">
                                         <div class="single_product">
                                             <div class="product-img">
-                                                <a href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$one_id])}}">
+                                                <a href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$one->id])}}">
                                                     <img class="primary-img" src="/storage/{{$one->image}}" alt="{{$one->name}}">
                                                 </a>
 

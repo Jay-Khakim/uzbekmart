@@ -171,7 +171,17 @@
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info">
                                             <h5><span class="badge badge-primary"> #{{$local->category->name}} </span></h5>
-                                            <h6 align="center"><a class="product-name" href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$local->id])}}"> {{$local->name}}<pre></pre></a></h6>
+                                            <h6 align="center">
+                                                <a class="product-name" href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$local->id])}}">
+                                                    @php
+                                                    if(strlen($local->name)> 15){
+                                                        echo substr($local->name, 0, 15)."...";
+                                                    }else {
+                                                        echo $local->name;
+                                                    }  
+                                                    @endphp   
+                                                </a>
+                                            </h6>
                                         </div>
                                     </div>
                                 </div>   
@@ -214,13 +224,24 @@
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info">
                                             <h5><span class="badge  badge-primary">#{{$foreign->category->name}}</span></h5>
-                                            <h6 align="center"><a class="product-name" href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$foreign->id])}}"> @php
-                                              if(strlen($foreign->name)> 15){
-                                                  echo substr($foreign->name, 0, 15)."...";
-                                              }else {
-                                                  echo $foreign->name;
-                                              }  
-                                            @endphp  </a></h6>
+                                            <h6 align="center">
+                                                <a class="product-name" href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$foreign->id])}}">
+                                                    {{-- @php
+                                                    if(strlen($foreign->name)< 15){
+                                                        echo "____".$foreign->name."___ _";
+                                                    }else {
+                                                        echo $foreign->name;
+                                                    }  
+                                                    @endphp --}}
+                                                    @php
+                                                    if(strlen($foreign->name)> 15){
+                                                        echo substr($foreign->name, 0, 15)."...";
+                                                    }else {
+                                                        echo $foreign->name;
+                                                    }  
+                                                    @endphp   
+                                                </a>
+                                            </h6>
                                         </div>
                                     </div>
                                 </div>
