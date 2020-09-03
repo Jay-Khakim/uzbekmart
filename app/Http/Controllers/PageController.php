@@ -59,7 +59,7 @@ class PageController extends Controller
         $category= $company->category->id;
         // dd($category);
         $single = Product::with('company')->find($pid);
-        $products= Product::with('category')->where('category_id', $category)->paginate(5);
+        $products= Product::with('category')->where('category_id', $category)->paginate(10);
 
         return view('companies.product-show')->with(compact('company', 'products', 'single'));
     }
@@ -81,9 +81,9 @@ class PageController extends Controller
         return view('companies.subcat-show')->with(compact('one_subcategories', 'category', 'subcategory', 'cat_id', 'subcat_id'));
     }
 
-    public function forinvestors(Request $request){
+    public function forinvestors(){
 
-        echo $region = $request->region;
+        
         return view('services.for-investors');
     }
 
@@ -105,9 +105,19 @@ class PageController extends Controller
         return view('services.service-show')->with(compact('service', 'service_id'));
     }
 
-    public function investments(){
+    public function investments(Request $request){
+        
+        // echo $region = $request->region;
         $categories = Category::all();
         $investments = Investment::with('category')->paginate(20);
+
+        // if(($request->cat !== "selected") && ($request->region !== "selected")){
+        //     // $cat_id = Category::where('name_en', 'cat');
+        //     $investments = Investment::with('category')
+        //     ->where('address_en', $request->region)
+        //     ->where('category_id', $request->cat)
+        //     ->paginate(20);
+        // }
         return view('investments.investments')->with(compact('categories', 'investments'));
     }
 

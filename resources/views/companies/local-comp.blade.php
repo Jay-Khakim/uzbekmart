@@ -111,6 +111,8 @@
                             {{-- Single company field --}}
 
                         </div>
+                    {{$localcomp->links()}}
+
                     </div>
                 </div>
             </div>

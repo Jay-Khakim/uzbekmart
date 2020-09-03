@@ -52,16 +52,6 @@
                                         @endphp 
                                     </h5>
                                 </div>
-                                {{-- <div class="price-filter">
-                                    <div id="slider-range"></div>
-                                    <div class="price-slider-amount">
-                                        <div class="label-input">
-                                            <label>@lang("price") : </label>
-                                            <input type="text" id="amount" name="price" placeholder="Add Your Price" />
-                                        </div>
-                                        <button type="button">Filter</button>
-                                    </div>
-                                </div> --}}
                             </div>
                             
                             <div class="category-module hiraola-sidebar_categories">
@@ -72,16 +62,9 @@
                                     <ul class="module-list_item">
                                         <li>
                                             @foreach ($categories as $category)
-                                                <a href="javascript:void(0)">{{$category->name}} (@foreach ($investments as $invest)
-                                                    @php
-                                                        $a = 0;
-                                                        if ($invest->category_id === $category->id) {
-                                                            $a = $a+1;
-                                                        }
-                                                        echo $a;
-                                                    @endphp
-                                                    @endforeach)
-                                                </a>
+                                                <a href="javascript:void(0)">{{$category->name}} (
+                                                    {{count(\App\Models\Investment::where('category_id', $category->id)->get())}}
+                                                )</a>
                                             @endforeach
                                         </li>
                                     </ul>
@@ -124,7 +107,7 @@
                                     <select class="nice-select" id="catID">
                                         <option value="selected">@lang("Select")</option>
                                         @foreach ($categories as $cat)
-                                            <option class="option" value=" {{$cat->name_en}} ">{{$cat->name}}</option>     
+                                            <option class="option" value=" {{$cat->id}} ">{{$cat->name}}</option>     
                                         @endforeach
                                     </select>
                                 </div>
@@ -185,31 +168,7 @@
                                     </div>
                                 </div>
                             @endforeach
-                        {{-- <div class="row">
-                            <div class="col-lg-12">
-                                <div class="hiraola-paginatoin-area">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-6">
-                                            <ul class="hiraola-pagination-box">
-                                                <li class="active"><a href="javascript:void(0)">1</a></li>
-                                                <li><a href="javascript:void(0)">2</a></li>
-                                                <li><a href="javascript:void(0)">3</a></li>
-                                                <li><a class="Next" href="javascript:void(0)"><i
-                                                        class="ion-ios-arrow-right"></i></a></li>
-                                                <li><a class="Next" href="javascript:void(0)">>|</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6">
-                                            <div class="product-select-box">
-                                                <div class="product-short">
-                                                    <p>Showing 1 to 12 of 18 (2 Pages)</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
+                        {{$investments->links()}}
                     </div>
                 </div>
             </div>
@@ -223,12 +182,11 @@
             $("#findBtn").click(function(){
                 var cat = $("#catID").val();
                 var region = $('#region_select').val();
-
                 $.ajax({
                 type: 'get',
                 dataType: 'html',
                 url: '{{route("investments", app()->getLocale() ) }}',
-                data: 'cat_id=' + cat + '&price=' + price,
+                data: 'cat_id=' + cat + '&region=' + region,
                 success:function(response){
                     console.log(response);
                     $("#productData").html(response);
