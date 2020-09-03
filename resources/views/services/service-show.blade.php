@@ -53,15 +53,6 @@
                             <br>
                             <br>
                             <span class="reference">@lang("Company"): <a href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$service->company->id])}}"> <strong> {{$service->company->name}}</strong></a></span>
-                            <div class="rating-box">
-                                <ul>
-                                    <li><i class="fa fa-star-of-david"></i></li>
-                                    <li><i class="fa fa-star-of-david"></i></li>
-                                    <li><i class="fa fa-star-of-david"></i></li>
-                                    <li><i class="fa fa-star-of-david"></i></li>
-                                    <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                </ul>
-                            </div>
                             <div class="sp-essential_stuff">
                                 <ul>
                                     <li><b>@lang("Phone"): </b><span>{{$service->phone}}</span></li>

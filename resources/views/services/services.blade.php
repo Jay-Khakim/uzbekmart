@@ -72,7 +72,7 @@
                                     </li>
                                 </ul>
                             </div> --}}
-                        </div>s
+                        </div>
                     </div>
                     <div class="col-lg-12 order-1 order-lg-1">
                         <div class="shop-toolbar">
@@ -127,7 +127,7 @@
                                                     <h6>@lang("Company"):  <a class="product-name" href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$service->company->id])}}">{{$service->company->name}}</a></h6>
                                                     <h6>@lang("Service"): <a class="product-name" href="{{route('service-show', [app()->getLocale(), $service->id])}}"> {{$service->name}} </a></h6>
                                                     <div class="product-short_desc">
-                                                        <p> {{$service->desc}} </p>
+                                                        <p> {!!$service->desc!!} </p>
                                                     </div>
                                                 </div>
                                                 <div class="add-actions">
