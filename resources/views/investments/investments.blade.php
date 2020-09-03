@@ -96,40 +96,42 @@
                                 {{-- <a class="active grid-3" data-target="gridview-3" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="fa fa-th"></i></a> --}}
                                 <a class=" active list" data-target="listview" data-toggle="tooltip" data-placement="top" title="List View"><i class="fa fa-th-list"></i></a>
                             </div>
-                             <div class="product-item-selection_area">
+                             {{-- <div class="product-item-selection_area">
                                 <div class="product-short">
                                     <label class="select-label">@lang("Regions"):</label><br>
-                                    <select class="nice-select">
-                                        <option value="selected">@lang("Select")</option>
-                                        <option value="Tashkent city">@lang("Tashkent city")</option>
-                                        <option value="Tashkent region">@lang("Tashkent region")</option>
-                                        <option value="Andijan region">@lang("Andijan region")</option>
-                                        <option value="Bukhara region">@lang("Bukhara region")</option>
-                                        <option value="Fergana regiron">@lang("Fergana regiron")</option>
-                                        <option value="Jizzakh region">@lang("Jizzakh region")</option>
-                                        <option value="Khorezm region">@lang("Khorezm region")</option>
-                                        <option value="Namangan region">@lang("Namangan region")</option>
-                                        <option value="Navoiy region">@lang("Navoiy region")</option>
-                                        <option value="Kashkadarya region">@lang("Kashkadarya region")</option>
-                                        <option value="Karakalpakstan Republic">@lang("Karakalpakstan Republic")</option>
-                                        <option value="Samarkhand region">@lang("Samarkhand region")</option>
-                                        <option value="Sirdarya region">@lang("Sirdarya region") </option>
-                                        <option value="Surkhandarya region">@lang("Surkhandarya region")</option>
+                                    <select class="nice-select" id='region_select'>
+                                        <option class="option" value="selected">@lang("Select")</option>
+                                        <option class="option" value="Tashkent city">@lang("Tashkent city")</option>
+                                        <option class="option" value="Tashkent region">@lang("Tashkent region")</option>
+                                        <option class="option" value="Andijan region">@lang("Andijan region")</option>
+                                        <option class="option" value="Bukhara region">@lang("Bukhara region")</option>
+                                        <option class="option" value="Fergana region">@lang("Fergana regiron")</option>
+                                        <option class="option" value="Jizzakh region">@lang("Jizzakh region")</option>
+                                        <option class="option" value="Khorezm region">@lang("Khorezm region")</option>
+                                        <option class="option" value="Namangan region">@lang("Namangan region")</option>
+                                        <option class="option" value="Navoiy region">@lang("Navoiy region")</option>
+                                        <option class="option" value="Kashkadarya region">@lang("Kashkadarya region")</option>
+                                        <option class="option" value="Karakalpakstan Republic">@lang("Karakalpakstan Republic")</option>
+                                        <option class="option" value="Samarkhand region">@lang("Samarkhand region")</option>
+                                        <option class="option" value="Sirdarya region">@lang("Sirdarya region") </option>
+                                        <option class="option" value="Surkhandarya region">@lang("Surkhandarya region")</option>
                                     </select>
                                 </div>
                             </div>
                             <div id="sort1" class="product-item-selection_area">
                                 <div class="product-short">
                                     <label class="select-label">@lang("Categories"):</label><br>
-                                    <select class="nice-select">
+                                    <select class="nice-select" id="catID">
                                         <option value="selected">@lang("Select")</option>
                                         @foreach ($categories as $cat)
-                                            <option value=" {{$cat->name_en}} ">{{$cat->name}}</option>     
+                                            <option class="option" value=" {{$cat->name_en}} ">{{$cat->name}}</option>     
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
-                            <h4 align="center"><input type="button" name="sort" id="btn22" class="btn btn-primary" value="@lang('Search')"></h4>
+                            <h4 align="center">
+                                <button name="sort" id="findBtn" class="btn btn-primary">@lang('Search')</button>
+                            </h4> --}}
                             
                         </div>
                         <div class="shop-product-wrap grid listview row">
@@ -213,4 +215,26 @@
             </div>
         </div>
         <!-- Hiraola's Content Wrapper Area End Here -->
+@endsection
+
+@section('custom_js')
+    <script>
+        $(document).ready(function(){
+            $("#findBtn").click(function(){
+                var cat = $("#catID").val();
+                var region = $('#region_select').val();
+
+                $.ajax({
+                type: 'get',
+                dataType: 'html',
+                url: '{{route("investments", app()->getLocale() ) }}',
+                data: 'cat_id=' + cat + '&price=' + price,
+                success:function(response){
+                    console.log(response);
+                    $("#productData").html(response);
+                }
+                });
+            });
+        });
+    </script>
 @endsection

@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     @yield('css')
 
+
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
      {{-- <script type="text/javascript">
@@ -104,6 +105,8 @@
     <script src="/assets/js/plugins/instafeed.min.js"></script>
     <script src="/assets/js/plugins/jquery.elevateZoom-3.0.8.min.js"></script>
     <script src="/assets/js/main.js"></script>
+    @yield('custom_js')
+
     
 </body>
 </html>

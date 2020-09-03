@@ -127,8 +127,13 @@
                             </ul>
                         </nav>
                         <div id="search22" class="offcanvas-inner_search">
-                            <form action="#" class="hm-searchbox">
-                                <input type="text" placeholder="{{__("Search")}}">
+                            {{-- <form action="{{url('search'), app()->getLocale()}}" class="hm-searchbox" type="get">
+                                @csrf
+                                <input style="border-radius: 8px;" name="query" type="search" placeholder="{{__("Search")}}...">
+                                <button style=" padding: 3px;"  class="search_btn" type="submit"><i class="ion-ios-search-strong" style="color: white;"></i></button>
+                            </form> --}}
+                            <form action="{{url('search'), app()->getLocale()}}" type="get" class="hm-searchbox">
+                                <input type="search" name="query" placeholder="{{__("Search")}}">
                                 <button class="search_btn" type="submit"><i class="ion-ios-search-strong"></i></button>
                             </form>
                         </div>

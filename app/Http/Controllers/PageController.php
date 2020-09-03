@@ -28,6 +28,17 @@ class PageController extends Controller
     
     public function localcomp(){
         $localcomp = Company::where('companytype', 'local')->with('category')->paginate(20);
+
+
+        // if(isset($request->orderBy)){
+        //     if($request->orderBy == 'name-a-z'){
+        //         $localcomp = Company::where('companytype', 'local')->orderBy('name_en')->get();
+        //     }
+        //     if($request->orderBy == 'price-high-low'){
+        //         $localcomp = Product::where('companytype', 'local')->orderBy('name_en','desc')->get();
+        //     }
+        // }
+
         return view('companies.local-comp')->with('localcomp', $localcomp);
     }
 
@@ -70,7 +81,9 @@ class PageController extends Controller
         return view('companies.subcat-show')->with(compact('one_subcategories', 'category', 'subcategory', 'cat_id', 'subcat_id'));
     }
 
-    public function forinvestors(){
+    public function forinvestors(Request $request){
+
+        echo $region = $request->region;
         return view('services.for-investors');
     }
 

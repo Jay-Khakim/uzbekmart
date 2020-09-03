@@ -48,7 +48,7 @@
                                 <a class=" grid-3" data-target="gridview-3" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="fa fa-th"></i></a>
                                 {{-- <a class="list" data-target="listview" data-toggle="tooltip" data-placement="top" title="List View"><i class="fa fa-th-list"></i></a> --}}
                             </div>
-                            <div class="product-item-selection_area">
+                            {{-- <div class="product-item-selection_area">
                                 <div class="product-short">
                                     <label class="select-label">@lang("Sort By"):</label>
                                     <select class="nice-select">
@@ -59,7 +59,7 @@
                                         <option value="5">@lang("Model (Z - A)")</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="shop-product-wrap grid gridview-5 row">
 

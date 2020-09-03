@@ -44,18 +44,16 @@
                                 <a class=" grid-3" data-target="gridview-3" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="fa fa-th"></i></a>
                                 {{-- <a class="list" data-target="listview" data-toggle="tooltip" data-placement="top" title="List View"><i class="fa fa-th-list"></i></a> --}}
                             </div>
-                            <div class="product-item-selection_area">
+                            {{-- <div class="product-item-selection_area">
                                 <div class="product-short">
-                                    <label class="select-label">@lang("Sort By"):</label>
+                                    <label class="select-label sorting_text"><span>@lang("Sort By"):</span></label>
                                     <select class="nice-select">
-                                        <option value="1">@lang("Relevance")</option>
-                                        <option value="2">@lang("Name, A to Z")</option>
-                                        <option value="3">@lang("Name, Z to A")</option>
-                                        <option value="5">@lang("Model (A - Z)")</option>
-                                        <option value="5">@lang("Model (Z - A)")</option>
+                                        <option class="product_sorting_btn" data-order="default" value="1">@lang("Relevance")</option>
+                                        <option class="product_sorting_btn" value="2" data-order="name-a-z"><span>@lang("Name, A to Z")</span></option>
+                                        <option class="product_sorting_btn" value="3" data-order="name-z-a"><span>@lang("Name, Z to A")</span></option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="shop-product-wrap grid gridview-5 row">
 
@@ -118,4 +116,45 @@
             </div>
         </div>
         <!-- Hiraola's Content Wrapper Area End Here -->
+@endsection
+
+@section('custom_js')
+    <script>
+        $(document).ready(function () {
+            $('.product_sorting_btn').click(function () {
+                let orderBy = $(this).data('order')
+                $('.sorting_text').text($(this).find('span').text())
+                $.ajax({
+                    url: "{{route('local-comp' ,app()->getLocale())}}",
+                    type: "GET",
+                    data: {
+                        orderBy: orderBy
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: (data) => {
+                        let positionParameters = location.pathname.indexOf('?');
+                        let url = location.pathname.substring(positionParameters,location.pathname.length);
+                        let newURL = url + '?'; // http://127.0.0.1:8001/phones?
+                        // console.log(newURL);
+                        newURL += 'orderBy=' + orderBy; // http://127.0.0.1:8001/phones?orderBy=name-z-a
+                        history.pushState({}, '', newURL);
+                        $('.product_grid').html(data)
+                        $('.product_grid').isotope('destroy')
+                        $('.product_grid').imagesLoaded( function() {
+                            let grid = $('.product_grid').isotope({
+                                itemSelector: '.product',
+                                layoutMode: 'fitRows',
+                                fitRows:
+                                    {
+                                        gutter: 30
+                                    }
+                            });
+                        });
+                    }
+                });
+            })
+        })
+    </script>
 @endsection
