@@ -402,31 +402,6 @@
                             @endforeach
                         @endif
                     </div>
-                    {{-- <div class="row">
-                        <div class="col-lg-12">
-                            <div class="hiraola-paginatoin-area">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <ul class="hiraola-pagination-box">
-                                            <li class="active"><a href="javascript:void(0)">1</a></li>
-                                            <li><a href="javascript:void(0)">2</a></li>
-                                            <li><a href="javascript:void(0)">3</a></li>
-                                            <li><a class="Next" href="javascript:void(0)"><i
-                                                    class="ion-ios-arrow-right"></i></a></li>
-                                            <li><a class="Next" href="javascript:void(0)">>|</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <div class="product-select-box">
-                                            <div class="product-short">
-                                                <p>Ko'rsatish 1 to 2 of 2 (1 Sahifa)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </div>
