@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Mail;
 use App\Models\Category;
 use App\Models\Subcategory;
 use App\Models\Company;
@@ -135,6 +136,26 @@ class PageController extends Controller
 
     public function contacts(){
         return view('contacts');
+    }
+
+    public function store(Request $request){
+        // dd($request->all());
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject'=>'required',
+            "message" => 'required'
+        ]);
+
+        Mail::send('contact-message', [
+            'msg' =>$request->message
+        ], function ($mail) use($request){
+            $mail-> from($request->email, $request->name);
+
+            $mail -> to('uzbekmartgroup@gmail.com')->subject($request->subject);
+        });
+
+        return redirect()->back()->with('flash_message', 'Message has been sent successfully!');
     }
 
     public function blogs(){

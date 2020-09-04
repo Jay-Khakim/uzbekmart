@@ -62,23 +62,30 @@
                         <div class="contact-form-content">
                             <h3 class="contact-page-title">@lang("Leave your message")</h3>
                             <div class="contact-form">
-                                <form id="contact-form" action="http://hasthemes.com/file/mail.php" method="post">
+                                <form id="contact-form" action="{{route("contacts-store", app()->getLocale())}}" method="post">
+                                    @csrf
                                     <div class="form-group">
                                         <label>@lang("Name") <span class="required">*</span></label>
-                                        <input type="text" name="con_name" id="con_name" required>
+                                        <input type="text" name="name" id="con_name" required>
+
                                     </div>
                                     <div class="form-group">
                                         <label>@lang("E-mail") <span class="required">*</span></label>
-                                        <input type="email" name="con_email" id="con_email" required>
+                                        <input type="email" name="email" id="con_email" required>
                                     </div>
                                     <div class="form-group">
                                         <label>@lang("Subject")</label>
-                                        <input type="text" name="con_subject" id="con_subject">
+                                        <input type="text" name="subject" id="con_subject" required>
                                     </div>
                                     <div class="form-group form-group-2">
                                         <label>@lang("Message")</label>
-                                        <textarea name="con_message" id="con_message"></textarea>
+                                        <textarea name="message" id="con_message" required></textarea>
                                     </div>
+                                    @if (Session::has('flash_message'))
+                                        <div class="alert alert-success">
+                                            {{Session::get('flash_message')}}
+                                        </div>
+                                    @endif
                                     <div class="form-group" align="center">
                                         <button type="submit" value="submit" id="submit" class="alsita-contact-form_btn" name="submit">@lang("Send")</button>
                                     </div>
