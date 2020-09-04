@@ -29,6 +29,11 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     @yield('css')
 
+    {{--@php
+    
+    symlink('/home/uzbekma1/uzbekmart/storage/app/public', '/home/uzbekma1/public_html/storage');
+    @endphp--}}
+
 
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
