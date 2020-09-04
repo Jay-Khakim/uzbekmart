@@ -166,7 +166,7 @@
                                                         <b>@lang("Amount ($ mln)")</b>: {{$invest->amount}} <br>
                                                         <b>@lang("IRR (fin), for 10 years (%)")</b>: {{$invest->iir}} <br>
                                                         <b>@lang("NPV (fin), for 10 years (%)")</b>: {{$invest->npv}} <br>
-                                                        <b>@lang("Payback (mounths)")</b>: {{$invest->payback}} <br>
+                                                        <b>@lang("Payback (months)")</b>: {{$invest->payback}} <br>
                                                         <b>@lang("Work places")</b>: {{$invest->workplaces}} <br>
                                                         <b>@lang("Phone")</b>: +998 71 145 45 02 <br>
                                                         
