@@ -201,35 +201,35 @@ h2 { color: #cc0000; margin: 0 0 10px 0; }
                           <td class="zona"><strong>@lang("Place") № 1</strong></td>
                           <td class="">1110x520</td>
                           <td class="zcount">@lang("Month")</td>
-                          <td class="zprice">1 000 000 @lang("sum")</td>
+                          <td class="zprice"> @lang("100 USD")</td>
                           
                         </tr>
                         <tr class="">
                           <td class="zona"><strong>@lang("Place") № 2</strong></td>
                           <td class="">310x520</td>
                           <td class="zcount">@lang("Month")</td>
-                          <td class="zprice">700 000 @lang("sum")</td>
+                          <td class="zprice"> @lang("70 USD")</td>
                           
                         </tr>
                         <tr class="odd">
                           <td class="zona"><strong>@lang("Place") № 3</strong></td>
                           <td class="zsize">575x200</td>
                           <td class="zcount">@lang("Month")</td>
-                          <td class="zprice">500 000 @lang("sum")</td>
+                          <td class="zprice">@lang("50 USD")</td>
                          
                         </tr>
                         <tr class="odd">
-                          <td class="zona"><strong>@lang("Топ компании")</strong></td>
+                          <td class="zona"><strong>@lang("Top companies")</strong></td>
                           <td class="zsize"></td>
                           <td class="zcount">@lang("Month")</td>
-                          <td class="zprice">223 000 @lang("sum")</td>
+                          <td class="zprice">@lang("20 USD")</td>
                           
                         </tr>
                         <tr class="odd">
                           <td class="zona"><strong>@lang("Banner within a category")</strong></td>
                           <td class="zsize">575x200</td>
                           <td class="zcount">@lang("Month")</td>
-                          <td class="zprice">223 000 @lang("sun")</td>
+                          <td class="zprice">@lang("20 USD")</td>
                           
                         </tr>
                         </table>
