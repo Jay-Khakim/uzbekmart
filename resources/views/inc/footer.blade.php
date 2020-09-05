@@ -202,7 +202,7 @@
                                                 <form action="https://uzbekmart.us17.list-manage.com/subscribe/post?u=2b6a4310f302a46f5382b290f&amp;id=c642c400d8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletters-form validate" target="_blank" novalidate>
                                                     <div id="mc_embed_signup_scroll">
                                                         <div id="mc-form" class="mc-form subscribe-form">
-                                                            <input type="email" value="" name="EMAIL" class="newsletter-input email" id="mce-EMAIL" autocomplete="off" placeholder="E-mail qoldiring" />
+                                                            <input type="email" value="" name="EMAIL" class="newsletter-input email" id="mce-EMAIL" autocomplete="off" placeholder="@lang('Please enter your email')" />
                                                             <div class="clear"><button name="subscribe" id="mc-embedded-subscribe" class="newsletter-btn" id="mc-submit">
                                                                 <i class="ion-android-mail" aria-hidden="true"></i>
                                                             </button></div>
