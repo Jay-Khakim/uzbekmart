@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="/assets/css/plugins/lightgallery.min.css">
     <link rel="stylesheet" href="/assets/css/plugins/nice-select.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="//code-ya.jivosite.com/widget/UyTUdznryw" async></script>
     @yield('css')
 
     {{--@php
