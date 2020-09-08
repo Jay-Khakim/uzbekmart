@@ -97,7 +97,9 @@
                                                     <img class="primary-img" src="/storage/{{$one->image}}" alt="{{$one->name}}">
                                                 </a>
 
-                                                <span class="sticker-2">New</span>
+                                                @if (($dt->dayOfYear - $one->created_at->dayOfYear) < 7 )
+                                                    <span class="sticker-2">New</span>
+                                                @endif
                                             </div>
                                             <br>
                                             <div class="hiraola-product_content">

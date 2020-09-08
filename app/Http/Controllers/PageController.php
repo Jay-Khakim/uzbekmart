@@ -12,6 +12,7 @@ use App\Models\Service;
 use App\Models\Investment;
 use App\Models\Buyrequest;
 use App\Models\Blog;
+use Carbon\Carbon;
 
 class PageController extends Controller
 {
@@ -20,24 +21,27 @@ class PageController extends Controller
         $subcategories= Subcategory::all();
         $localcomp = Company::where('companytype', 'local')->with('category')->orderBy("id", "desc")->take(8)->get();
         $foreigncomp = Company::where("companytype", "foreign")->with('category')->orderBy("id", "desc")->take(8)->get();
+        $dt = Carbon::now();
         $companies = Company::all();
         $products = Product::all();
         // dd($localcomp);
         // dd($category);
-        return view('index')->with(compact('category', 'subcategories', 'localcomp', 'foreigncomp', 'companies', 'products'));
+        return view('index')->with(compact('category', 'subcategories', 'localcomp', 'dt', 'foreigncomp', 'companies', 'products'));
     } 
     
     public function localcomp(){
         $categories = Category::all();
+        $dt = Carbon::now();
         $localcomp = Company::where('companytype', 'local')->with('category')->orderBy("id", "desc")->paginate(16);
 
-        return view('companies.local-comp')->with(compact('categories', 'localcomp'));
+        return view('companies.local-comp')->with(compact('categories', 'dt', 'localcomp'));
     }
 
     public function foreigncomp(){
+        $dt = Carbon::now();
         $categories = Category::all();
         $foreigncomp = Company::where('companytype', 'foreign')->with('category')->orderBy("id", "desc")->paginate(16);
-        return view('companies.foreign-comp')->with(compact('categories', 'foreigncomp'));
+        return view('companies.foreign-comp')->with(compact('categories', 'dt', 'foreigncomp'));
     }
 
     public function companyshow($language, $id){
@@ -58,21 +62,23 @@ class PageController extends Controller
     }
 
     public function categoryshow($language, $id){
+        $dt = Carbon::now();
         $categories = Category::all();
         $cat_id = $id;
         $one_categories = Company::where('category_id', $id)->with('category')->orderBy("id", "desc")->paginate(16);
-        return view('companies.categ-show')->with(compact('one_categories', 'categories', 'cat_id'));
+        return view('companies.categ-show')->with(compact('one_categories', 'dt', 'categories', 'cat_id'));
     }
 
     public function subcategoryshow($language, $cid, $sid){   //$cid  = category id, $sid=subcategory id
         $categories = Category::all();
+        $dt = Carbon::now();
         $category= Category::find($cid);
         $subcategory = Subcategory::find($sid);
         // $subcategory = Category::where('category_id', $id);
         $cat_id = $cid;
         $subcat_id = $sid;
         $one_subcategories = Company::where('subcategory_id', $sid)->with('category')->with('subcategory')->orderBy("id", "desc")->paginate(16);
-        return view('companies.subcat-show')->with(compact('one_subcategories', 'category', 'categories', 'subcategory', 'cat_id', 'subcat_id'));
+        return view('companies.subcat-show')->with(compact('one_subcategories', 'dt', 'category', 'categories', 'subcategory', 'cat_id', 'subcat_id'));
     }
 
     public function forinvestors(){

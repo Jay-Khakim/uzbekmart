@@ -31,23 +31,11 @@
                         <div id="cate-toggle" class="category-menu-list">
                             <ul>
                                 @foreach ($category as $cat)
-                                    <li class="right-menu"><a href="{{route('category-show', ['language'=>app()->getLocale(), 'id'=>$cat->id])}}"><img class="img-fluid"  src="/storage/{{$cat->image}}" alt="" class="mr-3"><span class="ml-1">{{$cat->name}} </span></a>
-                                        {{-- @foreach ($subcategories as $subcategory) --}}
-                                        {{-- {{count($subcategories->where('category_id', $cat->id))}} --}}
-                                        {{-- {{$su = $subcategories->where('category_id', $cat->id)}} --}}
-                                        {{-- @for ($i = 0; $i < count($subcategories->where('category_id', $cat->id)); $i++) --}}
-                                        {{-- @php
-                                            $su = $subcategories->where('category_id', $cat->id);
-                                            foreach ($su as $key) {
-                                                echo '<ul class="cat-mega-menu cat-mega-menu-3">
-                                                    <div id="div_top_hypers">
-                                                        <ul id="ul_top_hypers">
-                                                            <li>/ <a href="{{route("subcategory-show", ["language"=>app()->getLocale(), "cid"=>$cat->id, "sid"=> $sub->id])}}" class="a_top_hypers"> {{$sub->name}} </a></li> 
-                                                        </ul>
-                                                    </div>
-                                                </ul>';
-                                            };  
-                                        @endphp --}}
+                                    <li class="right-menu">
+                                        <a href="{{route('category-show', ['language'=>app()->getLocale(), 'id'=>$cat->id])}}">
+                                            {{-- <img class="img-fluid"  src="/storage/{{$cat->image}}" alt="" class="mr-3"> --}}
+                                            <span class="ml-1">{{$cat->name}} </span>
+                                        </a>
                                             
                                         <ul class="cat-mega-menu cat-mega-menu-3">
                                             @foreach ($subcategories->where('category_id', $cat->id) as $sub)
@@ -59,8 +47,6 @@
                                                     </div>
                                             @endforeach
                                         </ul>   
-                                        {{-- @endfor --}}
-                                        {{-- @endforeach     --}}
                                     </li>   
                                 @endforeach
                             </ul>
@@ -104,16 +90,6 @@
                 </div>
                 <div id="slider02" class="row">
                     <div class="category_company col-12 d-md-none my-4">
-                        {{-- <div class="category_item px-2">
-                            <a href="/en/categories" class="item_link">
-                                <div class="mx-auto">
-                                <span class="fa fa-list"></span>
-                                </div>
-                                <div class="category_title mx-auto">
-                                <span>All categories</span>
-                                </div>
-                            </a>
-                        </div>  --}}
                         @foreach ($category as $cat)
                             
                             <div class="category_item px-2">
@@ -166,7 +142,10 @@
                                         <a href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$local->id])}}">
                                             <img class="primary-img" src="/storage/{{$local->image}} " alt=" {{$local->name}} ">
                                         </a>
-                                        <span class="sticker-2">New</span>
+                                        @if (($dt->dayOfYear - $local->created_at->dayOfYear) < 7 )
+                                            <span class="sticker-2">New</span>
+                                        @endif
+                                        
                                     </div>
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info">
