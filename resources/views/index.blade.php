@@ -198,7 +198,7 @@
                                         <a href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$foreign->id])}}">
                                             <img class="primary-img" src="/storage/{{$foreign->image}} " alt=" {{$foreign->name}} ">
                                         </a>
-                                        @if (($dt->dayOfYear - $local->created_at->dayOfYear) < 7 )
+                                        @if (($dt->dayOfYear - $foreign->created_at->dayOfYear) < 7 )
                                             <span class="sticker-2">New</span>
                                         @endif
                                     </div>
