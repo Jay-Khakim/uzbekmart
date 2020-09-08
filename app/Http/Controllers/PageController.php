@@ -28,24 +28,16 @@ class PageController extends Controller
     } 
     
     public function localcomp(){
-        $localcomp = Company::where('companytype', 'local')->with('category')->orderBy("id", "desc")->paginate(20);
+        $categories = Category::all();
+        $localcomp = Company::where('companytype', 'local')->with('category')->orderBy("id", "desc")->paginate(16);
 
-
-        // if(isset($request->orderBy)){
-        //     if($request->orderBy == 'name-a-z'){
-        //         $localcomp = Company::where('companytype', 'local')->orderBy('name_en')->get();
-        //     }
-        //     if($request->orderBy == 'price-high-low'){
-        //         $localcomp = Product::where('companytype', 'local')->orderBy('name_en','desc')->get();
-        //     }
-        // }
-
-        return view('companies.local-comp')->with('localcomp', $localcomp);
+        return view('companies.local-comp')->with(compact('categories', 'localcomp'));
     }
 
     public function foreigncomp(){
-        $foreigncomp = Company::where('companytype', 'foreign')->with('category')->orderBy("id", "desc")->paginate(20);
-        return view('companies.foreign-comp')->with('foreigncomp', $foreigncomp);
+        $categories = Category::all();
+        $foreigncomp = Company::where('companytype', 'foreign')->with('category')->orderBy("id", "desc")->paginate(16);
+        return view('companies.foreign-comp')->with(compact('categories', 'foreigncomp'));
     }
 
     public function companyshow($language, $id){
@@ -68,18 +60,19 @@ class PageController extends Controller
     public function categoryshow($language, $id){
         $categories = Category::all();
         $cat_id = $id;
-        $one_categories = Company::where('category_id', $id)->with('category')->orderBy("id", "desc")->paginate(20);
+        $one_categories = Company::where('category_id', $id)->with('category')->orderBy("id", "desc")->paginate(16);
         return view('companies.categ-show')->with(compact('one_categories', 'categories', 'cat_id'));
     }
 
     public function subcategoryshow($language, $cid, $sid){   //$cid  = category id, $sid=subcategory id
+        $categories = Category::all();
         $category= Category::find($cid);
         $subcategory = Subcategory::find($sid);
         // $subcategory = Category::where('category_id', $id);
         $cat_id = $cid;
         $subcat_id = $sid;
-        $one_subcategories = Company::where('subcategory_id', $sid)->with('category')->with('subcategory')->orderBy("id", "desc")->paginate(20);
-        return view('companies.subcat-show')->with(compact('one_subcategories', 'category', 'subcategory', 'cat_id', 'subcat_id'));
+        $one_subcategories = Company::where('subcategory_id', $sid)->with('category')->with('subcategory')->orderBy("id", "desc")->paginate(16);
+        return view('companies.subcat-show')->with(compact('one_subcategories', 'category', 'categories', 'subcategory', 'cat_id', 'subcat_id'));
     }
 
     public function forinvestors(){

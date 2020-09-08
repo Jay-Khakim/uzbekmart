@@ -38,14 +38,42 @@
         <div class="hiraola-content_wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-3 order-2 order-lg-2">
+                        <div class="hiraola-sidebar-catagories_area">
+                            
+                            <div class="category-module hiraola-sidebar_categories">
+                                <div class="category-module_heading">
+                                    <h5>@lang("Categories")</h5>
+                                </div>
+                                <div class="module-body">
+                                    <ul class="module-list_item">
+                                        @foreach ($categories as $cat)
+                                        <li>
+                                            <a href="{{route('category-show', ['language'=>app()->getLocale(), 'id'=>$cat->id])}}">
+                                                {{$cat->name}} 
+                                            <span class="badge badge-pill badge-info">{{count(\App\Models\Company::where('category_id', $cat->id)->get())}}</span></a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar-banner_area">
+                            <div class="banner-item img-hover_effect">
+                                <a href="http://exportuz.com">
+                                    <img src="/../assets/images/banner/1_1.jpg" alt="Hiraola's Shop Banner Image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
                         <div class="shop-toolbar">
                             <div class="product-view-mode">
                                 <a class=" grid-3" data-target="gridview-3" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="fa fa-th"></i></a>
                                 {{-- <a class="list" data-target="listview" data-toggle="tooltip" data-placement="top" title="List View"><i class="fa fa-th-list"></i></a> --}}
                             </div>
                             <span>@lang('Totally'): 
-                                {{count($localcomp)}}
+                                {{$localcomp->total()}}
                                 @if (count($localcomp)>1)
                                     @lang('companies')
                                 @else 
@@ -53,18 +81,8 @@
                                 @endif
 
                             </span>
-                            {{-- <div class="product-item-selection_area">
-                                <div class="product-short">
-                                    <label class="select-label sorting_text"><span>@lang("Sort By"):</span></label>
-                                    <select class="nice-select">
-                                        <option class="product_sorting_btn" data-order="default" value="1">@lang("Relevance")</option>
-                                        <option class="product_sorting_btn" value="2" data-order="name-a-z"><span>@lang("Name, A to Z")</span></option>
-                                        <option class="product_sorting_btn" value="3" data-order="name-z-a"><span>@lang("Name, Z to A")</span></option>
-                                    </select>
-                                </div>
-                            </div> --}}
                         </div>
-                        <div class="shop-product-wrap grid gridview-5 row">
+                        <div class="shop-product-wrap grid gridview-4 row">
 
                             {{-- Single company field --}}
                             @foreach ($localcomp as $local)
