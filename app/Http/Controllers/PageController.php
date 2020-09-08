@@ -28,7 +28,7 @@ class PageController extends Controller
     } 
     
     public function localcomp(){
-        $localcomp = Company::where('companytype', 'local')->with('category')->paginate(20);
+        $localcomp = Company::where('companytype', 'local')->with('category')->orderBy("id", "desc")->paginate(20);
 
 
         // if(isset($request->orderBy)){
@@ -44,7 +44,7 @@ class PageController extends Controller
     }
 
     public function foreigncomp(){
-        $foreigncomp = Company::where('companytype', 'foreign')->with('category')->paginate(20);
+        $foreigncomp = Company::where('companytype', 'foreign')->with('category')->orderBy("id", "desc")->paginate(20);
         return view('companies.foreign-comp')->with('foreigncomp', $foreigncomp);
     }
 
@@ -68,7 +68,7 @@ class PageController extends Controller
     public function categoryshow($language, $id){
         $categories = Category::all();
         $cat_id = $id;
-        $one_categories = Company::where('category_id', $id)->with('category')->paginate(20);
+        $one_categories = Company::where('category_id', $id)->with('category')->orderBy("id", "desc")->paginate(20);
         return view('companies.categ-show')->with(compact('one_categories', 'categories', 'cat_id'));
     }
 
@@ -78,7 +78,7 @@ class PageController extends Controller
         // $subcategory = Category::where('category_id', $id);
         $cat_id = $cid;
         $subcat_id = $sid;
-        $one_subcategories = Company::where('subcategory_id', $sid)->with('category')->with('subcategory')->paginate(20);
+        $one_subcategories = Company::where('subcategory_id', $sid)->with('category')->with('subcategory')->orderBy("id", "desc")->paginate(20);
         return view('companies.subcat-show')->with(compact('one_subcategories', 'category', 'subcategory', 'cat_id', 'subcat_id'));
     }
 

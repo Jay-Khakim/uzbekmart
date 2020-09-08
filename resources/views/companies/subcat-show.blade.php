@@ -114,6 +114,7 @@
                     {{-- Single company field --}}
 
                 </div>
+            {{$one_subcategories->links()}}
             </div>
         </div>
     </div>

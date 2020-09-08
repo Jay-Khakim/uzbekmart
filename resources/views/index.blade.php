@@ -79,7 +79,7 @@
                                         <h3>{{__("onlayn shourum ")}}</h3>
                                         <h4>{{__("If you want to become one of us, please contact with us")}}</h4>
                                         <div class="hiraola-btn-ps_right slide-btn ">
-                                            <a class="hiraola-btn" href="contact.html">{{__("Contact now")}}</a>
+                                            <a class="hiraola-btn" href="{{route("contacts", app()->getLocale())}}">{{__("Contact now")}}</a>
                                         </div>
                                     </div>
                                     <div class="slider-progress"></div>
