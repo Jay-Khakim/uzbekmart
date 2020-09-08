@@ -31,24 +31,51 @@
                         <div id="cate-toggle" class="category-menu-list">
                             <ul>
                                 @foreach ($category as $cat)
-                                    <li class="right-menu">
-                                        <a href="{{route('category-show', ['language'=>app()->getLocale(), 'id'=>$cat->id])}}">
-                                            {{-- <img class="img-fluid"  src="/storage/{{$cat->image}}" alt="" class="mr-3"> --}}
-                                            <span class="ml-1">{{$cat->name}} </span>
-                                        </a>
+                                    @if ($a < 11)
+                                        <li class="right-menu">
+                                            <a href="{{route('category-show', ['language'=>app()->getLocale(), 'id'=>$cat->id])}}">
+                                                {{-- <img class="img-fluid"  src="/storage/{{$cat->image}}" alt="" class="mr-3"> --}}
+                                                <span class="ml-1">{{$cat->name}} </span>
+                                            </a>
                                             
-                                        <ul class="cat-mega-menu cat-mega-menu-3">
-                                            @foreach ($subcategories->where('category_id', $cat->id) as $sub)
-                                                {{-- {{dd($sub)}} --}}
-                                                    <div id="div_top_hypers">
-                                                        <ul id="ul_top_hypers">
-                                                            <li>/ <a href="{{route('subcategory-show', ['language'=>app()->getLocale(), 'cid'=>$cat->id, 'sid'=> $sub->id])}}" class="a_top_hypers"> {{$sub->name}} </a></li> 
-                                                        </ul>
-                                                    </div>
-                                            @endforeach
-                                        </ul>   
-                                    </li>   
+                                            <ul class="cat-mega-menu cat-mega-menu-3">
+                                                @foreach ($subcategories->where('category_id', $cat->id) as $sub)
+                                                    {{-- {{dd($sub)}} --}}
+                                                        <div id="div_top_hypers">
+                                                            <ul id="ul_top_hypers">
+                                                                <li>/ <a href="{{route('subcategory-show', ['language'=>app()->getLocale(), 'cid'=>$cat->id, 'sid'=> $sub->id])}}" class="a_top_hypers"> {{$sub->name}} </a></li> 
+                                                            </ul>
+                                                        </div>
+                                                @endforeach
+                                            </ul>   
+                                        </li>  
+                                    @else
+                                        <li class="rx-child">
+                                            <a href="{{route('category-show', ['language'=>app()->getLocale(), 'id'=>$cat->id])}}">
+                                                {{-- <img class="img-fluid"  src="/storage/{{$cat->image}}" alt="" class="mr-3"> --}}
+                                                <span class="ml-1">{{$cat->name}} </span>
+                                            </a>
+                                            
+                                            <ul class="cat-mega-menu cat-mega-menu-3">
+                                                @foreach ($subcategories->where('category_id', $cat->id) as $sub)
+                                                    {{-- {{dd($sub)}} --}}
+                                                        <div id="div_top_hypers">
+                                                            <ul id="ul_top_hypers">
+                                                                <li>/ <a href="{{route('subcategory-show', ['language'=>app()->getLocale(), 'cid'=>$cat->id, 'sid'=> $sub->id])}}" class="a_top_hypers"> {{$sub->name}} </a></li> 
+                                                            </ul>
+                                                        </div>
+                                                @endforeach
+                                            </ul>   
+                                        </li>
+                                    @endif
+                                      @php
+                                          $a = $a+1;
+                                      @endphp
                                 @endforeach
+                                <li class="rx-parent">
+                                    <a class="rx-default"><span class="fa fa-list pl-1" style="font-size: 20px;color:blue;padding-left:6px !important"></span><span class="ml-2"> @lang("All")</span></a>
+                                    <a class="rx-show"><span class="fa fa-window-close pl-1" style="font-size: 20px;color:red;padding-left:6px !important"></span><span class="ml-2">@lang("Close")</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -207,13 +234,6 @@
                                             <h5><span class="badge  badge-primary">#{{$foreign->category->name}}</span></h5>
                                             <h6 align="center">
                                                 <a class="product-name" href="{{route('comp-show', ['language'=>app()->getLocale(), 'id'=>$foreign->id])}}">
-                                                    {{-- @php
-                                                    if(strlen($foreign->name)< 15){
-                                                        echo "____".$foreign->name."___ _";
-                                                    }else {
-                                                        echo $foreign->name;
-                                                    }  
-                                                    @endphp --}}
                                                     @php
                                                     if(strlen($foreign->name)> 15){
                                                         echo substr($foreign->name, 0, 15)."...";

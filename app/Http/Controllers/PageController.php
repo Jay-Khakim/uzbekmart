@@ -17,6 +17,7 @@ use Carbon\Carbon;
 class PageController extends Controller
 {
     public function index(){
+        $a = 0;
         $category = Category::all();
         $subcategories= Subcategory::all();
         $localcomp = Company::where('companytype', 'local')->with('category')->orderBy("id", "desc")->take(8)->get();
@@ -26,7 +27,7 @@ class PageController extends Controller
         $products = Product::all();
         // dd($localcomp);
         // dd($category);
-        return view('index')->with(compact('category', 'subcategories', 'localcomp', 'dt', 'foreigncomp', 'companies', 'products'));
+        return view('index')->with(compact('category','a', 'subcategories', 'localcomp', 'dt', 'foreigncomp', 'companies', 'products'));
     } 
     
     public function localcomp(){
