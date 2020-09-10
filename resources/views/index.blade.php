@@ -21,17 +21,17 @@
     {{-- @include('inc.left-side-category') --}}
     <div class="slider-with-category_menu">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row" style="margin-left: 15px;">
                 <div id="slider01" class="col grid-half order-md-2 order-lg-1">
                     <div class="category-menu">
-                        <div class="category-heading">
+                        <div class="category-heading" style="margin-bottom: 5px;">
                             {{-- {{__("Categories")}} --}}
-                            <h2 class="categories-toggle"><span>@lang('Categories')</span></h2>
+                            <h2 class="categories-toggle" style="padding: 6px;"><span>@lang('Categories')</span></h2>
                         </div>
                         <div id="cate-toggle" class="category-menu-list">
                             <ul>
                                 @foreach ($category as $cat)
-                                    @if ($a < 11)
+                                    @if ($a < 10)
                                         <li class="right-menu">
                                             <a href="{{route('category-show', ['language'=>app()->getLocale(), 'id'=>$cat->id])}}">
                                                 {{-- <img class="img-fluid"  src="/storage/{{$cat->image}}" alt="" class="mr-3"> --}}
@@ -80,7 +80,7 @@
                         </div>
                     </div>
                 </div>
-                    <div class="col grid-full order-md-1 order-lg-2">
+                <div class="col grid-full order-md-1 order-lg-2">
                     <div class="hiraola-slider_area">
                         <div class="main-slider">
                             <!-- Begin Single Slide Area -->
@@ -137,7 +137,7 @@
                 <div id="banner1" class="col grid-half grid-md_half order-md-2 order-lg-3">
                     <div class="banner-item img-hover_effect">
                         <a href="http://exportuz.com/">
-                            <img class="img-full" src="assets/images/banner/1_1.jpg" alt="Hiraola's Banner">
+                            <img class="img-full" src="assets/images/banner/1.jpg" alt="Hiraola's Banner">
                         </a>
                     </div>
                 </div>
@@ -145,7 +145,33 @@
         </div>
     </div>
                 
-    
+    <div class="hiraola-banner_area" style="margin-top: 10px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="banner-item img-hover_effect">
+                        <a href="shop-left-sidebar.html">
+                            <img class="img-full" src="assets/images/banner/2_1.jpg" alt="Hiraola's Banner">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="banner-item img-hover_effect">
+                        <a href="shop-left-sidebar.html">
+                            <img class="img-full" src="assets/images/banner/2_2.jpg" alt="Hiraola's Banner">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="banner-item img-hover_effect">
+                        <a href="shop-left-sidebar.html">
+                            <img class="img-full" src="assets/images/banner/2_3.jpg" alt="Hiraola's Banner">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -281,6 +307,27 @@
         </div>
     </div>
     {{-- End of registration area --}}
+
+    <div class="hiraola-banner_area-2" style="margin-top: 10px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-item img-hover_effect">
+                        <a href="com-local/com-local.html">
+                            <img class="img-full"  src="assets/images/banner/3_1.jpg" alt="Hiraola's Banner">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="banner-item img-hover_effect">
+                        <a href="com-foreign/com-foreign.html">
+                            <img class="img-full" src="assets/images/banner/3_2.jpg" alt="Hiraola's Banner">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     {{-- Statistics area --}}
     @include('inc.statistics')
