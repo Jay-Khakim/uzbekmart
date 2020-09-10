@@ -96,7 +96,17 @@
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info">
                                             <h5><span class="badge  badge-primary"> #{{$one->category->name}} </span></h5>
-                                            <h6 align="center"><a class="product-name" href="{{route('comp-show', [app()->getLocale(), $one->id])}}"> {{$one->name}} </a></h6>
+                                            <h6 align="center">
+                                                <a class="product-name" href="{{route('comp-show', [app()->getLocale(), $one->id])}}">
+                                                    @php
+                                                    if(strlen($one->name)> 23){
+                                                        echo substr($one->name, 0, 23)."...";
+                                                    }else {
+                                                        echo $one->name;
+                                                    }  
+                                                    @endphp 
+                                                </a>
+                                            </h6>
                                             
                                         </div>
                                     </div>
