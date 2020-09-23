@@ -256,7 +256,9 @@ h2 { color: #cc0000; margin: 0 0 10px 0; }
         </div>
     </div>
     <div class="adv-rzd"></div>
+
     
+    <form method="POST" action="https://checkout.paycom.uz"> <input type="hidden" name="merchant" value="5f30f94d348f3ed8197c67b8"/> <input type="text" name="amount" value="10000"/><input type="hidden" name="account[name]" value="Jay khakim"/><input type="hidden" name="account[number]" value="302"/><input type="hidden" name="account[company]" value="Aka"/><button type="submit" style="cursor: pointer;border: 1px solid #ebebeb;border-radius: 6px;background: linear-gradient(to top, #f1f2f2, white);width: 54px;height: 54px;display: flex;align-items: center;justify-content: center;"> <img style="width: 42px;height: 42px;" src="http://cdn.payme.uz/buttons/button_medium_RU.svg"> </button></form>
     
 <div class="container">
 <table class="table-adv" border="0">
