@@ -41,7 +41,7 @@
                         <div class="hiraola-sidebar-catagories_area">
                             <div class="hiraola-sidebar_categories">
                                 <div class="hiraola-categories_title">
-                                    <h5 align="center">@lang("Amount of investments: ")</h5>
+                                    <h5 align="center">@lang("Amount of investments: in mln")</h5>
                                     <h5 align="center">$
                                         @php
                                             $sum = 0;
@@ -162,7 +162,7 @@
                                                         <b>@lang("Address"): </b>{{$invest->address}}<br>
                                                         <b>@lang("Project name"):</b> {{$invest->title}} <br>
                                                         <b>@lang("Category"):</b> {{$invest->category->name}}<br>
-                                                        <b>@lang("Avarage power")</b>: {{$invest->avaragepower}}<br>
+                                                        <b>@lang("Average power")</b>: {{$invest->avaragepower}}<br>
                                                         <b>@lang("Amount ($ mln)")</b>: {{$invest->amount}} <br>
                                                         <b>@lang("IRR (fin), for 10 years (%)")</b>: {{$invest->iir}} <br>
                                                         <b>@lang("NPV (fin), for 10 years (%)")</b>: {{$invest->npv}} <br>
