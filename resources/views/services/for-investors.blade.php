@@ -47,8 +47,8 @@
                                     <ul class="module-list_item">
                                         <li>
                                             <a href="{{route('services-for-investors', app()->getLocale())}}">@lang("For investors")</a>
-                                            <a href="service2.html">@lang("Check for company")</a>
-                                            <a href="service.html">@lang("Other services")</a>
+                                            <a href="{{route('check-company', app()->getLocale())}}">@lang("Check for company")</a>
+                                            <a href="{{route('services', app()->getLocale())}}">@lang("Other services")</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -87,7 +87,7 @@
                                 <a class="grid-3" data-target="gridview-3" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="fa fa-th"></i></a>
                                 <a class="active list" data-target="listview" data-toggle="tooltip" data-placement="top" title="List View"><i class="fa fa-th-list"></i></a>
                             </div>
-                            <div class="product-item-selection_area">
+                            {{-- <div class="product-item-selection_area">
                                 <div class="product-short">
                                     <label class="select-label">@lang("Sort By"):</label>
                                     <select class="nice-select">
@@ -96,7 +96,7 @@
                                         <option value="3">@lang("Name, Z to A")</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="shop-product-wrap grid listview row">
                             <div class="col-lg-4">
