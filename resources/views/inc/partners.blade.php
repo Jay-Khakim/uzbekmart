@@ -17,7 +17,6 @@
                                 <a href="javascript:void(0)">
                                     <img class="primary-img" src="/assets/images/partners/p10.jpg" alt="Hiraola's Product Image">
                                 </a>
-                                
                             </div>
                             <div class="hiraola-product_content">
                                 <div class="product-desc_info" style="padding-bottom: 28px;">
@@ -34,7 +33,6 @@
                                 <a href="javascript:void(0)">
                                     <img class="primary-img" src="/assets/images/partners/p10.jpg" alt="Hiraola's Product Image">
                                 </a>
-                                
                             </div>
                             <div class="hiraola-product_content">
                                 <div class="product-desc_info" style="padding-bottom: 40px;">
@@ -51,7 +49,6 @@
                                 <a href="javascript:void(0)">
                                     <img class="primary-img" src="/assets/images/partners/p11.jpg" alt="Hiraola's Product Image">
                                 </a>
-                                
                             </div>
                             <div class="hiraola-product_content">
                                 <div class="product-desc_info" style="padding-bottom: 40px;">
@@ -67,8 +64,7 @@
                             <div class="product-img">
                                 <a href="javascript:void(0)">
                                     <img class="primary-img" src="/assets/images/partners/p10.jpg" alt="Hiraola's Product Image">
-                                </a>
-                                
+                                </a> 
                             </div>
                             <div class="hiraola-product_content">
                                 <div class="product-desc_info" style="padding-bottom: 40px;">
@@ -101,8 +97,7 @@
                             <div class="product-img">
                                 <a href="javascript:void(0)">
                                     <img class="primary-img" src="/assets/images/partners/p10.jpg" alt="Hiraola's Product Image">
-                                </a>
-                                
+                                </a> 
                             </div>
                             <div class="hiraola-product_content">
                                 <div class="product-desc_info pt-1">
@@ -112,9 +107,6 @@
                         </div>
                     </div>
                     <!-- Hiraola's Slide Item Area End Here -->
-
-                
-                    
                     </div>
                 </div>
             </div>
@@ -142,7 +134,6 @@
                                         <a href="https://www.asianafrican.org/">
                                             <img class="primary-img" src="/assets/images/fpartners/fp1.jpg" alt="Hiraola's Product Image">
                                         </a>
-                                        
                                     </div>
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info" style="padding-bottom: 28px;">
@@ -159,7 +150,6 @@
                                         <a href="https://rcci.org.pk/">
                                             <img class="primary-img" src="/assets/images/fpartners/fp2.jpg" alt="Hiraola's Product Image">
                                         </a>
-                                        
                                     </div>
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info" style="padding-bottom: 40px;">
@@ -176,7 +166,6 @@
                                         <a href="http://www.ascame.org/">
                                             <img class="primary-img" src="/assets/images/fpartners/fp3.jpg" alt="Hiraola's Product Image">
                                         </a>
-                                        
                                     </div>
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info" style="padding-bottom: 10px;">
@@ -193,7 +182,6 @@
                                         <a href="https://www.micci.com/Index.aspx">
                                             <img class="primary-img" src="/assets/images/fpartners/fp4.jpg" alt="Hiraola's Product Image">
                                         </a>
-                                        
                                     </div>
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info" style="padding-bottom: 10px;">
@@ -210,7 +198,6 @@
                                         <a href="https://www.indianimporterschambers.com/">
                                             <img class="primary-img" src="/assets/images/fpartners/fp5.jpg" alt="Hiraola's Product Image">
                                         </a>
-                                        
                                     </div>
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info pt-2" style="padding-bottom: 15px;">
@@ -227,7 +214,6 @@
                                         <a href="https://bccci-bd.org/">
                                             <img class="primary-img" src="/assets/images/fpartners/fp6.jpg" alt="Hiraola's Product Image">
                                         </a>
-                                        
                                     </div>
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info pt-1" style="padding-bottom: 20px;">
@@ -237,9 +223,6 @@
                                 </div>
                             </div>
                             <!-- Hiraola's Slide Item Area End Here -->
-
-                        
-                            
                             </div>
                         </div>
                     </div>
