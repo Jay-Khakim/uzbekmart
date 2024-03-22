@@ -51,3 +51,10 @@
 ![Shop editing – 1](https://github.com/Jay-Khakim/uzbekmart/assets/68965155/8f1ea418-4f0b-4150-a4bb-d23113a8bcb4)
 
 
+---
+
+## 7. Admin panel
+![Home Admin Panel](https://github.com/Jay-Khakim/uzbekmart/assets/68965155/e64b0ed0-6cd5-44cb-b6c0-2809260c3e1a)
+
+
+---
